@@ -1,91 +1,1411 @@
-// 手動確認した作品と月ごとの観測記録。
-// 2026年1〜10月は遡及調査。月次流行の実測ではなく該当月に公開された動画の記録。
-// 定番の追加は items に classic:true を付ける。月別/年別トレンドの observations や trendYears は変更しない。
-// views/likes は取得できた場合だけ数値を入力。未確認なら null。
-// groupId が同じ作品はサイトで１タイルに統合。canonicalName は統一表示名。
-// 確認済みの再生数を優先して代表動画を選び、未確認なら featured:true を参考にする。記録は削除しない。
+// 調査元の動画・作品を保持。月別・年別は時期における話題、継続人気、注目動画の参考一覧。
+// 動画公開月と流行のピークは同一ではない。具体的な根拠は trendEvidence と observations.evidenceLinks を参照。
 window.AMIMONO_DATA = {
-  updated: "2026-11-05",
-  items: [
-    {id:"flight-cap-sakura",groupId:"flight-cap",canonicalName:"フライトニットキャップ",featured:true,name:"フライトニットキャップ",english:"Earflap Hat",category:"帽子・頭",region:"日本",tags:["耳当て","フライトキャップ"],firstYear:2025,status:"past",videoId:"8FWwDc2liJk",channel:"sakura.crochet / サクラクロシェ",published:"2025-01-25",views:416388,likes:9600,checked:"2026-11-05",note:"2025年公開の制作動画。再生数は検索時点の参考値。",evidence:"video"},
-    {id:"flight-cap-momiii",groupId:"flight-cap",name:"もこもこ耳当て付き帽子",english:"Crochet Flight Cap",category:"帽子・頭",region:"日本",tags:["耳当て","冬小物"],firstYear:2025,status:"past",videoId:"f8w0bmpTbO4",channel:"Momiii - Knitting Life -",published:"2025-10-26",views:27301,likes:673,checked:"2026-11-05",note:"2025年に別作者からも耳当て付き帽子の作り方が投稿。",evidence:"video"},
-    {id:"cat-beanie-sakura",groupId:"cat-ear-beanie",name:"猫耳ニット帽",english:"Cat Ear Beanie",category:"帽子・頭",region:"日本",tags:["猫耳","Y2K"],firstYear:2023,status:"archive",videoId:"q8smb34_yeY",channel:"sakura.crochet / サクラクロシェ",published:null,views:null,likes:null,checked:"2026-11-05",note:"過去の制作動画。公開日の正確な日付と数字は要再確認。",evidence:"reference"},
-    {id:"bouquet-blanket",groupId:"bouquet-blanket",name:"花束ブランケット",english:"Flower Bouquet Blanket",category:"雑貨",region:"日本",tags:["花","ブランケット"],firstYear:2025,status:"past",videoId:"qAIkYSCtgZA",channel:"てしごとにっき",published:null,views:null,likes:null,checked:"2026-11-05",note:"作品の作り方を探すための収録候補。数値未確認。",evidence:"reference"},
-    {id:"triangle-scarf-adel",name:"ハグウィング三角スカーフ",english:"Hug Wing Triangle Scarf",category:"首・肩",region:"韓国",tags:["三角スカーフ","허그윙 삼각 스카프"],firstYear:2026,status:"candidate",videoId:"V5Ci2bbun60",channel:"Adel Crochet",published:"2026-10-15",views:null,likes:null,checked:"2026-11-05",note:"韓国語圏の制作動画。反応数は再検証待ち。",evidence:"reference"},
-    {id:"netbag-adel",name:"リーフラインネットバッグ",english:"Leaf Line Net Bag",category:"バッグ・収納",region:"韓国",tags:["ネットバッグ","리프라인 네트백"],firstYear:2026,status:"candidate",videoId:"q0wibRYUA7Y",channel:"Adel Crochet",published:"2026-07-14",views:null,likes:null,checked:"2026-11-05",note:"韓国語圏のネットバッグの制作動画。",evidence:"reference"},
-    {id:"card-wallet-adel",name:"ツートーンカードケース",english:"Two-Tone Card Wallet",category:"バッグ・収納",region:"韓国",tags:["カードケース","투톤"],firstYear:2026,status:"candidate",videoId:"-Z9CZHvZ9r4",channel:"Adel Crochet",published:"2026-09-11",views:null,likes:null,checked:"2026-11-05",note:"韓国語圏の小物制作動画。",evidence:"reference"},
-    {id:"wavebag-adel",name:"波模様トートバッグ",english:"Wave Tote Bag",category:"バッグ・収納",region:"韓国",tags:["波模様","물결백"],firstYear:2026,status:"candidate",videoId:"LKtW4lSk4ys",channel:"Adel Crochet",published:"2026-06-02",views:null,likes:null,checked:"2026-11-05",note:"波模様のバッグの作り方。",evidence:"reference"},
-    {id:"bottle-cream",groupId:"foldable-bottle-holder",canonicalName:"折りたたみボトルホルダー",name:"クリームソーダ型ボトルカバー",english:"Cream Soda Bottle Cover",category:"バッグ・収納",region:"日本",tags:["ペットボトル","飲み物"],firstYear:2026,status:"candidate",videoId:"_2inIHDvj0Y",channel:"TSUMUGI かぎ針編み",published:null,views:null,likes:null,checked:"2026-11-05",note:"立体モチーフ系ドリンクホルダー。公開日は未確認。",evidence:"reference"},
-    {id:"bottle-cupcake",groupId:"foldable-bottle-holder",name:"カップケーキ型ボトルホルダー",english:"Cupcake Bottle Holder",category:"バッグ・収納",region:"日本",tags:["折りたたみ","飲み物"],firstYear:2026,status:"candidate",videoId:"uw3uBmabuJk",channel:"TSUMUGI かぎ針編み",published:null,views:null,likes:null,checked:"2026-11-05",note:"収納できるタイプの作品候補。公開日は未確認。",evidence:"reference"},
-    {id:"bottle-shell",groupId:"foldable-bottle-holder",featured:true,name:"貝殻ボトルホルダー",english:"Shell Bottle Holder",category:"バッグ・収納",region:"日本",tags:["折りたたみ","飲み物"],firstYear:2026,status:"candidate",videoId:"NpvQPcK4Rrc",channel:"TSUMUGI かぎ針編み",published:null,views:null,likes:null,checked:"2026-11-05",note:"収納できる貝殻型の作品候補。公開日は未確認。",evidence:"reference"},
-    {id:"bottle-net",groupId:"foldable-bottle-holder",name:"ネット編みボトルホルダー",english:"Net Bottle Holder",category:"バッグ・収納",region:"日本",tags:["折りたたみ","ネット"],firstYear:2026,status:"candidate",videoId:"F4wBbhyfFM0",channel:"sakura.crochet / サクラクロシェ",published:null,views:null,likes:null,checked:"2026-11-05",note:"小さく収納できるタイプ。公開日は未確認。",evidence:"reference"}
-,
-    {id:"parandi-plakshi",groupId:"crochet-parandi",canonicalName:"クロシェ・パランディ",featured:true,name:"クロシェ・パランディ",english:"Crochet Parandi",category:"雑貨",region:"インド・英語圏",tags:["ヘアアクセサリー","髪飾り","paranda","パランダ","編み込み","crochet hair accessory"],firstYear:2026,status:"candidate",videoId:"937e6PWLL54",channel:"Plakshi Jain | Crochet",published:"2026-03-26",views:279202,likes:5600,checked:"2026-11-05",note:"髪に組み込む飾り。2026年3月公開動画の累計再生数を確認。海外の注目候補であり日本の流行を示すものではない。",evidence:"video"},
-    {id:"parandi-kajal",groupId:"crochet-parandi",name:"クロシェ・パランディ（花付き）",english:"Crochet Parandi",category:"雑貨",region:"インド・英語圏",tags:["ヘアアクセサリー","髪飾り","paranda","パランダ","花モチーフ"],firstYear:2026,status:"candidate",videoId:"ZgxNh4rWWmI",channel:"Calm & Crochet by Kajal",published:"2026-04-13",views:99721,likes:2200,checked:"2026-11-05",note:"同じ作品系統を別作者が制作。作品種類としてはクロシェ・パランディ1件、根拠動画は2件。",evidence:"video"}
-,
-    {id:"jan-star-earmuffs",groupId:"star-earmuffs",name:"星型イヤーマフ",english:"Star Ear Muffs",category:"帽子・頭",region:"英語圏",tags:["星型","耳当て"],firstYear:2026,status:"candidate",videoId:"d5e2BDUEAis",channel:"thisfairymade",published:"2026-01-18",views:818,likes:null,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"},
-    {id:"feb-cherry-pouch",groupId:"cherry-pouch",name:"チェリーポーチ",english:"Cherry Pouch",category:"バッグ・収納",region:"英語圏",tags:["チェリー","フリル"],firstYear:2026,status:"candidate",videoId:"dOmPhF5eT8w",channel:"thisfairymade",published:"2026-02-04",views:656,likes:35,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"},
-    {id:"mar-bandana",groupId:"crochet-bandana",name:"クロシェバンダナ",english:"Crochet Bandana",category:"帽子・頭",region:"英語圏",tags:["春","バンダナ"],firstYear:2026,status:"candidate",videoId:"z6yHLQJ1MP8",channel:"VivCrochets",published:"2026-03-20",views:130272,likes:2600,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"},
-    {id:"apr-mesh-shrug",groupId:"mesh-shrug",name:"メッシュシュラグ",english:"Mesh Crochet Shrug",category:"衣類",region:"英語圏",tags:["ボレロ","袖"],firstYear:2026,status:"candidate",videoId:"OmnEgOg5k04",channel:"VivCrochets",published:"2026-04-11",views:37658,likes:976,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"},
-    {id:"may-scallop-bandana",groupId:"crochet-bandana",name:"スカラップバンダナ",english:"Scalloped Crochet Bandana",category:"帽子・頭",region:"英語圏",tags:["縁取り","バンダナ"],firstYear:2026,status:"candidate",videoId:"HJcZazde7-M",channel:"VivCrochets",published:"2026-05-08",views:193582,likes:3500,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"},
-    {id:"jun-mesh-bag",groupId:"net-bag",name:"メッシュビーチバッグ",english:"Mesh Beach Bag",category:"バッグ・収納",region:"アラビア語圏",tags:["ネットバッグ","夏","トート"],firstYear:2026,status:"candidate",videoId:"7aKstTRxyfQ",channel:"ebtehal handmade",published:"2026-06-02",views:11853,likes:540,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"},
-    {id:"jul-tie-mesh",groupId:"tie-mesh-top",name:"前結びメッシュトップス",english:"Tie-Front Crochet Mesh Top",category:"衣類",region:"英語圏",tags:["夏服","クロシェトップス"],firstYear:2026,status:"candidate",videoId:"i5fiJP0gz1s",channel:"VivCrochets",published:"2026-07-17",views:94901,likes:2400,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"},
-    {id:"aug-granny-day",groupId:"granny-square",name:"グラニースクエア",english:"Granny Square",category:"雑貨",region:"英語圏",tags:["モチーフ","8月15日","記念日"],firstYear:2026,status:"candidate",videoId:"cB32-a0r6f0",channel:"Cornwall Crochet",published:"2026-08-15",views:1261,likes:29,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"},
-    {id:"sep-hobo",groupId:"hobo-bag",name:"ホーボーバッグ",english:"Crochet Hobo Bag",category:"バッグ・収納",region:"英語圏",tags:["ショルダーバッグ","秋"],firstYear:2026,status:"candidate",videoId:"wssTNoojSQg",channel:"VivCrochets",published:"2026-09-04",views:8926,likes:225,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"},
-    {id:"oct-earwarmer",groupId:"ear-warmer",name:"イヤーウォーマー",english:"Crochet Ear Warmer",category:"帽子・頭",region:"日本",tags:["耳当て","冬","ヘッドバンド"],firstYear:2026,status:"candidate",videoId:"rimppemU0-M",channel:"ミミチャンネル かぎ針編み",published:"2026-10-22",views:16438,likes:null,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"}
-,
-    {id:"mermaid-blanket-2016",groupId:"mermaid-blanket",name:"マーメイドブランケット",english:"Mermaid Tail Blanket",category:"雑貨",region:"スペイン語圏",tags:["人魚","ブランケット"],firstYear:2016,videoId:"5s8hH8-6IK0",channel:"Ahuyama Crochet",published:"2016-01-28",views:2695653,likes:38000,trendYears:[2016],trendSources:["https://www.theguardian.com/fashion/shortcuts/2016/dec/11/mermaid-blankets-this-years-answer-to-the-onesie"],status:"past",checked:"2026-11-05",note:"年別の流行資料・制作動画から確認。動画の公開年と流行年は別に記録。",evidence:"video"},
-    {id:"bucket-hat-2021",classic:true,groupId:"crochet-bucket-hat",name:"クロシェバケットハット",english:"Crochet Bucket Hat",category:"帽子・頭",region:"英語圏",tags:["バケットハット","帽子"],firstYear:2021,videoId:"mxuRYr7NUI0",channel:"MOP Crochet",published:"2021-10-17",views:172149,likes:5600,trendYears:[2021,2022],trendSources:["https://www.gq.com/story/crochet-hat-trend","https://www.voguescandinavia.com/articles/crocheted-bucket-hats-to-buy-now"],status:"past",checked:"2026-11-05",note:"年別の流行資料・制作動画から確認。動画の公開年と流行年は別に記録。",evidence:"video"},
-    {id:"hexagon-cardigan-2023",groupId:"hexagon-cardigan",name:"ヘキサゴンカーディガン",english:"Hexagon Cardigan",category:"衣類",region:"日本",tags:["六角形","カーディガン"],firstYear:2023,videoId:"H4wvR4_j-Q8",channel:"*.ゆくれあ.*",published:"2023-02-03",views:430025,likes:null,trendYears:[2023],trendSources:["https://www.youtube.com/watch?v=KtA4oseKsWI"],status:"past",checked:"2026-11-05",note:"年別の流行資料・制作動画から確認。動画の公開年と流行年は別に記録。",evidence:"video"}
-,
-    {id:"granny-cardigan-2022",classic:true,groupId:"granny-cardigan",name:"グラニースクエアカーディガン",english:"Granny Square Cardigan",category:"衣類",region:"スペイン語圏",tags:["グラニースクエア","カーディガン"],firstYear:2022,status:"past",videoId:"UITsqeURJsM",channel:"DiMar DiMax Crochet",published:"2022-10-29",views:225148,likes:6600,checked:"2026-11-05",note:"2022年のグラニースクエア衣料トレンドに対応する制作動画。",evidence:"video",trendYears:[2022],trendSources:["https://www.marieclaire.com/fashion/winter-2022-2023-trends/"]},
-    {id:"crochet-tote-2025",classic:true,groupId:"crochet-tote-2025",name:"クロシェトートバッグ",english:"Crochet Tote Bag",category:"バッグ・収納",region:"英語圏",tags:["バッグ","夏","クロシェ"],firstYear:2025,status:"past",videoId:"E5LCbuWp9dg",channel:"Toh Handmade",published:"2025-08-30",views:444812,likes:6600,checked:"2026-11-05",note:"2025年のクロシェバッグのファッショントレンドに対応する制作動画。",evidence:"video",trendYears:[2025],trendSources:["https://www.harpersbazaar.com/fashion/trends/g60234233/best-crochet-tote-bags/"]}
-,
-    {id:"classic-granny-square",groupId:"granny-square",canonicalName:"グラニースクエア",classic:true,name:"グラニースクエア",english:"Granny Square",category:"モチーフ",region:"英語圏",tags:["四角モチーフ","定番","初心者"],firstYear:2025,status:"classic",videoId:"P8e-9k3JsEI",channel:"Meema Makes",published:"2025-09-05",views:1066000,likes:13000,checked:"2026-11-05",note:"基本のグラニースクエアを一から編む手順。",evidence:"video"},
-    {id:"classic-coaster",groupId:"crochet-coaster",classic:true,name:"かぎ針編みコースター",english:"Crochet Coaster",category:"雑貨",region:"日本",tags:["コースター","モチーフ","花"],firstYear:2026,status:"classic",videoId:"NyVYHPDt3XY",channel:"Knit Worm",published:"2026-03-03",views:6547,likes:73,checked:"2026-11-05",note:"6種類の基本モチーフコースター制作動画。",evidence:"video"},
-    {id:"classic-scrunchie",groupId:"crochet-scrunchie",classic:true,name:"編みシュシュ",english:"Crochet Scrunchie",category:"アクセサリー",region:"英語圏",tags:["シュシュ","ヘアアクセサリー"],firstYear:2024,status:"classic",videoId:"7j5ZQPdTta4",channel:"by Kristine",published:"2024-09-15",views:19289,likes:399,checked:"2026-11-05",note:"初心者向けシュシュの制作動画。",evidence:"video"},
-    {id:"classic-beanie",groupId:"plain-beanie",classic:true,name:"ベーシックニット帽",english:"Crochet Beanie",category:"帽子・頭",region:"英語圏",tags:["ニット帽","ビーニー"],firstYear:2024,status:"classic",videoId:"eORO9c3OWss",channel:"by Kristine",published:"2024-09-29",views:441984,likes:8000,checked:"2026-11-05",note:"一般的なニット帽の作り方。フライトキャップ・猫耳帽子とは別の種類。",evidence:"video"},
-    {id:"classic-pouch",groupId:"crochet-pouch",classic:true,name:"編みポーチ",english:"Crochet Pouch",category:"バッグ・収納",region:"英語圏",tags:["小物入れ","ミニポーチ","財布"],firstYear:2024,status:"classic",videoId:"rfj8eVa1ESE",channel:"chubbiesbyash",published:"2024-06-03",views:961735,likes:26000,checked:"2026-11-05",note:"初心者向けポーチの制作動画。",evidence:"video"}
-,
-    {id:"discovery-babushka",groupId:"babushka",name:"バブーシュカ",english:"Crochet Babushka / Headscarf",category:"帽子・頭",region:"日本",tags:["三角巾","ヘッドスカーフ","ボンネット"],shape:"頭を三角形の布で包み、あご下で結ぶヘッドスカーフ。",videoId:"QzE6Vxt8GZ0",channel:"あみもの予備校チャンネル",published:"2025-08-02",views:64471,likes:1000,trendYears:[2025],trendSources:["https://www.mery.jp/2491810"],classic:false,firstYear:2025,status:"candidate",checked:"2026-11-05",evidence:"video"},
-    {id:"discovery-balaclava",groupId:"balaclava",name:"バラクラバ",english:"Crochet Balaclava",category:"帽子・頭",region:"英語圏",tags:["目出し帽","フード","防寒"],shape:"頭・耳・首を包み、顔まわりだけが開くニットフード。",videoId:"Ho-i00V_F7g",channel:"Kenikse Crochet",published:"2024-09-27",views:422612,likes:9000,trendYears:[2021,2022],trendSources:["https://www.vogue.co.uk/fashion/article/knitted-hood-balaclavas-trend","https://www.vogue.co.jp/fashion/article/sakurako-suzuki-balaclavas","https://www.theguardian.com/fashion/2021/nov/05/balaclavas-battle-to-be-most-coveted-fashion-item-of-late-2021"],classic:false,firstYear:2024,status:"candidate",checked:"2026-11-05",evidence:"video"},
-    {id:"discovery-sophie",groupId:"sophie-scarf",name:"ソフィースカーフ",english:"Sophie Scarf",category:"首・肩",region:"英語圏",tags:["PetiteKnit","細いスカーフ","ガーター編み"],shape:"両端が細く尖った小さなニットスカーフ。PetiteKnitの作品名。",videoId:"1Ficyht92K4",channel:"Flower City Fibers",published:"2025-02-12",views:1150175,likes:19000,trendYears:[2025],trendSources:["https://note.com/miconoyarn/n/n4359fadf57b8","https://www.ravelry.com/projects/Stepheknits/sophie-scarf"],note:"有料の原作パターンの補助解説動画であり、完全な無料編み図ではありません。",classic:false,firstYear:2025,status:"candidate",checked:"2026-11-05",evidence:"video"},
-    {id:"discovery-lipcase",groupId:"lip-case",name:"リップケース",english:"Crochet Lip Balm Holder",category:"バッグ・収納",region:"日本",tags:["バッグチャーム","リップホルダー","小物"],shape:"リップクリームを入れてバッグなどに下げる小さな編みケース。",videoId:"jaIE6ZJ8ULc",channel:"sakura.crochet / サクラクロシェ",published:"2026-01-16",views:63997,likes:1200,classic:false,firstYear:2026,status:"candidate",checked:"2026-11-05",evidence:"video"},
-    {id:"discovery-earmuffs",groupId:"earmuffs",name:"編みイヤーマフ",english:"Crochet Earmuffs",category:"帽子・頭",region:"日本",tags:["耳あて","イヤーマフ","冬小物"],shape:"左右の耳を覆うパッドをつないだ、帽子とは別の防寒小物。",videoId:"-701BSRYfEc",channel:"Cotoson素朴な編み物",published:"2023-11-11",views:60281,likes:985,classic:true,firstYear:2023,status:"candidate",checked:"2026-11-05",evidence:"video"},
-    {id:"discovery-catbeanie",groupId:"cat-ear-beanie",name:"猫耳ニット帽",english:"Cat Ear Beanie",category:"帽子・頭",region:"英語圏",tags:["猫耳","スクエアビーニー","宮脇咲良"],shape:"平らな四角形の帽子をかぶると、両角が猫耳のように立つ。",videoId:"s8uaBqUjZr4",channel:"Rika's Crochet",published:"2023-01-24",views:1188523,likes:33000,trendYears:[2023,2024],trendSources:["https://www.sponichi.co.jp/entertainment/news/2024/03/02/kiji/20240302s00041000484000c.html","https://dailynewsonline.jp/article/2912482/"],classic:false,firstYear:2023,status:"candidate",checked:"2026-11-05",evidence:"video"},
-    {id:"discovery-bouquet",groupId:"bouquet-blanket",name:"花束ブランケット",english:"Flower Bouquet Blanket",category:"雑貨",region:"英語圏",tags:["花束","変形","ブランケット"],shape:"広げるとブランケット、たたんで束ねると花束のように見える作品。",videoId:"O844EESTnW0",channel:"Gense",published:"2025-05-07",views:10999,likes:394,trendYears:[2026],trendSources:["https://prtimes.jp/main/html/rd/p/000000823.000041489.html"],classic:false,firstYear:2025,status:"candidate",checked:"2026-11-05",evidence:"video"}
-,
-    {id:"discovery-scoodie",groupId:"scoodie",name:"フード付きマフラー（スクーディー）",english:"Hooded Scarf / Scoodie",category:"首・肩",region:"英語圏",tags:["フードマフラー","スクーディー","hooded scarf"],shape:"フードとマフラーが一体になった形。首に巻いたままフードをかぶれる。",videoId:"FlNxTUFmO6c",channel:"VivCrochets",published:"2026-10-22",views:null,likes:null,trendSources:["https://vivcrochets.com/crochet-hooded-scarf-scoodie-free-pattern-tutorial/"],firstYear:2026,status:"candidate",checked:"2026-11-05",evidence:"video"},
-    {id:"discovery-sophie-hood-like",groupId:"sophie-hood-style",name:"ソフィーフード風マフラー",english:"Tapered Crochet Hooded Scarf",category:"首・肩",region:"英語圏",tags:["ソフィーフード","PetiteKnit","先細り","フード"],shape:"首に巻く細長いマフラーの途中がフードになっている形。ソフィーフードに着想を得た別作品。",videoId:"7sG16PegJZM",channel:"VivCrochets",published:"2026-10-23",views:null,likes:null,trendYears:[2025,2026],trendSources:["https://vivcrochets.com/crochet-hooded-scarf-tapered-free-pattern-tutorial/","https://hololala-knit.com/sophie-hood/"],firstYear:2026,status:"candidate",checked:"2026-11-05",evidence:"video",note:"PetiteKnit Sophie Hoodそのものの作り方ではなく、着想を得たかぎ針編み作品。"},
-    {id:"classic-handwarmer",groupId:"fingerless-gloves",classic:true,name:"アームウォーマー（指なし手袋）",english:"Crochet Fingerless Gloves",category:"手・腕",region:"英語圏",tags:["ハンドウォーマー","指なし手袋","アームウォーマー"],shape:"指先を出したまま手・手首を温める筒状の小物。",videoId:"ucJkaCFG2-0",channel:"Cherilyn Q",published:"2025-05-10",views:16384,likes:221,firstYear:2025,status:"classic",checked:"2026-11-05",evidence:"video"}
-,
-    {id:"classic-snood",groupId:"neck-warmer",classic:true,name:"ネックウォーマー（スヌード）",english:"Crochet Snood / Neck Warmer",category:"首・肩",region:"日本",tags:["スヌード","ネックウォーマー","防寒"],shape:"首に通して使う、輪になったマフラー。",videoId:"St5SdMZXT4s",channel:"ちいさな桜",published:"2024-11-29",views:20351,likes:199,firstYear:2024,status:"classic",checked:"2026-11-05",evidence:"video"}
+  "updated": "2026-11-05",
+  "items": [
+    {
+      "id": "flight-cap-sakura",
+      "groupId": "flight-cap",
+      "canonicalName": "フライトニットキャップ",
+      "featured": true,
+      "name": "フライトニットキャップ",
+      "english": "Earflap Hat",
+      "category": "帽子・頭",
+      "region": "日本",
+      "tags": [
+        "耳当て",
+        "フライトキャップ"
+      ],
+      "firstYear": 2025,
+      "status": "past",
+      "videoId": "8FWwDc2liJk",
+      "channel": "sakura.crochet / サクラクロシェ",
+      "published": "2025-01-25",
+      "views": 416388,
+      "likes": 9600,
+      "checked": "2026-11-05",
+      "note": "2025年公開の制作動画。再生数は検索時点の参考値。",
+      "evidence": "video"
+    },
+    {
+      "id": "flight-cap-momiii",
+      "groupId": "flight-cap",
+      "name": "もこもこ耳当て付き帽子",
+      "english": "Crochet Flight Cap",
+      "category": "帽子・頭",
+      "region": "日本",
+      "tags": [
+        "耳当て",
+        "冬小物"
+      ],
+      "firstYear": 2025,
+      "status": "past",
+      "videoId": "f8w0bmpTbO4",
+      "channel": "Momiii - Knitting Life -",
+      "published": "2025-10-26",
+      "views": 27301,
+      "likes": 673,
+      "checked": "2026-11-05",
+      "note": "2025年に別作者からも耳当て付き帽子の作り方が投稿。",
+      "evidence": "video"
+    },
+    {
+      "id": "cat-beanie-sakura",
+      "groupId": "cat-ear-beanie",
+      "name": "猫耳ニット帽",
+      "english": "Cat Ear Beanie",
+      "category": "帽子・頭",
+      "region": "日本",
+      "tags": [
+        "猫耳",
+        "Y2K"
+      ],
+      "firstYear": 2023,
+      "status": "archive",
+      "videoId": "q8smb34_yeY",
+      "channel": "sakura.crochet / サクラクロシェ",
+      "published": null,
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "note": "過去の制作動画。公開日の正確な日付と数字は要再確認。",
+      "evidence": "reference"
+    },
+    {
+      "id": "bouquet-blanket",
+      "groupId": "bouquet-blanket",
+      "name": "花束ブランケット",
+      "english": "Flower Bouquet Blanket",
+      "category": "雑貨",
+      "region": "日本",
+      "tags": [
+        "花",
+        "ブランケット"
+      ],
+      "firstYear": 2025,
+      "status": "past",
+      "videoId": "qAIkYSCtgZA",
+      "channel": "てしごとにっき",
+      "published": null,
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "note": "作品の作り方を探すための収録候補。数値未確認。",
+      "evidence": "reference"
+    },
+    {
+      "id": "triangle-scarf-adel",
+      "name": "ハグウィング三角スカーフ",
+      "english": "Hug Wing Triangle Scarf",
+      "category": "首・肩",
+      "region": "韓国",
+      "tags": [
+        "三角スカーフ",
+        "허그윙 삼각 스카프"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "videoId": "V5Ci2bbun60",
+      "channel": "Adel Crochet",
+      "published": "2026-10-15",
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "note": "韓国語圏の制作動画。反応数は再検証待ち。",
+      "evidence": "reference"
+    },
+    {
+      "id": "netbag-adel",
+      "name": "リーフラインネットバッグ",
+      "english": "Leaf Line Net Bag",
+      "category": "バッグ・収納",
+      "region": "韓国",
+      "tags": [
+        "ネットバッグ",
+        "리프라인 네트백"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "videoId": "q0wibRYUA7Y",
+      "channel": "Adel Crochet",
+      "published": "2026-07-14",
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "note": "韓国語圏のネットバッグの制作動画。",
+      "evidence": "reference"
+    },
+    {
+      "id": "card-wallet-adel",
+      "name": "ツートーンカードケース",
+      "english": "Two-Tone Card Wallet",
+      "category": "バッグ・収納",
+      "region": "韓国",
+      "tags": [
+        "カードケース",
+        "투톤"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "videoId": "-Z9CZHvZ9r4",
+      "channel": "Adel Crochet",
+      "published": "2026-09-11",
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "note": "韓国語圏の小物制作動画。",
+      "evidence": "reference"
+    },
+    {
+      "id": "wavebag-adel",
+      "name": "波模様トートバッグ",
+      "english": "Wave Tote Bag",
+      "category": "バッグ・収納",
+      "region": "韓国",
+      "tags": [
+        "波模様",
+        "물결백"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "videoId": "LKtW4lSk4ys",
+      "channel": "Adel Crochet",
+      "published": "2026-06-02",
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "note": "波模様のバッグの作り方。",
+      "evidence": "reference"
+    },
+    {
+      "id": "bottle-cream",
+      "groupId": "foldable-bottle-holder",
+      "canonicalName": "折りたたみボトルホルダー",
+      "name": "クリームソーダ型ボトルカバー",
+      "english": "Cream Soda Bottle Cover",
+      "category": "バッグ・収納",
+      "region": "日本",
+      "tags": [
+        "ペットボトル",
+        "飲み物"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "videoId": "_2inIHDvj0Y",
+      "channel": "TSUMUGI かぎ針編み",
+      "published": null,
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "note": "立体モチーフ系ドリンクホルダー。公開日は未確認。",
+      "evidence": "reference"
+    },
+    {
+      "id": "bottle-cupcake",
+      "groupId": "foldable-bottle-holder",
+      "name": "カップケーキ型ボトルホルダー",
+      "english": "Cupcake Bottle Holder",
+      "category": "バッグ・収納",
+      "region": "日本",
+      "tags": [
+        "折りたたみ",
+        "飲み物"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "videoId": "uw3uBmabuJk",
+      "channel": "TSUMUGI かぎ針編み",
+      "published": null,
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "note": "収納できるタイプの作品候補。公開日は未確認。",
+      "evidence": "reference"
+    },
+    {
+      "id": "bottle-shell",
+      "groupId": "foldable-bottle-holder",
+      "featured": true,
+      "name": "貝殻ボトルホルダー",
+      "english": "Shell Bottle Holder",
+      "category": "バッグ・収納",
+      "region": "日本",
+      "tags": [
+        "折りたたみ",
+        "飲み物"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "videoId": "NpvQPcK4Rrc",
+      "channel": "TSUMUGI かぎ針編み",
+      "published": null,
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "note": "収納できる貝殻型の作品候補。公開日は未確認。",
+      "evidence": "reference"
+    },
+    {
+      "id": "bottle-net",
+      "groupId": "foldable-bottle-holder",
+      "name": "ネット編みボトルホルダー",
+      "english": "Net Bottle Holder",
+      "category": "バッグ・収納",
+      "region": "日本",
+      "tags": [
+        "折りたたみ",
+        "ネット"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "videoId": "F4wBbhyfFM0",
+      "channel": "sakura.crochet / サクラクロシェ",
+      "published": null,
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "note": "小さく収納できるタイプ。公開日は未確認。",
+      "evidence": "reference"
+    },
+    {
+      "id": "parandi-plakshi",
+      "groupId": "crochet-parandi",
+      "canonicalName": "クロシェ・パランディ",
+      "featured": true,
+      "name": "クロシェ・パランディ",
+      "english": "Crochet Parandi",
+      "category": "雑貨",
+      "region": "インド・英語圏",
+      "tags": [
+        "ヘアアクセサリー",
+        "髪飾り",
+        "paranda",
+        "パランダ",
+        "編み込み",
+        "crochet hair accessory"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "videoId": "937e6PWLL54",
+      "channel": "Plakshi Jain | Crochet",
+      "published": "2026-03-26",
+      "views": 279202,
+      "likes": 5600,
+      "checked": "2026-11-05",
+      "note": "髪に組み込む飾り。2026年3月公開動画の累計再生数を確認。海外の注目候補であり日本の流行を示すものではない。",
+      "evidence": "video"
+    },
+    {
+      "id": "parandi-kajal",
+      "groupId": "crochet-parandi",
+      "name": "クロシェ・パランディ（花付き）",
+      "english": "Crochet Parandi",
+      "category": "雑貨",
+      "region": "インド・英語圏",
+      "tags": [
+        "ヘアアクセサリー",
+        "髪飾り",
+        "paranda",
+        "パランダ",
+        "花モチーフ"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "videoId": "ZgxNh4rWWmI",
+      "channel": "Calm & Crochet by Kajal",
+      "published": "2026-04-13",
+      "views": 99721,
+      "likes": 2200,
+      "checked": "2026-11-05",
+      "note": "同じ作品系統を別作者が制作。作品種類としてはクロシェ・パランディ1件、根拠動画は2件。",
+      "evidence": "video"
+    },
+    {
+      "id": "jan-star-earmuffs",
+      "groupId": "star-earmuffs",
+      "name": "星型イヤーマフ",
+      "english": "Star Ear Muffs",
+      "category": "帽子・頭",
+      "region": "英語圏",
+      "tags": [
+        "星型",
+        "耳当て"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "videoId": "d5e2BDUEAis",
+      "channel": "thisfairymade",
+      "published": "2026-01-18",
+      "views": 818,
+      "likes": null,
+      "checked": "2026-11-05",
+      "note": "公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",
+      "evidence": "video"
+    },
+    {
+      "id": "feb-cherry-pouch",
+      "groupId": "cherry-pouch",
+      "name": "チェリーポーチ",
+      "english": "Cherry Pouch",
+      "category": "バッグ・収納",
+      "region": "英語圏",
+      "tags": [
+        "チェリー",
+        "フリル"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "videoId": "dOmPhF5eT8w",
+      "channel": "thisfairymade",
+      "published": "2026-02-04",
+      "views": 656,
+      "likes": 35,
+      "checked": "2026-11-05",
+      "note": "公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",
+      "evidence": "video"
+    },
+    {
+      "id": "mar-bandana",
+      "groupId": "crochet-bandana",
+      "name": "クロシェバンダナ",
+      "english": "Crochet Bandana",
+      "category": "帽子・頭",
+      "region": "英語圏",
+      "tags": [
+        "春",
+        "バンダナ"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "videoId": "z6yHLQJ1MP8",
+      "channel": "VivCrochets",
+      "published": "2026-03-20",
+      "views": 130272,
+      "likes": 2600,
+      "checked": "2026-11-05",
+      "note": "公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",
+      "evidence": "video"
+    },
+    {
+      "id": "apr-mesh-shrug",
+      "groupId": "mesh-shrug",
+      "name": "メッシュシュラグ",
+      "english": "Mesh Crochet Shrug",
+      "category": "衣類",
+      "region": "英語圏",
+      "tags": [
+        "ボレロ",
+        "袖"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "videoId": "OmnEgOg5k04",
+      "channel": "VivCrochets",
+      "published": "2026-04-11",
+      "views": 37658,
+      "likes": 976,
+      "checked": "2026-11-05",
+      "note": "公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",
+      "evidence": "video"
+    },
+    {
+      "id": "may-scallop-bandana",
+      "groupId": "crochet-bandana",
+      "name": "スカラップバンダナ",
+      "english": "Scalloped Crochet Bandana",
+      "category": "帽子・頭",
+      "region": "英語圏",
+      "tags": [
+        "縁取り",
+        "バンダナ"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "videoId": "HJcZazde7-M",
+      "channel": "VivCrochets",
+      "published": "2026-05-08",
+      "views": 193582,
+      "likes": 3500,
+      "checked": "2026-11-05",
+      "note": "公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",
+      "evidence": "video"
+    },
+    {
+      "id": "jun-mesh-bag",
+      "groupId": "net-bag",
+      "name": "メッシュビーチバッグ",
+      "english": "Mesh Beach Bag",
+      "category": "バッグ・収納",
+      "region": "アラビア語圏",
+      "tags": [
+        "ネットバッグ",
+        "夏",
+        "トート"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "videoId": "7aKstTRxyfQ",
+      "channel": "ebtehal handmade",
+      "published": "2026-06-02",
+      "views": 11853,
+      "likes": 540,
+      "checked": "2026-11-05",
+      "note": "公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",
+      "evidence": "video"
+    },
+    {
+      "id": "jul-tie-mesh",
+      "groupId": "tie-mesh-top",
+      "name": "前結びメッシュトップス",
+      "english": "Tie-Front Crochet Mesh Top",
+      "category": "衣類",
+      "region": "英語圏",
+      "tags": [
+        "夏服",
+        "クロシェトップス"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "videoId": "i5fiJP0gz1s",
+      "channel": "VivCrochets",
+      "published": "2026-07-17",
+      "views": 94901,
+      "likes": 2400,
+      "checked": "2026-11-05",
+      "note": "公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",
+      "evidence": "video"
+    },
+    {
+      "id": "aug-granny-day",
+      "groupId": "granny-square",
+      "name": "グラニースクエア",
+      "english": "Granny Square",
+      "category": "雑貨",
+      "region": "英語圏",
+      "tags": [
+        "モチーフ",
+        "8月15日",
+        "記念日"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "videoId": "cB32-a0r6f0",
+      "channel": "Cornwall Crochet",
+      "published": "2026-08-15",
+      "views": 1261,
+      "likes": 29,
+      "checked": "2026-11-05",
+      "note": "公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",
+      "evidence": "video"
+    },
+    {
+      "id": "sep-hobo",
+      "groupId": "hobo-bag",
+      "name": "ホーボーバッグ",
+      "english": "Crochet Hobo Bag",
+      "category": "バッグ・収納",
+      "region": "英語圏",
+      "tags": [
+        "ショルダーバッグ",
+        "秋"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "videoId": "wssTNoojSQg",
+      "channel": "VivCrochets",
+      "published": "2026-09-04",
+      "views": 8926,
+      "likes": 225,
+      "checked": "2026-11-05",
+      "note": "公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",
+      "evidence": "video"
+    },
+    {
+      "id": "oct-earwarmer",
+      "groupId": "ear-warmer",
+      "name": "イヤーウォーマー",
+      "english": "Crochet Ear Warmer",
+      "category": "帽子・頭",
+      "region": "日本",
+      "tags": [
+        "耳当て",
+        "冬",
+        "ヘッドバンド"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "videoId": "rimppemU0-M",
+      "channel": "ミミチャンネル かぎ針編み",
+      "published": "2026-10-22",
+      "views": 16438,
+      "likes": null,
+      "checked": "2026-11-05",
+      "note": "公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",
+      "evidence": "video"
+    },
+    {
+      "id": "mermaid-blanket-2016",
+      "groupId": "mermaid-blanket",
+      "name": "マーメイドブランケット",
+      "english": "Mermaid Tail Blanket",
+      "category": "雑貨",
+      "region": "スペイン語圏",
+      "tags": [
+        "人魚",
+        "ブランケット"
+      ],
+      "firstYear": 2016,
+      "videoId": "5s8hH8-6IK0",
+      "channel": "Ahuyama Crochet",
+      "published": "2016-01-28",
+      "views": 2695653,
+      "likes": 38000,
+      "trendYears": [
+        2016
+      ],
+      "trendSources": [
+        "https://www.theguardian.com/fashion/shortcuts/2016/dec/11/mermaid-blankets-this-years-answer-to-the-onesie"
+      ],
+      "status": "past",
+      "checked": "2026-11-05",
+      "note": "年別の流行資料・制作動画から確認。動画の公開年と流行年は別に記録。",
+      "evidence": "video"
+    },
+    {
+      "id": "bucket-hat-2021",
+      "classic": true,
+      "groupId": "crochet-bucket-hat",
+      "name": "クロシェバケットハット",
+      "english": "Crochet Bucket Hat",
+      "category": "帽子・頭",
+      "region": "英語圏",
+      "tags": [
+        "バケットハット",
+        "帽子"
+      ],
+      "firstYear": 2021,
+      "videoId": "mxuRYr7NUI0",
+      "channel": "MOP Crochet",
+      "published": "2021-10-17",
+      "views": 172149,
+      "likes": 5600,
+      "trendYears": [
+        2021,
+        2022
+      ],
+      "trendSources": [
+        "https://www.gq.com/story/crochet-hat-trend",
+        "https://www.voguescandinavia.com/articles/crocheted-bucket-hats-to-buy-now"
+      ],
+      "status": "past",
+      "checked": "2026-11-05",
+      "note": "年別の流行資料・制作動画から確認。動画の公開年と流行年は別に記録。",
+      "evidence": "video"
+    },
+    {
+      "id": "hexagon-cardigan-2023",
+      "groupId": "hexagon-cardigan",
+      "name": "ヘキサゴンカーディガン",
+      "english": "Hexagon Cardigan",
+      "category": "衣類",
+      "region": "日本",
+      "tags": [
+        "六角形",
+        "カーディガン"
+      ],
+      "firstYear": 2023,
+      "videoId": "H4wvR4_j-Q8",
+      "channel": "*.ゆくれあ.*",
+      "published": "2023-02-03",
+      "views": 430025,
+      "likes": null,
+      "trendYears": [
+        2023
+      ],
+      "trendSources": [
+        "https://www.youtube.com/watch?v=KtA4oseKsWI"
+      ],
+      "status": "past",
+      "checked": "2026-11-05",
+      "note": "年別の流行資料・制作動画から確認。動画の公開年と流行年は別に記録。",
+      "evidence": "video"
+    },
+    {
+      "id": "granny-cardigan-2022",
+      "classic": true,
+      "groupId": "granny-cardigan",
+      "name": "グラニースクエアカーディガン",
+      "english": "Granny Square Cardigan",
+      "category": "衣類",
+      "region": "スペイン語圏",
+      "tags": [
+        "グラニースクエア",
+        "カーディガン"
+      ],
+      "firstYear": 2022,
+      "status": "past",
+      "videoId": "UITsqeURJsM",
+      "channel": "DiMar DiMax Crochet",
+      "published": "2022-10-29",
+      "views": 225148,
+      "likes": 6600,
+      "checked": "2026-11-05",
+      "note": "2022年のグラニースクエア衣料トレンドに対応する制作動画。",
+      "evidence": "video",
+      "trendYears": [
+        2022
+      ],
+      "trendSources": [
+        "https://www.marieclaire.com/fashion/winter-2022-2023-trends/"
+      ]
+    },
+    {
+      "id": "crochet-tote-2025",
+      "classic": true,
+      "groupId": "crochet-tote-2025",
+      "name": "クロシェトートバッグ",
+      "english": "Crochet Tote Bag",
+      "category": "バッグ・収納",
+      "region": "英語圏",
+      "tags": [
+        "バッグ",
+        "夏",
+        "クロシェ"
+      ],
+      "firstYear": 2025,
+      "status": "past",
+      "videoId": "E5LCbuWp9dg",
+      "channel": "Toh Handmade",
+      "published": "2025-08-30",
+      "views": 444812,
+      "likes": 6600,
+      "checked": "2026-11-05",
+      "note": "2025年のクロシェバッグのファッショントレンドに対応する制作動画。",
+      "evidence": "video",
+      "trendYears": [
+        2025
+      ],
+      "trendSources": [
+        "https://www.harpersbazaar.com/fashion/trends/g60234233/best-crochet-tote-bags/"
+      ]
+    },
+    {
+      "id": "classic-granny-square",
+      "groupId": "granny-square",
+      "canonicalName": "グラニースクエア",
+      "classic": true,
+      "name": "グラニースクエア",
+      "english": "Granny Square",
+      "category": "モチーフ",
+      "region": "英語圏",
+      "tags": [
+        "四角モチーフ",
+        "定番",
+        "初心者"
+      ],
+      "firstYear": 2025,
+      "status": "classic",
+      "videoId": "P8e-9k3JsEI",
+      "channel": "Meema Makes",
+      "published": "2025-09-05",
+      "views": 1066000,
+      "likes": 13000,
+      "checked": "2026-11-05",
+      "note": "基本のグラニースクエアを一から編む手順。",
+      "evidence": "video"
+    },
+    {
+      "id": "classic-coaster",
+      "groupId": "crochet-coaster",
+      "classic": true,
+      "name": "かぎ針編みコースター",
+      "english": "Crochet Coaster",
+      "category": "雑貨",
+      "region": "日本",
+      "tags": [
+        "コースター",
+        "モチーフ",
+        "花"
+      ],
+      "firstYear": 2026,
+      "status": "classic",
+      "videoId": "NyVYHPDt3XY",
+      "channel": "Knit Worm",
+      "published": "2026-03-03",
+      "views": 6547,
+      "likes": 73,
+      "checked": "2026-11-05",
+      "note": "6種類の基本モチーフコースター制作動画。",
+      "evidence": "video"
+    },
+    {
+      "id": "classic-scrunchie",
+      "groupId": "crochet-scrunchie",
+      "classic": true,
+      "name": "編みシュシュ",
+      "english": "Crochet Scrunchie",
+      "category": "アクセサリー",
+      "region": "英語圏",
+      "tags": [
+        "シュシュ",
+        "ヘアアクセサリー"
+      ],
+      "firstYear": 2024,
+      "status": "classic",
+      "videoId": "7j5ZQPdTta4",
+      "channel": "by Kristine",
+      "published": "2024-09-15",
+      "views": 19289,
+      "likes": 399,
+      "checked": "2026-11-05",
+      "note": "初心者向けシュシュの制作動画。",
+      "evidence": "video"
+    },
+    {
+      "id": "classic-beanie",
+      "groupId": "plain-beanie",
+      "classic": true,
+      "name": "ベーシックニット帽",
+      "english": "Crochet Beanie",
+      "category": "帽子・頭",
+      "region": "英語圏",
+      "tags": [
+        "ニット帽",
+        "ビーニー"
+      ],
+      "firstYear": 2024,
+      "status": "classic",
+      "videoId": "eORO9c3OWss",
+      "channel": "by Kristine",
+      "published": "2024-09-29",
+      "views": 441984,
+      "likes": 8000,
+      "checked": "2026-11-05",
+      "note": "一般的なニット帽の作り方。フライトキャップ・猫耳帽子とは別の種類。",
+      "evidence": "video"
+    },
+    {
+      "id": "classic-pouch",
+      "groupId": "crochet-pouch",
+      "classic": true,
+      "name": "編みポーチ",
+      "english": "Crochet Pouch",
+      "category": "バッグ・収納",
+      "region": "英語圏",
+      "tags": [
+        "小物入れ",
+        "ミニポーチ",
+        "財布"
+      ],
+      "firstYear": 2024,
+      "status": "classic",
+      "videoId": "rfj8eVa1ESE",
+      "channel": "chubbiesbyash",
+      "published": "2024-06-03",
+      "views": 961735,
+      "likes": 26000,
+      "checked": "2026-11-05",
+      "note": "初心者向けポーチの制作動画。",
+      "evidence": "video"
+    },
+    {
+      "id": "discovery-babushka",
+      "groupId": "babushka",
+      "name": "バブーシュカ",
+      "english": "Crochet Babushka / Headscarf",
+      "category": "帽子・頭",
+      "region": "日本",
+      "tags": [
+        "三角巾",
+        "ヘッドスカーフ",
+        "ボンネット"
+      ],
+      "shape": "頭を三角形の布で包み、あご下で結ぶヘッドスカーフ。",
+      "videoId": "QzE6Vxt8GZ0",
+      "channel": "あみもの予備校チャンネル",
+      "published": "2025-08-02",
+      "views": 64471,
+      "likes": 1000,
+      "trendYears": [
+        2025
+      ],
+      "trendSources": [
+        "https://www.mery.jp/2491810"
+      ],
+      "classic": false,
+      "firstYear": 2025,
+      "status": "candidate",
+      "checked": "2026-11-05",
+      "evidence": "video"
+    },
+    {
+      "id": "discovery-balaclava",
+      "groupId": "balaclava",
+      "name": "バラクラバ",
+      "english": "Crochet Balaclava",
+      "category": "帽子・頭",
+      "region": "英語圏",
+      "tags": [
+        "目出し帽",
+        "フード",
+        "防寒"
+      ],
+      "shape": "頭・耳・首を包み、顔まわりだけが開くニットフード。",
+      "videoId": "Ho-i00V_F7g",
+      "channel": "Kenikse Crochet",
+      "published": "2024-09-27",
+      "views": 422612,
+      "likes": 9000,
+      "trendYears": [
+        2021,
+        2022
+      ],
+      "trendSources": [
+        "https://www.vogue.co.uk/fashion/article/knitted-hood-balaclavas-trend",
+        "https://www.vogue.co.jp/fashion/article/sakurako-suzuki-balaclavas",
+        "https://www.theguardian.com/fashion/2021/nov/05/balaclavas-battle-to-be-most-coveted-fashion-item-of-late-2021"
+      ],
+      "classic": false,
+      "firstYear": 2024,
+      "status": "candidate",
+      "checked": "2026-11-05",
+      "evidence": "video"
+    },
+    {
+      "id": "discovery-sophie",
+      "groupId": "sophie-scarf",
+      "name": "ソフィースカーフ",
+      "english": "Sophie Scarf",
+      "category": "首・肩",
+      "region": "英語圏",
+      "tags": [
+        "PetiteKnit",
+        "細いスカーフ",
+        "ガーター編み"
+      ],
+      "shape": "両端が細く尖った小さなニットスカーフ。PetiteKnitの作品名。",
+      "videoId": "1Ficyht92K4",
+      "channel": "Flower City Fibers",
+      "published": "2025-02-12",
+      "views": 1150175,
+      "likes": 19000,
+      "trendYears": [
+        2025
+      ],
+      "trendSources": [
+        "https://note.com/miconoyarn/n/n4359fadf57b8",
+        "https://www.ravelry.com/projects/Stepheknits/sophie-scarf"
+      ],
+      "note": "有料の原作パターンの補助解説動画であり、完全な無料編み図ではありません。",
+      "classic": false,
+      "firstYear": 2025,
+      "status": "candidate",
+      "checked": "2026-11-05",
+      "evidence": "video"
+    },
+    {
+      "id": "discovery-lipcase",
+      "groupId": "lip-case",
+      "name": "リップケース",
+      "english": "Crochet Lip Balm Holder",
+      "category": "バッグ・収納",
+      "region": "日本",
+      "tags": [
+        "バッグチャーム",
+        "リップホルダー",
+        "小物"
+      ],
+      "shape": "リップクリームを入れてバッグなどに下げる小さな編みケース。",
+      "videoId": "jaIE6ZJ8ULc",
+      "channel": "sakura.crochet / サクラクロシェ",
+      "published": "2026-01-16",
+      "views": 63997,
+      "likes": 1200,
+      "classic": false,
+      "firstYear": 2026,
+      "status": "candidate",
+      "checked": "2026-11-05",
+      "evidence": "video"
+    },
+    {
+      "id": "discovery-earmuffs",
+      "groupId": "earmuffs",
+      "name": "編みイヤーマフ",
+      "english": "Crochet Earmuffs",
+      "category": "帽子・頭",
+      "region": "日本",
+      "tags": [
+        "耳あて",
+        "イヤーマフ",
+        "冬小物"
+      ],
+      "shape": "左右の耳を覆うパッドをつないだ、帽子とは別の防寒小物。",
+      "videoId": "-701BSRYfEc",
+      "channel": "Cotoson素朴な編み物",
+      "published": "2023-11-11",
+      "views": 60281,
+      "likes": 985,
+      "classic": true,
+      "firstYear": 2023,
+      "status": "candidate",
+      "checked": "2026-11-05",
+      "evidence": "video"
+    },
+    {
+      "id": "discovery-catbeanie",
+      "groupId": "cat-ear-beanie",
+      "name": "猫耳ニット帽",
+      "english": "Cat Ear Beanie",
+      "category": "帽子・頭",
+      "region": "英語圏",
+      "tags": [
+        "猫耳",
+        "スクエアビーニー",
+        "宮脇咲良"
+      ],
+      "shape": "平らな四角形の帽子をかぶると、両角が猫耳のように立つ。",
+      "videoId": "s8uaBqUjZr4",
+      "channel": "Rika's Crochet",
+      "published": "2023-01-24",
+      "views": 1188523,
+      "likes": 33000,
+      "trendYears": [
+        2023,
+        2024
+      ],
+      "trendSources": [
+        "https://www.sponichi.co.jp/entertainment/news/2024/03/02/kiji/20240302s00041000484000c.html",
+        "https://dailynewsonline.jp/article/2912482/"
+      ],
+      "classic": false,
+      "firstYear": 2023,
+      "status": "candidate",
+      "checked": "2026-11-05",
+      "evidence": "video"
+    },
+    {
+      "id": "discovery-bouquet",
+      "groupId": "bouquet-blanket",
+      "name": "花束ブランケット",
+      "english": "Flower Bouquet Blanket",
+      "category": "雑貨",
+      "region": "英語圏",
+      "tags": [
+        "花束",
+        "変形",
+        "ブランケット"
+      ],
+      "shape": "広げるとブランケット、たたんで束ねると花束のように見える作品。",
+      "videoId": "O844EESTnW0",
+      "channel": "Gense",
+      "published": "2025-05-07",
+      "views": 10999,
+      "likes": 394,
+      "trendYears": [
+        2026
+      ],
+      "trendSources": [
+        "https://prtimes.jp/main/html/rd/p/000000823.000041489.html"
+      ],
+      "classic": false,
+      "firstYear": 2025,
+      "status": "candidate",
+      "checked": "2026-11-05",
+      "evidence": "video"
+    },
+    {
+      "id": "discovery-scoodie",
+      "groupId": "scoodie",
+      "name": "フード付きマフラー（スクーディー）",
+      "english": "Hooded Scarf / Scoodie",
+      "category": "首・肩",
+      "region": "英語圏",
+      "tags": [
+        "フードマフラー",
+        "スクーディー",
+        "hooded scarf"
+      ],
+      "shape": "フードとマフラーが一体になった形。首に巻いたままフードをかぶれる。",
+      "videoId": "FlNxTUFmO6c",
+      "channel": "VivCrochets",
+      "published": "2026-10-22",
+      "views": null,
+      "likes": null,
+      "trendSources": [
+        "https://vivcrochets.com/crochet-hooded-scarf-scoodie-free-pattern-tutorial/"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "checked": "2026-11-05",
+      "evidence": "video"
+    },
+    {
+      "id": "discovery-sophie-hood-like",
+      "groupId": "sophie-hood-style",
+      "name": "ソフィーフード風マフラー",
+      "english": "Tapered Crochet Hooded Scarf",
+      "category": "首・肩",
+      "region": "英語圏",
+      "tags": [
+        "ソフィーフード",
+        "PetiteKnit",
+        "先細り",
+        "フード"
+      ],
+      "shape": "首に巻く細長いマフラーの途中がフードになっている形。ソフィーフードに着想を得た別作品。",
+      "videoId": "7sG16PegJZM",
+      "channel": "VivCrochets",
+      "published": "2026-10-23",
+      "views": null,
+      "likes": null,
+      "trendYears": [
+        2025,
+        2026
+      ],
+      "trendSources": [
+        "https://vivcrochets.com/crochet-hooded-scarf-tapered-free-pattern-tutorial/",
+        "https://hololala-knit.com/sophie-hood/"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "checked": "2026-11-05",
+      "evidence": "video",
+      "note": "PetiteKnit Sophie Hoodそのものの作り方ではなく、着想を得たかぎ針編み作品。"
+    },
+    {
+      "id": "classic-handwarmer",
+      "groupId": "fingerless-gloves",
+      "classic": true,
+      "name": "アームウォーマー（指なし手袋）",
+      "english": "Crochet Fingerless Gloves",
+      "category": "手・腕",
+      "region": "英語圏",
+      "tags": [
+        "ハンドウォーマー",
+        "指なし手袋",
+        "アームウォーマー"
+      ],
+      "shape": "指先を出したまま手・手首を温める筒状の小物。",
+      "videoId": "ucJkaCFG2-0",
+      "channel": "Cherilyn Q",
+      "published": "2025-05-10",
+      "views": 16384,
+      "likes": 221,
+      "firstYear": 2025,
+      "status": "classic",
+      "checked": "2026-11-05",
+      "evidence": "video"
+    },
+    {
+      "id": "classic-snood",
+      "groupId": "neck-warmer",
+      "classic": true,
+      "name": "ネックウォーマー（スヌード）",
+      "english": "Crochet Snood / Neck Warmer",
+      "category": "首・肩",
+      "region": "日本",
+      "tags": [
+        "スヌード",
+        "ネックウォーマー",
+        "防寒"
+      ],
+      "shape": "首に通して使う、輪になったマフラー。",
+      "videoId": "St5SdMZXT4s",
+      "channel": "ちいさな桜",
+      "published": "2024-11-29",
+      "views": 20351,
+      "likes": 199,
+      "firstYear": 2024,
+      "status": "classic",
+      "checked": "2026-11-05",
+      "evidence": "video"
+    }
   ],
-  trendYears: {
-    "2015":[],
-    "2016":["mermaid-blanket-2016"],
-    "2017":[],
-    "2018":[],
-    "2019":[],
-    "2020":[],
-    "2021":["bucket-hat-2021","discovery-balaclava"],
-    "2022":["bucket-hat-2021","granny-cardigan-2022","discovery-balaclava"],
-    "2023":["hexagon-cardigan-2023","discovery-catbeanie"],
-    "2024":["discovery-catbeanie"],
-    "2025":["crochet-tote-2025","discovery-babushka","discovery-sophie","discovery-sophie-hood-like"],
-    "2026":["parandi-plakshi","discovery-bouquet"]
+  "trendYears": {
+    "2015": [],
+    "2016": [
+      "mermaid-blanket-2016"
+    ],
+    "2017": [],
+    "2018": [],
+    "2019": [],
+    "2020": [],
+    "2021": [
+      "bucket-hat-2021",
+      "discovery-balaclava"
+    ],
+    "2022": [
+      "bucket-hat-2021",
+      "granny-cardigan-2022",
+      "discovery-balaclava",
+      "discovery-sophie"
+    ],
+    "2023": [
+      "hexagon-cardigan-2023",
+      "discovery-catbeanie",
+      "discovery-balaclava",
+      "discovery-sophie"
+    ],
+    "2024": [
+      "discovery-catbeanie",
+      "discovery-babushka",
+      "discovery-balaclava",
+      "discovery-sophie",
+      "classic-scrunchie",
+      "classic-pouch"
+    ],
+    "2025": [
+      "crochet-tote-2025",
+      "discovery-babushka",
+      "discovery-sophie",
+      "discovery-sophie-hood-like",
+      "discovery-bouquet",
+      "flight-cap-sakura",
+      "discovery-catbeanie",
+      "jun-mesh-bag",
+      "discovery-earmuffs"
+    ],
+    "2026": [
+      "parandi-plakshi",
+      "discovery-bouquet",
+      "discovery-balaclava",
+      "discovery-sophie",
+      "discovery-babushka",
+      "discovery-scoodie",
+      "discovery-sophie-hood-like",
+      "mar-bandana",
+      "may-scallop-bandana",
+      "jul-tie-mesh",
+      "oct-earwarmer",
+      "bottle-shell",
+      "discovery-lipcase",
+      "discovery-catbeanie",
+      "discovery-earmuffs",
+      "netbag-adel",
+      "discovery-catbeanie"
+    ]
   },
-  observations: [
-    {"month":"2026-01","itemIds":["jan-star-earmuffs"],"summary":"公開月ベースの遡及調査：星型イヤーマフ。公開された制作動画を収録。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
-    {"month":"2026-02","itemIds":["feb-cherry-pouch"],"summary":"公開月ベースの遡及調査：チェリーポーチ。公開された制作動画を収録。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
-    {"month":"2026-03","itemIds":["mar-bandana","parandi-plakshi"],"summary":"公開月ベースの遡及調査：クロシェバンダナとパランディ。両動画は3月公開。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
-    {"month":"2026-04","itemIds":["apr-mesh-shrug","parandi-kajal"],"summary":"公開月ベースの遡及調査：メッシュシュラグと別作者のパランディ。4月公開。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
-    {"month":"2026-05","itemIds":["may-scallop-bandana"],"summary":"公開月ベースの遡及調査：スカラップバンダナ。3月のバンダナと同系統であり、表示時は統合。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
-    {"month":"2026-06","itemIds":["jun-mesh-bag","wavebag-adel"],"summary":"公開月ベースの遡及調査：ネットバッグ・波模様バッグの制作動画が6月に公開。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
-    {"month":"2026-07","itemIds":["jul-tie-mesh","netbag-adel"],"summary":"公開月ベースの遡及調査：前結びメッシュトップスと韓国のリーフラインバッグ。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
-    {"month":"2026-08","itemIds":["aug-granny-day"],"summary":"公開月ベースの遡及調査：Granny Square Dayの公開動画。制作過程の解説動画とは限らないため参考登録。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
-    {"month":"2026-09","itemIds":["sep-hobo","card-wallet-adel"],"summary":"公開月ベースの遡及調査：ホーボーバッグ、韓国のカードケース。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
-    {"month":"2026-10","itemIds":["oct-earwarmer","triangle-scarf-adel"],"summary":"公開月ベースの遡及調査：イヤーウォーマーと韓国の三角スカーフ。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
-    {"month":"2026-11","itemIds":[],"summary":"11月5日時点の新規調査。発見月ではなく流行月の根拠で選ぶため、従来の8件は月別トレンドから外して作品図鑑・過去年に残した。","highlights":["キャップ用の後付け耳当ては2026年10月末〜11月初旬に関連記事とSNS投稿を確認したが、同じ構造のYouTube制作動画を未確認。","11月に実際に注目が増えたと確認でき、かつ対応する制作動画が見つかった作品は現在未登録。","制作動画公開月・今回の調査月だけでは流行月と認定しない。"],"basis":"流行の証拠とYouTube制作動画の双方を満たしたものだけ月別表示。11月はまだ月初。","evidenceLinks":["https://www.moderndailyknitting.com/community/jumping-on-a-trend/","https://nlab.itmedia.co.jp/cont/articles/4077822/2/"],"undisplayedTrends":[{"name":"キャップ用後付け耳当て（オーバーキャップ・イヤーフラップ）","reason":"現時点で対応するYouTube作り方動画の照合ができていない。"}]}
-  ]
+  "observations": [
+    {
+      "month": "2026-01",
+      "itemIds": [
+        "jan-star-earmuffs",
+        "discovery-lipcase"
+      ],
+      "summary": "公開月ベースの遡及調査：星型イヤーマフ。公開された制作動画を収録。",
+      "highlights": [
+        "公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"
+      ],
+      "basis": "同時期の注目・継続人気作品と制作動画の公開月に基づく参考収録。すべてが月間人気急上昇と検証されたわけではありません。",
+      "evidenceGrade": "mixed"
+    },
+    {
+      "month": "2026-02",
+      "itemIds": [
+        "feb-cherry-pouch",
+        "discovery-sophie",
+        "discovery-lipcase"
+      ],
+      "summary": "公開月ベースの遡及調査：チェリーポーチ。公開された制作動画を収録。",
+      "highlights": [
+        "公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"
+      ],
+      "basis": "同時期の注目・継続人気作品と制作動画の公開月に基づく参考収録。すべてが月間人気急上昇と検証されたわけではありません。",
+      "evidenceGrade": "mixed"
+    },
+    {
+      "month": "2026-03",
+      "itemIds": [
+        "mar-bandana",
+        "parandi-plakshi",
+        "discovery-sophie"
+      ],
+      "summary": "公開月ベースの遡及調査：クロシェバンダナとパランディ。両動画は3月公開。",
+      "highlights": [
+        "公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"
+      ],
+      "basis": "同時期の注目・継続人気作品と制作動画の公開月に基づく参考収録。すべてが月間人気急上昇と検証されたわけではありません。",
+      "evidenceGrade": "mixed"
+    },
+    {
+      "month": "2026-04",
+      "itemIds": [
+        "apr-mesh-shrug",
+        "parandi-kajal",
+        "discovery-bouquet"
+      ],
+      "summary": "公開月ベースの遡及調査：メッシュシュラグと別作者のパランディ。4月公開。",
+      "highlights": [
+        "公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"
+      ],
+      "basis": "同時期の注目・継続人気作品と制作動画の公開月に基づく参考収録。すべてが月間人気急上昇と検証されたわけではありません。",
+      "evidenceGrade": "mixed"
+    },
+    {
+      "month": "2026-05",
+      "itemIds": [
+        "may-scallop-bandana",
+        "apr-mesh-shrug",
+        "discovery-bouquet"
+      ],
+      "summary": "公開月ベースの遡及調査：スカラップバンダナ。3月のバンダナと同系統であり、表示時は統合。",
+      "highlights": [
+        "公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"
+      ],
+      "basis": "同時期の注目・継続人気作品と制作動画の公開月に基づく参考収録。すべてが月間人気急上昇と検証されたわけではありません。",
+      "evidenceGrade": "mixed"
+    },
+    {
+      "month": "2026-06",
+      "itemIds": [
+        "jun-mesh-bag",
+        "wavebag-adel",
+        "discovery-bouquet",
+        "jul-tie-mesh"
+      ],
+      "summary": "公開月ベースの遡及調査：ネットバッグ・波模様バッグの制作動画が6月に公開。",
+      "highlights": [
+        "公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"
+      ],
+      "basis": "同時期の注目・継続人気作品と制作動画の公開月に基づく参考収録。すべてが月間人気急上昇と検証されたわけではありません。",
+      "evidenceGrade": "mixed"
+    },
+    {
+      "month": "2026-07",
+      "itemIds": [
+        "jul-tie-mesh",
+        "netbag-adel",
+        "discovery-bouquet",
+        "jun-mesh-bag"
+      ],
+      "summary": "公開月ベースの遡及調査：前結びメッシュトップスと韓国のリーフラインバッグ。",
+      "highlights": [
+        "公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"
+      ],
+      "basis": "同時期の注目・継続人気作品と制作動画の公開月に基づく参考収録。すべてが月間人気急上昇と検証されたわけではありません。",
+      "evidenceGrade": "mixed",
+      "evidenceLinks": [
+        "https://prtimes.jp/main/html/rd/p/000000823.000041489.html",
+        "https://hoshiami.jp/blogs/hoshiami-inspiration/summer-crochet-trend-2026-01"
+      ]
+    },
+    {
+      "month": "2026-08",
+      "itemIds": [
+        "aug-granny-day",
+        "discovery-bouquet",
+        "jul-tie-mesh",
+        "discovery-sophie"
+      ],
+      "summary": "公開月ベースの遡及調査：Granny Square Dayの公開動画。制作過程の解説動画とは限らないため参考登録。",
+      "highlights": [
+        "公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"
+      ],
+      "basis": "同時期の注目・継続人気作品と制作動画の公開月に基づく参考収録。すべてが月間人気急上昇と検証されたわけではありません。",
+      "evidenceGrade": "mixed"
+    },
+    {
+      "month": "2026-09",
+      "itemIds": [
+        "sep-hobo",
+        "card-wallet-adel",
+        "discovery-balaclava",
+        "discovery-sophie"
+      ],
+      "summary": "公開月ベースの遡及調査：ホーボーバッグ、韓国のカードケース。",
+      "highlights": [
+        "公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"
+      ],
+      "basis": "同時期の注目・継続人気作品と制作動画の公開月に基づく参考収録。すべてが月間人気急上昇と検証されたわけではありません。",
+      "evidenceGrade": "mixed",
+      "evidenceLinks": [
+        "https://www.lovecrafts.com/en-us/blogs/articles-us/ear-warming-makes"
+      ]
+    },
+    {
+      "month": "2026-10",
+      "itemIds": [
+        "oct-earwarmer",
+        "triangle-scarf-adel",
+        "discovery-balaclava",
+        "discovery-scoodie",
+        "discovery-sophie-hood-like",
+        "flight-cap-sakura"
+      ],
+      "summary": "公開月ベースの遡及調査：イヤーウォーマーと韓国の三角スカーフ。",
+      "highlights": [
+        "公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"
+      ],
+      "basis": "同時期の注目・継続人気作品と制作動画の公開月に基づく参考収録。すべてが月間人気急上昇と検証されたわけではありません。",
+      "evidenceGrade": "mixed",
+      "evidenceLinks": [
+        "https://trilltrill.jp/articles/5082491",
+        "https://www.moderndailyknitting.com/community/jumping-on-a-trend/"
+      ]
+    },
+    {
+      "month": "2026-11",
+      "itemIds": [
+        "discovery-balaclava",
+        "discovery-scoodie",
+        "discovery-sophie-hood-like",
+        "oct-earwarmer",
+        "flight-cap-sakura",
+        "discovery-babushka",
+        "discovery-sophie"
+      ],
+      "summary": "2026年11月初旬の秋冬ニットフード・耳当て・小型スカーフなどの継続注目。10月末〜11月初旬のメディアの動きを基準に選出。",
+      "highlights": [
+        "10月5日の冬帽子特集と9月7日の編み物パターン特集で、バラクラバ・ボンネット・耳を温める作品が注目。",
+        "10月29日にはキャップ用後付け耳当てのミニトレンドが報道されたが、対応するYouTube制作動画は未確認のため別途追跡。",
+        "掲載動画の一部は過去公開の代表動画であり、11月に動画再生数が急増したことを示すものではありません。"
+      ],
+      "basis": "同時期の注目・継続人気作品と制作動画の公開月に基づく参考収録。すべてが月間人気急上昇と検証されたわけではありません。",
+      "evidenceLinks": [
+        "https://trilltrill.jp/articles/5082491",
+        "https://www.lovecrafts.com/en-us/blogs/articles-us/ear-warming-makes",
+        "https://www.moderndailyknitting.com/community/jumping-on-a-trend/"
+      ],
+      "undisplayedTrends": [
+        {
+          "name": "キャップ用後付け耳当て（オーバーキャップ・イヤーフラップ）",
+          "reason": "現時点で対応するYouTube作り方動画の照合ができていない。"
+        }
+      ],
+      "evidenceGrade": "mixed"
+    }
+  ],
+  "trendEvidence": {
+    "2022": {
+      "summary": "ソフィースカーフの原作発表と編み物コミュニティでの人気、バラクラバ・クロシェ帽子の流行。",
+      "sources": [
+        "https://stitchcraftmarketing.com/9-craft-trends-dominating-2026-for-makers-retailers-stitchcraft-marketing/"
+      ]
+    },
+    "2024": {
+      "summary": "日本の編み物人気が拡大。バブーシュカなどの検索増加をハンドメイド市場が報告。",
+      "sources": [
+        "https://group.gmo/news/article/9272/",
+        "https://www.jprime.jp/articles/-/37079"
+      ]
+    },
+    "2025": {
+      "summary": "花束ブランケットや夏のネットバッグの流行、若い世代での編み物ブーム。Sophie Scarfなどの継続人気。",
+      "sources": [
+        "https://note.com/mochidaakari/n/ne1fc7a02b001",
+        "https://group.gmo/news/article/9775/",
+        "https://www.jprime.jp/articles/-/37079"
+      ]
+    },
+    "2026": {
+      "summary": "花束ブランケットの販売実績、Sophie Scarfの継続的人気、夏のクロシェ衣類、秋冬のバラクラバ・ボンネット・フード小物の再注目。個々の作品の人気度には差がある。",
+      "sources": [
+        "https://prtimes.jp/main/html/rd/p/000000823.000041489.html",
+        "https://stitchcraftmarketing.com/9-craft-trends-dominating-2026-for-makers-retailers-stitchcraft-marketing/",
+        "https://trilltrill.jp/articles/5082491",
+        "https://www.lovecrafts.com/en-us/blogs/articles-us/ear-warming-makes",
+        "https://community.etsy.com/forum/etsy-success-300/topic/etsy-insights-explore-the-trends-shaping-spring-and-summer-2026-165859/"
+      ]
+    }
+  }
 };
