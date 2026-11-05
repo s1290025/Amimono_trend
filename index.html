@@ -14,10 +14,10 @@
 <main>
 <section class="pane active" id="current"><div class="months" id="months"></div><div class="cards" id="currentCards"></div></section>
 <section class="pane" id="history"><div class="yearbar" id="yearbar"></div><div class="cards" id="historyCards"></div></section>
-<section class="pane" id="library"><div class="controls"><input id="search" type="search" aria-label="作品検索" placeholder="作品名・形・英語名で検索"><select id="scope" aria-label="作品の分類"><option value="">すべての作品</option><option value="trending">流行した作品</option><option value="classic">定番作品</option></select><select id="cat" aria-label="カテゴリー"><option value="">すべての種類</option></select></div><div class="count" id="resultCount"></div><div class="cards" id="allCards"></div></section>
+<section class="pane" id="library"><div class="controls"><input id="search" type="search" aria-label="作品検索" placeholder="作品名・形・英語名で検索"><select id="scope" aria-label="作品の分類"><option value="">すべての作品</option><option value="discovery">名前や形が特徴的</option><option value="trending">流行した作品</option><option value="classic">定番作品</option></select><select id="cat" aria-label="カテゴリー"><option value="">すべての種類</option></select></div><div class="count" id="resultCount"></div><div class="cards" id="allCards"></div></section>
 </main></div>
 <footer><div class="wrap">Amimono Trend · 画像・作品の権利は各作者に帰属します。</div></footer>
-<script src="./data.js?v=20261105-discovery1"></script>
+<script src="./data.js?v=20261105-discovery2"></script>
 <script>
 (function(){
 "use strict";
@@ -96,7 +96,7 @@ function initLibrary(){
  function filter(){
   var q=$("search").value.trim().toLocaleLowerCase(),cat=$("cat").value,scope=$("scope").value;
   var arr=items.filter(function(x){
-   var matchedScope=!scope||(scope==="classic"?x.classic===true:trendKeys.has(groupKey(x)));
+   var matchedScope=!scope||(scope==="classic"?x.classic===true:scope==="discovery"?!!x.shape:trendKeys.has(groupKey(x)));
    return matchedScope&&(!cat||x.category===cat)&&[x.name,x.canonicalName,x.english,x.channel,x.shape,(x.tags||[]).join(" ")].join(" ").toLocaleLowerCase().includes(q);
   });
   $("resultCount").textContent=uniqueItems(arr).length+"種類";cards(arr,"allCards");
