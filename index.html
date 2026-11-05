@@ -17,7 +17,7 @@
 <section class="pane" id="library"><div class="controls"><input id="search" type="search" aria-label="作品検索" placeholder="作品名・形・英語名で検索"><select id="scope" aria-label="作品の分類"><option value="">すべての作品</option><option value="discovery">名前や形が特徴的</option><option value="trending">流行した作品</option><option value="classic">定番作品</option></select><select id="cat" aria-label="カテゴリー"><option value="">すべての種類</option></select></div><div class="count" id="resultCount"></div><div class="cards" id="allCards"></div></section>
 </main></div>
 <footer><div class="wrap">Amimono Trend · 画像・作品の権利は各作者に帰属します。</div></footer>
-<script src="./data.js?v=20261105-history6"></script>
+<script src="./data.js?v=20261105-bottle7"></script>
 <script>
 (function(){
 "use strict";
@@ -53,6 +53,8 @@ function rankVideo(x){
 }
 function betterVideo(a,b){
  if(!!a.videoId!==!!b.videoId)return !!a.videoId;
+ // 記事・原作同士なら、対象期間内で新しい検証資料を代表にする。
+ if(!a.videoId&&!b.videoId&&a.published&&b.published&&a.published!==b.published)return a.published>b.published;
  var x=rankVideo(a),y=rankVideo(b);
  for(var i=0;i<x.length;i++){if(x[i]!==y[i])return x[i]>y[i]}
  return false;
