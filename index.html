@@ -32,14 +32,26 @@ function card(x){
  var url="https://www.youtube.com/watch?v="+encodeURIComponent(x.videoId);
  return '<article class="card"><a href="'+url+'" class="cardimage" target="_blank" rel="noopener noreferrer" aria-label="'+esc(x.name)+'の制作動画"><img loading="lazy" alt="'+esc(x.name)+'の制作動画サムネイル" src="'+thumb+'" onerror="this.parentElement.classList.add('+"'missing'"+')"><span class="fallback">サムネイルを表示できません</span><span class="play">YouTubeで見る ↗</span></a><div class="body"><div class="badges"><span class="tag">'+(x.evidence==="video"?"確認済み":"要再確認")+'</span><span class="tag">投稿地域: '+esc(x.region)+'</span><span class="tag">'+esc(x.category)+'</span></div><h3>'+esc(x.name)+'</h3><p class="en">'+esc(x.english)+'</p><p class="meta">'+esc(x.channel)+'</p>'+(x.published?'<p class="meta">'+esc(x.published.slice(0,7))+'</p>':"")+''+(typeof x.views==="number"?'<p class="meta">再生 '+formatNumber(x.views)+'</p>':"")+'<a class="open" href="'+url+'" target="_blank" rel="noopener noreferrer">動画を見る ↗</a></div></article>';
 }
-function cards(arr,el){$(el).innerHTML=arr.length?arr.map(card).join(""):'<div class="empty">まだ記録がありません。</div>'}
+function uniqueItems(arr){
+ var groups=new Map();
+ arr.forEach(function(item){
+  var key=item.groupId||item.id;
+  var prev=groups.get(key);
+  if(!prev){groups.set(key,item);return}
+  // 代表指定を優先し、それ以外は確認済みの再生数・いいね数で比較する。
+  function score(x){return (x.featured?1000000000000:0)+(typeof x.views==="number"?x.views:0)+(typeof x.likes==="number"?x.likes/1000:0)+(x.evidence==="video"?0.1:0)}
+  if(score(item)>score(prev))groups.set(key,item);
+ });
+ return Array.from(groups.values());
+}
+function cards(arr,el){arr=uniqueItems(arr);$(el).innerHTML=arr.length?arr.map(card).join(""):'<div class="empty">まだ記録がありません。</div>'}
 function initTabs(){document.querySelectorAll(".tab").forEach(function(t){t.addEventListener("click",function(){document.querySelectorAll(".tab").forEach(function(n){n.classList.toggle("active",n===t)});document.querySelectorAll(".pane").forEach(function(n){n.classList.toggle("active",n.id===t.dataset.tab)})})})}
 function initCurrent(){
  $("updated").textContent=data.updated;
  var yearObs=obs.filter(function(x){return Number(x.month.slice(0,4))===nowYear}).sort(function(a,b){return a.month.localeCompare(b.month)});
  var selected=yearObs.length?yearObs[yearObs.length-1].month:null;
  function renderMonth(){
- $("months").innerHTML=Array.from({length:12},function(_,i){var m=nowYear+"-"+String(i+1).padStart(2,"0"),o=yearObs.find(function(x){return x.month===m});return '<button class="month '+(o?"has ":"")+(m===selected?"active":"")+'" data-month="'+m+'" '+(o?"":"disabled")+'><span>'+String(i+1)+'月</span><strong>'+(o?o.itemIds.length:"—")+'</strong></button>'}).join("");
+ $("months").innerHTML=Array.from({length:12},function(_,i){var m=nowYear+"-"+String(i+1).padStart(2,"0"),o=yearObs.find(function(x){return x.month===m});return '<button class="month '+(o?"has ":"")+(m===selected?"active":"")+'" data-month="'+m+'" '+(o?"":"disabled")+'><span>'+String(i+1)+'月</span><strong>'+(o?uniqueItems(items.filter(function(x){return o.itemIds.includes(x.id)})).length:"—")+'</strong></button>'}).join("");
  document.querySelectorAll(".month.has").forEach(function(b){b.addEventListener("click",function(){selected=b.dataset.month;renderMonth()})});
  var record=yearObs.find(function(o){return o.month===selected});
  var ids=new Set(record?record.itemIds:[]);
@@ -56,7 +68,7 @@ function initHistory(){
  $("yearbar").innerHTML=list.map(function(y){
  var records=obs.filter(function(o){return Number(o.month.slice(0,4))===y});
  var ids=new Set(records.flatMap(function(o){return o.itemIds}));
- var n=items.filter(function(x){return dateYear(x)===y||ids.has(x.id)}).length;
+ var n=uniqueItems(items.filter(function(x){return dateYear(x)===y||ids.has(x.id)})).length;
  return '<button class="yearbtn '+(selected===y?"active":"")+'" data-year="'+y+'"><span>'+y+'年</span><strong>'+n+'</strong></button>';
  }).join("");
  document.querySelectorAll(".yearbtn").forEach(function(b){b.addEventListener("click",function(){selected=Number(b.dataset.year);renderYear()})});
@@ -74,7 +86,7 @@ function initLibrary(){
  function filter(){
  var q=$("search").value.trim().toLocaleLowerCase(),cat=$("cat").value;
  var arr=items.filter(function(x){return x.classic===true&&(!cat||x.category===cat)&&[x.name,x.english,x.channel,(x.tags||[]).join(" ")].join(" ").toLocaleLowerCase().includes(q)});
- $("resultCount").textContent=arr.length+"件の作品";cards(arr,"allCards")
+ $("resultCount").textContent=uniqueItems(arr).length+"件の作品";cards(arr,"allCards")
  }
  ["search","cat"].forEach(function(id){$(id).addEventListener(id==="search"?"input":"change",filter)});filter()
 }
