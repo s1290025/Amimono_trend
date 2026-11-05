@@ -1531,6 +1531,258 @@ window.AMIMONO_DATA = {
       "evidence": "product-introduction",
       "shape": "韓国の伝統的な福袋を編み物にした巾着。左右の紐を締めると、丸くふくらんだ袋の形になる。",
       "note": "2026年1月17日の手編み商品紹介。伝統的な形の存在は確認できるが、2026年1月に流行した証拠ではない。編み方のチュートリアルではなく販売商品紹介。"
+    },
+    {
+      "id": "foldable-margaret-bottle-kumiami-video",
+      "groupId": "foldable-flower-bottle-holder",
+      "canonicalName": "花にしまえる折りたたみボトルホルダー",
+      "name": "マーガレットの折りたたみボトルホルダー",
+      "english": "Foldable Daisy Bottle Holder / Crochet Flower Bottle Holder",
+      "category": "バッグ・収納",
+      "region": "日本",
+      "tags": [
+        "マーガレット",
+        "折りたためる",
+        "ペットボトル",
+        "バッグチャーム",
+        "変形",
+        "ネット収納"
+      ],
+      "firstYear": 2026,
+      "status": "past",
+      "sourceType": "video",
+      "videoId": "Xf2NdyG7zlU",
+      "sourceUrl": "https://www.youtube.com/watch?v=Xf2NdyG7zlU",
+      "channel": "kumiami",
+      "published": null,
+      "checked": "2026-11-05",
+      "views": null,
+      "likes": null,
+      "evidence": "video-original-date-pending",
+      "shape": "花モチーフを裏返すと網状のボトルホルダーが出現。使わないときは花の裏にネットを畳んで小さなバッグチャームに。",
+      "note": "動画は2026-05-13公開のねとらぼ記事に埋め込まれた同じ作品。動画自体の日単位公開日が未確定のためpublished:null。記事時点の再生数11万超・高評価2300超は次の同group記事記録で保持。",
+      "originalUrl": "https://nlab.itmedia.co.jp/cont/articles/3828338/"
+    },
+    {
+      "id": "foldable-margaret-bottle-2026-article",
+      "groupId": "foldable-flower-bottle-holder",
+      "name": "マーガレットの収納式ボトルホルダー（2026年5月紹介）",
+      "english": "Foldable Daisy Bottle Holder",
+      "category": "バッグ・収納",
+      "region": "日本",
+      "tags": [
+        "折りたためる",
+        "花",
+        "マーガレット",
+        "ボトルホルダー",
+        "バッグチャーム"
+      ],
+      "firstYear": 2026,
+      "status": "past",
+      "sourceType": "article",
+      "sourceUrl": "https://nlab.itmedia.co.jp/cont/articles/3828338/",
+      "sourceLabel": "ねとらぼ：2026-05-13公開、動画の反響と変形機構を確認",
+      "published": "2026-05-13",
+      "checked": "2026-11-05",
+      "views": null,
+      "likes": null,
+      "evidence": "contemporary-coverage",
+      "shape": "花の内部にネットを収納し、使うときに裏返してボトルホルダーへ伸ばす二形態のかぎ針編み。",
+      "note": "2026年5月13日の記事で動画11万回以上・2300高評価以上、複数のSNSで見かけるとの記述。数値は動画累計の当時の記録であり月間再生数ではない。"
+    },
+    {
+      "id": "seashell-foldable-bottle-tsumugi-2026",
+      "groupId": "foldable-shell-bottle-holder",
+      "canonicalName": "貝殻にしまえるボトルホルダー",
+      "name": "貝殻の収納式ボトルホルダー",
+      "english": "Foldable Seashell Bottle Holder",
+      "category": "バッグ・収納",
+      "region": "日本",
+      "tags": [
+        "貝殻",
+        "シェル",
+        "折りたためる",
+        "ボトルホルダー",
+        "ネット",
+        "夏"
+      ],
+      "firstYear": 2026,
+      "status": "past",
+      "sourceType": "video",
+      "videoId": "NpvQPcK4Rrc",
+      "sourceUrl": "https://www.youtube.com/watch?v=NpvQPcK4Rrc",
+      "channel": "TSUMUGI かぎ針編み",
+      "published": "2026-07-04",
+      "checked": "2026-11-05",
+      "views": null,
+      "likes": null,
+      "evidence": "video-and-contemporary-coverage",
+      "shape": "立体的な2枚の貝殻でネット部分を挟んで小さく収納。開くと網状のペットボトルホルダーになる。",
+      "note": "動画公開日2026-07-04はユーチュラ確認。2026-07-11のスナップショットで40,222回再生・1,613高評価。2026-08-10ねとらぼ記事で10万回以上の累計再生を報告。日ごとの増加や7月のピークは未検証。",
+      "originalUrl": "https://nlab.itmedia.co.jp/cont/articles/3957336/"
+    },
+    {
+      "id": "seashell-foldable-bottle-aug-article",
+      "groupId": "foldable-shell-bottle-holder",
+      "name": "貝殻収納式ボトルホルダー（2026年8月の反響）",
+      "english": "Foldable Seashell Bottle Holder",
+      "category": "バッグ・収納",
+      "region": "日本",
+      "tags": [
+        "貝殻",
+        "ボトルホルダー",
+        "夏",
+        "再紹介"
+      ],
+      "firstYear": 2026,
+      "status": "past",
+      "sourceType": "article",
+      "sourceUrl": "https://nlab.itmedia.co.jp/cont/articles/3957336/",
+      "sourceLabel": "ねとらぼ：2026-08-10公開の反響記事",
+      "published": "2026-08-10",
+      "checked": "2026-11-05",
+      "views": null,
+      "likes": null,
+      "evidence": "contemporary-coverage",
+      "shape": "貝殻型の上下パーツにネットを収納し、広げてドリンクを持ち運ぶボトルホルダー。",
+      "note": "2026-08-10時点でYouTubeの累計再生数10万回以上という記事記録。8月の急上昇や流行ピークを示す数字ではない。"
+    },
+    {
+      "id": "star-bottle-holder-ichigo-2026",
+      "groupId": "star-motif-bottle-holder",
+      "name": "星モチーフのボトルホルダー",
+      "english": "Star Motif Bottle Holder",
+      "category": "バッグ・収納",
+      "region": "日本",
+      "tags": [
+        "星",
+        "スターモチーフ",
+        "ボトルホルダー",
+        "ミニポーチ",
+        "ネット"
+      ],
+      "firstYear": 2026,
+      "status": "candidate",
+      "sourceType": "video",
+      "videoId": "jBF9tCJOcc0",
+      "sourceUrl": "https://www.youtube.com/watch?v=jBF9tCJOcc0",
+      "channel": "Ichigo crochet - いちごクロッシェ -",
+      "published": "2026-08-03",
+      "checked": "2026-11-05",
+      "views": null,
+      "likes": null,
+      "evidence": "video-publication-only",
+      "shape": "2枚の星形モチーフをつないだ底からネット部分が伸びるボトルホルダー。網を短くすれば小さなポーチにもできる。貝殻収納式とは別構造。",
+      "note": "2026-08-03公開はユーチュラで確認。2026-08-12時点のスナップショットは2,196再生・86高評価。8月に流行したことまでは不明。"
+    },
+    {
+      "id": "flower-fidget-popit-2025",
+      "groupId": "flower-fidget-popit",
+      "name": "押して遊べるフラワー・フィジェット",
+      "english": "Flower Fidget Pop-It Toy",
+      "category": "雑貨",
+      "region": "英語圏",
+      "tags": [
+        "花",
+        "フィジェット",
+        "ポップイット",
+        "指先",
+        "仕掛け",
+        "感覚遊び"
+      ],
+      "firstYear": 2025,
+      "status": "discovery",
+      "sourceType": "pattern",
+      "sourceUrl": "https://www.ravelry.com/patterns/library/flower-fidget-pop-it-toy",
+      "sourceLabel": "Juli Anne原作の無料パターン（2025年5月公開、日付未確認）",
+      "published": null,
+      "checked": "2026-11-05",
+      "views": null,
+      "likes": null,
+      "evidence": "original-pattern",
+      "shape": "厚みのある花びらを指で押してパコッと反転できる、花形の立体フィジェット玩具。",
+      "note": "原作者Ravelryで2025年5月公開を確認。日付が不明のため年別・月別には使わない。流行規模は未確認。"
+    },
+    {
+      "id": "mushroom-fidget-popit-2025",
+      "groupId": "mushroom-popit",
+      "name": "傘を押せるキノコのフィジェット",
+      "english": "Mushroom Pop It",
+      "category": "雑貨",
+      "region": "英語圏",
+      "tags": [
+        "きのこ",
+        "フィジェット",
+        "ポップイット",
+        "キーホルダー",
+        "変形"
+      ],
+      "firstYear": 2025,
+      "status": "discovery",
+      "sourceType": "pattern",
+      "sourceUrl": "https://www.ravelry.com/patterns/library/mushroom-pop-it",
+      "sourceLabel": "AlexandraMoon原作パターン（2025年5月公開、日付未確認）",
+      "published": null,
+      "checked": "2026-11-05",
+      "views": null,
+      "likes": null,
+      "evidence": "original-pattern",
+      "shape": "小さなキノコの傘を押すと上下に反転する仕掛け。キーチェーンと指先玩具の両方に使える。",
+      "note": "Ravelryで2025年5月公開を確認。花型フィジェットとは構造が異なるため別グループ。動画未確認・流行時期未検証。"
+    },
+    {
+      "id": "bouquet-drawstring-bag-2025",
+      "groupId": "flower-bouquet-drawstring-bag",
+      "name": "花束に変わる巾着バッグ",
+      "english": "Flower Bouquet Drawstring Bag",
+      "category": "バッグ・収納",
+      "region": "英語圏",
+      "tags": [
+        "花束",
+        "巾着",
+        "ギフト包装",
+        "変形",
+        "リバーシブル"
+      ],
+      "firstYear": 2025,
+      "status": "discovery",
+      "sourceType": "pattern",
+      "sourceUrl": "https://www.ravelry.com/patterns/library/flower-bouquet-drawstring-bag",
+      "sourceLabel": "Christa Lynn / The Secret Yarnery原作（2025年6月公開）",
+      "published": null,
+      "checked": "2026-11-05",
+      "views": null,
+      "likes": null,
+      "evidence": "original-pattern",
+      "shape": "開くと収納用の巾着袋、口をきゅっと絞ると花が集まって花束の形になる。既存の花束ブランケットとは用途も構造も異なる。",
+      "note": "原作者Ravelryで2025年6月公開、無料パターンと動画チュートリアルの存在を確認。動画ID・日単位の公開日未確認。流行の証拠ではない。"
+    },
+    {
+      "id": "overcap-earflaps-nlab-2026-11",
+      "groupId": "overcap-earflaps",
+      "name": "キャップの上からかぶる編みフード（11月の反響）",
+      "english": "Over-Cap Earflap Hood",
+      "category": "帽子・頭",
+      "region": "日本",
+      "tags": [
+        "後付け耳当て",
+        "オーバーキャップ",
+        "重ね着",
+        "フード",
+        "冬"
+      ],
+      "firstYear": 2026,
+      "status": "past",
+      "sourceType": "article",
+      "sourceUrl": "https://nlab.itmedia.co.jp/cont/articles/4077822/",
+      "sourceLabel": "ねとらぼ：2026-11-05公開、ITO knit roomの投稿を紹介",
+      "published": "2026-11-05",
+      "checked": "2026-11-05",
+      "views": null,
+      "likes": null,
+      "evidence": "contemporary-social-report",
+      "shape": "手持ちの野球帽の上から重ねて装着し、耳を包む別体の編みフード。帽子本体を編むフライトキャップとは異なる。",
+      "note": "2026年11月5日のねとらぼ記事でInstagram投稿13万再生以上、いいね2100件以上を報告。数字はInstagram投稿時点の値でYouTubeではない。10月の別記事・別作者と同構造のためgroupId統合。"
     }
   ],
   "trendYears": {
@@ -1601,7 +1853,10 @@ window.AMIMONO_DATA = {
       "classic-beanie",
       "classic-snood",
       "classic-handwarmer",
-      "discovery-catbeanie"
+      "discovery-catbeanie",
+      "foldable-margaret-bottle-2026-article",
+      "seashell-foldable-bottle-tsumugi-2026",
+      "star-bottle-holder-ichigo-2026"
     ]
   },
   "observations": [
@@ -1659,14 +1914,19 @@ window.AMIMONO_DATA = {
     {
       "month": "2026-05",
       "itemIds": [
-        "may-scallop-bandana"
+        "may-scallop-bandana",
+        "foldable-margaret-bottle-2026-article"
       ],
-      "summary": "公開月が確認できた制作動画の記録です。該当月の流行ピークや人気順位を示すものではありません。",
+      "summary": "公開月が確認できた制作動画の記録です。該当月の流行ピークや人気順位を示すものではありません。 5月13日のねとらぼ記事で、折り畳んで花になるボトルホルダーの動画に11万回超・高評価2300超の反響があったと報告。累計再生数であり5月のピークとは断定しない。",
       "highlights": [
-        "この月に公開された動画の収録。月間の流行順位・ピークは未検証。"
+        "この月に公開された動画の収録。月間の流行順位・ピークは未検証。",
+        "5月13日のねとらぼ記事で、折り畳んで花になるボトルホルダーの動画に11万回超・高評価2300超の反響があったと報告。累計再生数であり5月のピークとは断定しない。"
       ],
       "basis": "動画の公開日による作品記録であり、同じ月に人気が急増した根拠は未確認。",
-      "evidenceGrade": "video-publication-only"
+      "evidenceGrade": "mixed",
+      "evidenceLinks": [
+        "https://nlab.itmedia.co.jp/cont/articles/3828338/"
+      ]
     },
     {
       "month": "2026-06",
@@ -1683,28 +1943,39 @@ window.AMIMONO_DATA = {
     {
       "month": "2026-07",
       "itemIds": [
-        "jul-tie-mesh"
+        "jul-tie-mesh",
+        "seashell-foldable-bottle-tsumugi-2026"
       ],
-      "summary": "公開月が確認できた制作動画の記録です。該当月の流行ピークや人気順位を示すものではありません。",
+      "summary": "公開月が確認できた制作動画の記録です。該当月の流行ピークや人気順位を示すものではありません。 7月4日公開の貝殻収納式ボトルホルダー制作動画。7月11日時点で4万回以上の累計再生を確認。",
       "highlights": [
-        "この月に公開された動画の収録。月間の流行順位・ピークは未検証。"
+        "この月に公開された動画の収録。月間の流行順位・ピークは未検証。",
+        "7月4日公開の貝殻収納式ボトルホルダー制作動画。7月11日時点で4万回以上の累計再生を確認。"
       ],
       "basis": "動画の公開日による作品記録であり、同じ月に人気が急増した根拠は未確認。",
-      "evidenceGrade": "video-publication-only",
+      "evidenceGrade": "mixed",
       "evidenceLinks": [
         "https://prtimes.jp/main/html/rd/p/000000823.000041489.html",
-        "https://hoshiami.jp/blogs/hoshiami-inspiration/summer-crochet-trend-2026-01"
+        "https://hoshiami.jp/blogs/hoshiami-inspiration/summer-crochet-trend-2026-01",
+        "https://yutura.net/channel/143258/video/NpvQPcK4Rrc/"
       ]
     },
     {
       "month": "2026-08",
-      "itemIds": [],
-      "summary": "公開月が確認できた制作動画の記録です。該当月の流行ピークや人気順位を示すものではありません。",
+      "itemIds": [
+        "seashell-foldable-bottle-aug-article",
+        "star-bottle-holder-ichigo-2026"
+      ],
+      "summary": "公開月が確認できた制作動画の記録です。該当月の流行ピークや人気順位を示すものではありません。 8月10日には貝殻ボトルホルダーの10万再生超・視聴者の制作反応を紹介。星モチーフ版は8月3日公開の参考制作動画で、流行の証拠は未確認。",
       "highlights": [
-        "この月に公開された動画の収録。月間の流行順位・ピークは未検証。"
+        "この月に公開された動画の収録。月間の流行順位・ピークは未検証。",
+        "8月10日には貝殻ボトルホルダーの10万再生超・視聴者の制作反応を紹介。星モチーフ版は8月3日公開の参考制作動画で、流行の証拠は未確認。"
       ],
       "basis": "動画の公開日による作品記録であり、同じ月に人気が急増した根拠は未確認。",
-      "evidenceGrade": "video-publication-only"
+      "evidenceGrade": "mixed",
+      "evidenceLinks": [
+        "https://nlab.itmedia.co.jp/cont/articles/3957336/",
+        "https://yutura.net/channel/114986/video/jBF9tCJOcc0/"
+      ]
     },
     {
       "month": "2026-09",
@@ -1753,24 +2024,23 @@ window.AMIMONO_DATA = {
     },
     {
       "month": "2026-11",
-      "itemIds": [],
-      "summary": "11月5日時点で、11月に話題化したことと制作動画を両方確認できた作品はありません。",
-      "highlights": [
-        "調査時点では0件。過去作品の継続人気と11月固有の流行を混同しない。"
+      "itemIds": [
+        "overcap-earflaps-nlab-2026-11"
       ],
-      "basis": "注目候補はwatchlistで追跡。過去の動画を11月の流行として転記しない。",
+      "summary": "11月5日時点で、11月に話題化したことと制作動画を両方確認できた作品はありません。 11月5日の編み物専門紹介記事でキャップに重ねる編みフードのInstagram投稿が13万再生・2100いいね以上と確認。10月の記事の後も話題継続が見られる。ただし11月のピークは未確認。",
+      "highlights": [
+        "調査時点では0件。過去作品の継続人気と11月固有の流行を混同しない。",
+        "11月5日の編み物専門紹介記事でキャップに重ねる編みフードのInstagram投稿が13万再生・2100いいね以上と確認。10月の記事の後も話題継続が見られる。ただし11月のピークは未確認。"
+      ],
+      "basis": "2026-11-05公開記事により同月時点の注目を確認。10月公開の同構造作品の記事と区別し、11月の新しい反響根拠を採用。",
       "evidenceLinks": [
         "https://trilltrill.jp/articles/5082491",
         "https://www.lovecrafts.com/en-us/blogs/articles-us/ear-warming-makes",
-        "https://www.moderndailyknitting.com/community/jumping-on-a-trend/"
+        "https://www.moderndailyknitting.com/community/jumping-on-a-trend/",
+        "https://nlab.itmedia.co.jp/cont/articles/4077822/"
       ],
-      "undisplayedTrends": [
-        {
-          "name": "キャップ用後付け耳当て（オーバーキャップ・イヤーフラップ）",
-          "reason": "現時点で対応するYouTube作り方動画の照合ができていない。"
-        }
-      ],
-      "evidenceGrade": "video-publication-only"
+      "undisplayedTrends": [],
+      "evidenceGrade": "contemporary-social-report"
     }
   ],
   "trendEvidence": {
@@ -1839,13 +2109,16 @@ window.AMIMONO_DATA = {
       ]
     },
     "2026": {
-      "summary": "2026年は花束ブランケットが10月の専門記事で再紹介。クロシェバケットハットは2026年のファッション記事で再注目。その他の作品は公開日が確認できた制作動画や継続注目の参考であり、年内急上昇を個別に検証したものではない。 10月29日のModern Daily Knittingでキャップ用の着脱式耳当ての小規模流行も言及。 ブティック社の10月21日付秋冬小物特集は定番の継続的な制作候補と花モチーフの2wayイヤーマフ兼つけ衿を紹介（急上昇を示すデータではない）。",
+      "summary": "2026年は花束ブランケットが10月の専門記事で再紹介。クロシェバケットハットは2026年のファッション記事で再注目。その他の作品は公開日が確認できた制作動画や継続注目の参考であり、年内急上昇を個別に検証したものではない。 10月29日のModern Daily Knittingでキャップ用の着脱式耳当ての小規模流行も言及。 ブティック社の10月21日付秋冬小物特集は定番の継続的な制作候補と花モチーフの2wayイヤーマフ兼つけ衿を紹介（急上昇を示すデータではない）。 2026年5月のマーガレット型収納式ボトルホルダーと7〜8月の貝殻型収納式ボトルホルダーは、同時代の制作動画と専門記事で反響を確認。11月5日にはキャップ用後付けニットフードがInstagramで話題になったとの記事を確認。",
       "sources": [
         "https://www.dailycrochet.com/crochet-flower-bouquet-blanket-video-tutorial/",
         "https://www.whowhatwear.com/fashion/celebrity-style/crochet-bucket-hat-trend-zoe-kravitz",
         "https://www.elle.com/fashion/shopping/a71097428/best-beach-hat-trends-2026/",
         "https://www.moderndailyknitting.com/community/jumping-on-a-trend/",
-        "https://onlineshop.boutique-sha.co.jp/blogs/magazine/261019"
+        "https://onlineshop.boutique-sha.co.jp/blogs/magazine/261019",
+        "https://nlab.itmedia.co.jp/cont/articles/3828338/",
+        "https://nlab.itmedia.co.jp/cont/articles/3957336/",
+        "https://nlab.itmedia.co.jp/cont/articles/4077822/"
       ]
     }
   }
