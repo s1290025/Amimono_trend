@@ -32,17 +32,27 @@ function card(x){
  var url="https://www.youtube.com/watch?v="+encodeURIComponent(x.videoId);
  return '<article class="card"><a href="'+url+'" class="cardimage" target="_blank" rel="noopener noreferrer" aria-label="'+esc(x.name)+'の制作動画"><img loading="lazy" alt="'+esc(x.name)+'の制作動画サムネイル" src="'+thumb+'" onerror="this.parentElement.classList.add('+"'missing'"+')"><span class="fallback">サムネイルを表示できません</span><span class="play">YouTubeで見る ↗</span></a><div class="body"><div class="badges"><span class="tag">'+(x.evidence==="video"?"確認済み":"要再確認")+'</span><span class="tag">投稿地域: '+esc(x.region)+'</span><span class="tag">'+esc(x.category)+'</span></div><h3>'+esc(x.name)+'</h3><p class="en">'+esc(x.english)+'</p><p class="meta">'+esc(x.channel)+'</p>'+(x.published?'<p class="meta">'+esc(x.published.slice(0,7))+'</p>':"")+''+(typeof x.views==="number"?'<p class="meta">再生 '+formatNumber(x.views)+'</p>':"")+'<a class="open" href="'+url+'" target="_blank" rel="noopener noreferrer">動画を見る ↗</a></div></article>';
 }
+function groupKey(x){return x.groupId||x.id}
+function rankVideo(x){
+ // 再生数が確認済みならそれを優先。未確認の代表は固定指定を参考にする。
+ return [typeof x.views==="number"?1:0,typeof x.views==="number"?x.views:0,typeof x.likes==="number"?x.likes:0,x.featured?1:0,x.evidence==="video"?1:0];
+}
+function betterVideo(a,b){
+ var x=rankVideo(a),y=rankVideo(b);
+ for(var i=0;i<x.length;i++){if(x[i]!==y[i])return x[i]>y[i]}
+ return false;
+}
 function uniqueItems(arr){
- var groups=new Map();
- arr.forEach(function(item){
-  var key=item.groupId||item.id;
-  var prev=groups.get(key);
-  if(!prev){groups.set(key,item);return}
-  // 代表指定を優先し、それ以外は確認済みの再生数・いいね数で比較する。
-  function score(x){return (x.featured?1000000000000:0)+(typeof x.views==="number"?x.views:0)+(typeof x.likes==="number"?x.likes/1000:0)+(x.evidence==="video"?0.1:0)}
-  if(score(item)>score(prev))groups.set(key,item);
+ var selected=new Map();
+ arr.forEach(function(item){selected.set(groupKey(item),true)});
+ var keys=Array.from(selected.keys());
+ return keys.map(function(key){
+  var candidates=items.filter(function(item){return groupKey(item)===key});
+  var best=candidates[0];
+  candidates.forEach(function(item){if(betterVideo(item,best))best=item});
+  var canonical=candidates.find(function(item){return item.canonicalName})||candidates[0];
+  return Object.assign({},best,{name:canonical.canonicalName||canonical.name,groupId:key,sourceCount:candidates.length});
  });
- return Array.from(groups.values());
 }
 function cards(arr,el){arr=uniqueItems(arr);$(el).innerHTML=arr.length?arr.map(card).join(""):'<div class="empty">まだ記録がありません。</div>'}
 function initTabs(){document.querySelectorAll(".tab").forEach(function(t){t.addEventListener("click",function(){document.querySelectorAll(".tab").forEach(function(n){n.classList.toggle("active",n===t)});document.querySelectorAll(".pane").forEach(function(n){n.classList.toggle("active",n.id===t.dataset.tab)})})})}
