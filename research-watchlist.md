@@ -129,3 +129,21 @@
 - ポクチュモニの**制作方法を紹介する動画・原作者**、地域外での普及、2026年の流行規模。
 - 過去の保留欄にあるポップアップ花コースターとポケット・バケットハットの制作動画公開日、クラゲのバッグチャームの構造差。
 - 2026年8月・11月などの月別空欄は、対象月に注目を集めた一次資料が不足するため補完を見送り。公開月だけで話題化を断定しない。
+
+## 2026-11-05 調査更新：折りたためるボトルホルダーと珍しい機構
+
+### 掲載に進めたもの
+- **マーガレットの収納式ボトルホルダー（2026年5月）**：花の中にネットを隠してバッグチャームにする構造。ねとらぼ2026-05-13記事で動画11万再生以上・高評価2300以上を記録。記事ID `foldable-margaret-bottle-2026-article` を2026年5月・2026年年別へ。原動画ID `Xf2NdyG7zlU` も `foldable-margaret-bottle-kumiami-video` で保存したが、**YouTube動画自体の日付は不明で `published:null`**。https://nlab.itmedia.co.jp/cont/articles/3828338/ 
+- **貝殻にしまうボトルホルダー（2026年7月動画・8月反響）**：貝殻2枚でネットを挟む、花型と異なる収納機構。旧保留 `bottle-shell`（動画 `NpvQPcK4Rrc`）を、動画公開日2026-07-04をユーチュラで確認して `seashell-foldable-bottle-tsumugi-2026` として再収録。7月11日時点40,222再生・1613高評価、8月10日の記事で累計10万再生以上。記事資料 `seashell-foldable-bottle-aug-article` は同一 `groupId`。https://yutura.net/channel/143258/video/NpvQPcK4Rrc/ 、https://nlab.itmedia.co.jp/cont/articles/3957336/
+- **星モチーフのボトルホルダー**：2枚の星モチーフから網状のホルダーが伸びる。8月3日動画公開、8月12日時点2,196再生・86高評価。貝殻のような収納式とは異なり、途中で編み止めれば小型ポーチになる選択肢。8月は**公開月の参考作品**で流行根拠未確認。https://yutura.net/channel/114986/video/jBF9tCJOcc0/
+- **キャップ用の後付けニットフード（2026年11月）**：10月の先行記事と同じ構造なので既存 `overcap-earflaps` に統合。11月5日のねとらぼ記事で投稿者ITO knit roomのInstagram13万回超再生・2100件超のいいねと報道。11月の継続注目として採用し、ピーク月は未確定。https://nlab.itmedia.co.jp/cont/articles/4077822/
+- **花びらを押して反転させるフィジェット**：2025年5月原作Ravelryパターンの図鑑掲載。https://www.ravelry.com/patterns/library/flower-fidget-pop-it-toy
+- **傘が上下に反転するキノコのフィジェット**：2025年5月原作Ravelryパターンの図鑑掲載。花型とは構造が異なる。https://www.ravelry.com/patterns/library/mushroom-pop-it
+- **絞ると花束になる巾着バッグ**：2025年6月発表のThe Secret Yarnery原作パターン（動画チュートリアルあり）。花束ブランケットとは異なる用途・構造。https://www.ravelry.com/patterns/library/flower-bouquet-drawstring-bag
+
+### 継続調査
+- マーガレット型 `Xf2NdyG7zlU`、花束巾着バッグの補助動画の**日単位の公開日**。動画の公開日を紹介記事から転記しない。
+- **花形収納式とマーガレット以外の作家による同構造作品**：https://chiisana-sakura.com/crochet-flower-motif-bottle-holder/ （2026-05-22）および https://www.ravelry.com/patterns/library/rustic-bottle-holder （2026年6月）。構造・制作動画の相違と人気を比較して代表を選ぶ。別作者というだけでは作品種類を増やさない。
+- **ポップアップ式フラワーコースター**は飲料を置いた時に花が立ち上がる構造。収納式花ボトルホルダーとは混同しない。
+- 2026年8月の貝殻ボトルホルダーは10万回再生以上という**累計数**であって、8月に再生が急増したと断定できない。11月のキャップフードも11月ピークと断定しない。
+- 韓国・インド・東南アジア・南米などの現地語資料からの形状の独立確認は今後も継続。今回の探索だけで各地域を網羅したとはみなさない。
