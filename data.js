@@ -48,7 +48,7 @@ window.AMIMONO_DATA = {
     {id:"classic-pouch",groupId:"crochet-pouch",classic:true,name:"編みポーチ",english:"Crochet Pouch",category:"バッグ・収納",region:"英語圏",tags:["小物入れ","ミニポーチ","財布"],firstYear:2024,status:"classic",videoId:"rfj8eVa1ESE",channel:"chubbiesbyash",published:"2024-06-03",views:961735,likes:26000,checked:"2026-11-05",note:"初心者向けポーチの制作動画。",evidence:"video"}
 ,
     {id:"discovery-babushka",groupId:"babushka",name:"バブーシュカ",english:"Crochet Babushka / Headscarf",category:"帽子・頭",region:"日本",tags:["三角巾","ヘッドスカーフ","ボンネット"],shape:"頭を三角形の布で包み、あご下で結ぶヘッドスカーフ。",videoId:"QzE6Vxt8GZ0",channel:"あみもの予備校チャンネル",published:"2025-08-02",views:64471,likes:1000,trendYears:[2025],trendSources:["https://www.mery.jp/2491810"],classic:false,firstYear:2025,status:"candidate",checked:"2026-11-05",evidence:"video"},
-    {id:"discovery-balaclava",groupId:"balaclava",name:"バラクラバ",english:"Crochet Balaclava",category:"帽子・頭",region:"英語圏",tags:["目出し帽","フード","防寒"],shape:"頭・耳・首を包み、顔まわりだけが開くニットフード。",videoId:"Ho-i00V_F7g",channel:"Kenikse Crochet",published:"2024-09-27",views:422612,likes:9000,trendSources:["https://www.mery.jp/2491810"],classic:false,firstYear:2024,status:"candidate",checked:"2026-11-05",evidence:"video"},
+    {id:"discovery-balaclava",groupId:"balaclava",name:"バラクラバ",english:"Crochet Balaclava",category:"帽子・頭",region:"英語圏",tags:["目出し帽","フード","防寒"],shape:"頭・耳・首を包み、顔まわりだけが開くニットフード。",videoId:"Ho-i00V_F7g",channel:"Kenikse Crochet",published:"2024-09-27",views:422612,likes:9000,trendYears:[2021,2022],trendSources:["https://www.vogue.co.uk/fashion/article/knitted-hood-balaclavas-trend","https://www.vogue.co.jp/fashion/article/sakurako-suzuki-balaclavas","https://www.theguardian.com/fashion/2021/nov/05/balaclavas-battle-to-be-most-coveted-fashion-item-of-late-2021"],classic:false,firstYear:2024,status:"candidate",checked:"2026-11-05",evidence:"video"},
     {id:"discovery-sophie",groupId:"sophie-scarf",name:"ソフィースカーフ",english:"Sophie Scarf",category:"首・肩",region:"英語圏",tags:["PetiteKnit","細いスカーフ","ガーター編み"],shape:"両端が細く尖った小さなニットスカーフ。PetiteKnitの作品名。",videoId:"1Ficyht92K4",channel:"Flower City Fibers",published:"2025-02-12",views:1150175,likes:19000,trendYears:[2025],trendSources:["https://note.com/miconoyarn/n/n4359fadf57b8","https://www.ravelry.com/projects/Stepheknits/sophie-scarf"],note:"有料の原作パターンの補助解説動画であり、完全な無料編み図ではありません。",classic:false,firstYear:2025,status:"candidate",checked:"2026-11-05",evidence:"video"},
     {id:"discovery-lipcase",groupId:"lip-case",name:"リップケース",english:"Crochet Lip Balm Holder",category:"バッグ・収納",region:"日本",tags:["バッグチャーム","リップホルダー","小物"],shape:"リップクリームを入れてバッグなどに下げる小さな編みケース。",videoId:"jaIE6ZJ8ULc",channel:"sakura.crochet / サクラクロシェ",published:"2026-01-16",views:63997,likes:1200,classic:false,firstYear:2026,status:"candidate",checked:"2026-11-05",evidence:"video"},
     {id:"discovery-earmuffs",groupId:"earmuffs",name:"編みイヤーマフ",english:"Crochet Earmuffs",category:"帽子・頭",region:"日本",tags:["耳あて","イヤーマフ","冬小物"],shape:"左右の耳を覆うパッドをつないだ、帽子とは別の防寒小物。",videoId:"-701BSRYfEc",channel:"Cotoson素朴な編み物",published:"2023-11-11",views:60281,likes:985,classic:true,firstYear:2023,status:"candidate",checked:"2026-11-05",evidence:"video"},
@@ -68,12 +68,12 @@ window.AMIMONO_DATA = {
     "2018":[],
     "2019":[],
     "2020":[],
-    "2021":["bucket-hat-2021"],
-    "2022":["bucket-hat-2021","granny-cardigan-2022"],
+    "2021":["bucket-hat-2021","discovery-balaclava"],
+    "2022":["bucket-hat-2021","granny-cardigan-2022","discovery-balaclava"],
     "2023":["hexagon-cardigan-2023","discovery-catbeanie"],
     "2024":["discovery-catbeanie"],
     "2025":["crochet-tote-2025","discovery-babushka","discovery-sophie","discovery-sophie-hood-like"],
-    "2026":["mar-bandana","may-scallop-bandana","parandi-plakshi","jul-tie-mesh","oct-earwarmer","bottle-shell","discovery-bouquet","discovery-sophie-hood-like","discovery-scoodie"]
+    "2026":["parandi-plakshi","discovery-bouquet"]
   },
   observations: [
     {"month":"2026-01","itemIds":["jan-star-earmuffs"],"summary":"公開月ベースの遡及調査：星型イヤーマフ。公開された制作動画を収録。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
@@ -86,6 +86,6 @@ window.AMIMONO_DATA = {
     {"month":"2026-08","itemIds":["aug-granny-day"],"summary":"公開月ベースの遡及調査：Granny Square Dayの公開動画。制作過程の解説動画とは限らないため参考登録。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
     {"month":"2026-09","itemIds":["sep-hobo","card-wallet-adel"],"summary":"公開月ベースの遡及調査：ホーボーバッグ、韓国のカードケース。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
     {"month":"2026-10","itemIds":["oct-earwarmer","triangle-scarf-adel"],"summary":"公開月ベースの遡及調査：イヤーウォーマーと韓国の三角スカーフ。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
-    {"month":"2026-11","itemIds":["oct-earwarmer","triangle-scarf-adel","parandi-plakshi","bottle-shell","flight-cap-sakura","discovery-bouquet","discovery-scoodie","discovery-sophie-hood-like"],"summary":"2026年11月5日までのSNS・専門メディア調査。流行確認の根拠がある冬の耳当て系を優先し、別作品のYouTube制作動画を代表として掲載。過去に公開された動画も含む。","highlights":["キャップに後付けする耳当ては海外編み物メディア（10/29）・国内記事（11/5）で注目。ただし同一作品のYouTube制作動画は未確認のためタイルには未掲載。","イヤーウォーマーは2026年10月の制作動画を11月の継続注目候補として掲載。","クロシェ・パランディは3月・4月の異なる作者の投稿から代表1動画のみ採用。","折りたたみボトルホルダー系は複数デザインを１グループに統合。","過去のフライトキャップは2026年秋冬の耳当て帽子再注目と関連する参考例で、11月の新作ではない。"],"basis":"調査日ベース。公開月の人気ピークを示さない。","evidenceLinks":["https://www.moderndailyknitting.com/community/jumping-on-a-trend/","https://nlab.itmedia.co.jp/cont/articles/4077822/","https://overridehat.com/journal/trend/","https://onlineshop.boutique-sha.co.jp/blogs/magazine/261019"],"undisplayedTrends":[{"name":"キャップ用後付け耳当て","reason":"2026年10月末の海外記事・11月5日の日本SNS投稿で注目。対応するYouTubeの制作動画を未確認のため表示しない。"}]}
+    {"month":"2026-11","itemIds":[],"summary":"11月5日時点の新規調査。発見月ではなく流行月の根拠で選ぶため、従来の8件は月別トレンドから外して作品図鑑・過去年に残した。","highlights":["キャップ用の後付け耳当ては2026年10月末〜11月初旬に関連記事とSNS投稿を確認したが、同じ構造のYouTube制作動画を未確認。","11月に実際に注目が増えたと確認でき、かつ対応する制作動画が見つかった作品は現在未登録。","制作動画公開月・今回の調査月だけでは流行月と認定しない。"],"basis":"流行の証拠とYouTube制作動画の双方を満たしたものだけ月別表示。11月はまだ月初。","evidenceLinks":["https://www.moderndailyknitting.com/community/jumping-on-a-trend/","https://nlab.itmedia.co.jp/cont/articles/4077822/2/"],"undisplayedTrends":[{"name":"キャップ用後付け耳当て（オーバーキャップ・イヤーフラップ）","reason":"現時点で対応するYouTube作り方動画の照合ができていない。"}]}
   ]
 };
