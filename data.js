@@ -1199,17 +1199,241 @@ window.AMIMONO_DATA = {
       "evidence": "original",
       "status": "candidate",
       "note": "Ravelryは2026年10月公開と表記するが正確な日付は未確認のためpublished:null。購入後利用できる動画付き有料パターン。2026年10月という月単位の記録は可能だが日単位の時点制約には採用しない。"
+    },
+    {
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "status": "past",
+      "evidence": "article",
+      "tags": [
+        "人魚",
+        "変形",
+        "ブランケット"
+      ],
+      "id": "mermaid-blanket-2015-article",
+      "groupId": "mermaid-blanket",
+      "name": "マーメイドブランケット",
+      "english": "Crochet Mermaid Tail Blanket",
+      "shape": "足を包む袋状のブランケットの先が、人魚の尾びれになっている。",
+      "category": "雑貨",
+      "region": "英語圏",
+      "firstYear": 2015,
+      "published": "2015-03-17",
+      "sourceType": "article",
+      "sourceUrl": "https://www.trendhunter.com/trends/crochet-mermaid-tail",
+      "sourceLabel": "2015年の作品紹介",
+      "channel": "TrendHunter",
+      "note": "2015年3月の作品紹介記事。2016年の別作者制作動画と同じ構造の作品群をグループ化。",
+      "trendSources": [
+        "https://www.trendhunter.com/trends/crochet-mermaid-tail"
+      ]
+    },
+    {
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "status": "past",
+      "evidence": "article",
+      "tags": [
+        "サメ",
+        "動物",
+        "着るブランケット",
+        "おもしろい形"
+      ],
+      "id": "shark-blanket-2015-pattern",
+      "groupId": "shark-cocoon-blanket",
+      "name": "サメに食べられるブランケット",
+      "english": "Shark Cocoon Blanket",
+      "shape": "大きく口を開いたサメの胴体に、足からすっぽり入り、尾びれが足元に続く袋状のブランケット。",
+      "category": "雑貨",
+      "region": "英国",
+      "firstYear": 2015,
+      "published": "2015-05-04",
+      "sourceType": "pattern",
+      "sourceUrl": "https://www.offthehookforyou.co.uk/eaten-by-a-shark-the-pattern-finally/",
+      "sourceLabel": "作者の無料編み図",
+      "channel": "Off The Hook For You / Vicki Roberts",
+      "note": "2015年5月公開の作者オリジナル編み図。2015年の発見候補であり、この特定作品の大流行を示す数値は未確認。",
+      "trendSources": [
+        "https://www.offthehookforyou.co.uk/eaten-by-a-shark-the-pattern-finally/"
+      ]
+    },
+    {
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "status": "past",
+      "evidence": "article",
+      "tags": [
+        "猫耳",
+        "ピンク",
+        "社会運動",
+        "ニット帽"
+      ],
+      "id": "pussyhat-2017-article",
+      "groupId": "pink-cat-ear-pussyhat",
+      "name": "ピンクの猫耳帽子（Pussyhat）",
+      "english": "Pussyhat Project Hat",
+      "shape": "長方形に編んで縫い合わせると、かぶった際に両角が猫耳になるピンクの帽子。",
+      "category": "帽子・頭",
+      "region": "米国",
+      "firstYear": 2017,
+      "published": "2017-03-17",
+      "sourceType": "article",
+      "sourceUrl": "https://crafthouston.org/2017/03/case-study-pussyhat/",
+      "sourceLabel": "2017年の工芸館記事",
+      "channel": "Houston Center for Contemporary Craft",
+      "note": "2017年Women's Marchで普及したピンク帽子。構造は通常の猫耳帽子に近いが、Pussyhatという歴史的名称と背景がある。",
+      "trendSources": [
+        "https://crafthouston.org/2017/03/case-study-pussyhat/"
+      ]
+    },
+    {
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "status": "past",
+      "evidence": "article",
+      "tags": [
+        "タコ",
+        "あみぐるみ",
+        "触手",
+        "Octo Project"
+      ],
+      "id": "octopus-preemie-2017-article",
+      "groupId": "crochet-octopus-preemie",
+      "name": "くるくる触手のタコのあみぐるみ",
+      "english": "Octopus for a Preemie",
+      "shape": "小さなタコの頭から、くるくる巻いた細い触手が何本も伸びるあみぐるみ。",
+      "category": "雑貨",
+      "region": "オーストラリア・欧州",
+      "firstYear": 2017,
+      "published": "2017-08-11",
+      "sourceType": "article",
+      "sourceUrl": "https://www.abc.net.au/news/2017-08-11/touch-of-an-octopus-gives-comfort-to-premature-babies/8790688",
+      "sourceLabel": "2017年の地域活動記事",
+      "channel": "ABC News",
+      "note": "2017年に複数地域で編みぐるみの制作・寄贈活動が報道された。医療効果についてはこの図鑑では保証しない。",
+      "trendSources": [
+        "https://www.abc.net.au/news/2017-08-11/touch-of-an-octopus-gives-comfort-to-premature-babies/8790688"
+      ]
+    },
+    {
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "status": "past",
+      "evidence": "article",
+      "tags": [
+        "タコ",
+        "あみぐるみ",
+        "地域活動"
+      ],
+      "id": "octopus-preemie-2018-article",
+      "groupId": "crochet-octopus-preemie",
+      "name": "タコのあみぐるみ（2018年の制作活動）",
+      "english": "Crochet Octopus for Preemies",
+      "shape": "丸いタコの頭にくるくるした触手を付けた小型あみぐるみ。",
+      "category": "雑貨",
+      "region": "シンガポール",
+      "firstYear": 2017,
+      "published": "2018-04-01",
+      "sourceType": "article",
+      "sourceUrl": "https://cnalifestyle.channelnewsasia.com/singapore/volunteers-crochet-octopus-for-premature-babies-215046",
+      "sourceLabel": "2018年の地域活動記事",
+      "channel": "CNA Lifestyle",
+      "note": "2018年4月の制作活動を報じた記事。継続的な活動の広がりであり、新商品トレンドの急増とは区別する。",
+      "trendSources": [
+        "https://cnalifestyle.channelnewsasia.com/singapore/volunteers-crochet-octopus-for-premature-babies-215046"
+      ]
+    },
+    {
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "status": "past",
+      "evidence": "article",
+      "tags": [
+        "記録",
+        "365日",
+        "気温",
+        "グラデーション"
+      ],
+      "id": "temperature-blanket-2019-article",
+      "groupId": "temperature-blanket",
+      "name": "気温ブランケット",
+      "english": "Temperature Blanket",
+      "shape": "その日の気温を色に対応させ、毎日一段ずつ編むことで1年分の気温を縞模様に残すブランケット。",
+      "category": "雑貨",
+      "region": "オーストラリア",
+      "firstYear": 2019,
+      "published": "2019-06-09",
+      "sourceType": "article",
+      "sourceUrl": "https://www.abc.net.au/news/2019-06-09/woman-crochets-blanket-with-temperature-for-each-day-of-year/11189178",
+      "sourceLabel": "2019年の話題記事",
+      "channel": "ABC News",
+      "note": "2019年6月9日の取材記事ではSNSでの共有が広がったことを報道。技法そのものの初登場年ではない。",
+      "trendSources": [
+        "https://www.abc.net.au/news/2019-06-09/woman-crochets-blanket-with-temperature-for-each-day-of-year/11189178"
+      ]
+    },
+    {
+      "views": 990151,
+      "likes": 58000,
+      "checked": "2026-11-05",
+      "status": "past",
+      "evidence": "video",
+      "tags": [
+        "カーディガン",
+        "パッチワーク",
+        "Harry Styles",
+        "棒針編み",
+        "再現"
+      ],
+      "id": "jw-anderson-cardigan-2020",
+      "groupId": "jw-anderson-patchwork-cardigan",
+      "name": "カラーブロック・パッチワークカーディガン",
+      "english": "JW Anderson Colour Block Patchwork Cardigan",
+      "shape": "赤・黄・緑・オレンジなど大きな四角い色ブロックをつなげたオーバーサイズの棒針編みカーディガン。",
+      "category": "衣類",
+      "region": "英国・英語圏",
+      "firstYear": 2020,
+      "published": "2020-08-12",
+      "videoId": "-igQBecLdKI",
+      "sourceType": "video",
+      "sourceUrl": "https://www.youtube.com/watch?v=-igQBecLdKI",
+      "originalUrl": "https://www.ravelry.com/patterns/library/colour-block-patchwork-cardigan",
+      "originalLabel": "JW Anderson公式の無料編み図",
+      "channel": "JW Anderson",
+      "note": "2020年6月からファン制作がTikTokで広まり、7月にデザイナー公式編み図、8月12日に公式制作動画が公開。公式動画の確認時点再生数・いいねは累計。オリジナルは棒針編み、ファンによるかぎ針再現作も存在。",
+      "trendSources": [
+        "https://www.vogue.com/article/jw-anderson-harry-styles-cardigan-tiktok",
+        "https://www.ravelry.com/patterns/library/colour-block-patchwork-cardigan"
+      ]
     }
   ],
   "trendYears": {
-    "2015": [],
+    "2015": [
+      "mermaid-blanket-2015-article",
+      "shark-blanket-2015-pattern"
+    ],
     "2016": [
       "mermaid-blanket-2016"
     ],
-    "2017": [],
-    "2018": [],
-    "2019": [],
-    "2020": [],
+    "2017": [
+      "pussyhat-2017-article",
+      "octopus-preemie-2017-article"
+    ],
+    "2018": [
+      "octopus-preemie-2018-article"
+    ],
+    "2019": [
+      "temperature-blanket-2019-article"
+    ],
+    "2020": [
+      "jw-anderson-cardigan-2020"
+    ],
     "2021": [
       "bucket-hat-2021"
     ],
@@ -1416,6 +1640,41 @@ window.AMIMONO_DATA = {
     }
   ],
   "trendEvidence": {
+    "2015": {
+      "summary": "2015年に人魚の尾びれ型ブランケットと、口を開けたサメ型ブランケットが公開・紹介された。2015年の個別作品の人気順位は不明。",
+      "sources": [
+        "https://www.trendhunter.com/trends/crochet-mermaid-tail",
+        "https://www.offthehookforyou.co.uk/eaten-by-a-shark-the-pattern-finally/",
+        "https://www.mjsoffthehookdesigns.com/about-mjs-off-the-hook/"
+      ]
+    },
+    "2017": {
+      "summary": "1月のWomen's Marchでピンクの猫耳帽子が広まり、タコのあみぐるみの制作・寄贈活動も各地で報道。両者は異なる文脈で注目された。",
+      "sources": [
+        "https://crafthouston.org/2017/03/case-study-pussyhat/",
+        "https://www.abc.net.au/news/2017-08-11/touch-of-an-octopus-gives-comfort-to-premature-babies/8790688"
+      ]
+    },
+    "2018": {
+      "summary": "2017年からのタコのあみぐるみ制作活動が2018年にもシンガポールで報道。製品ブームとは異なる継続的な地域活動。",
+      "sources": [
+        "https://cnalifestyle.channelnewsasia.com/singapore/volunteers-crochet-octopus-for-premature-babies-215046"
+      ]
+    },
+    "2019": {
+      "summary": "日々の気温を色で記録する気温ブランケットの制作例が2019年6月の報道でSNSの反響とともに紹介された。",
+      "sources": [
+        "https://www.abc.net.au/news/2019-06-09/woman-crochets-blanket-with-temperature-for-each-day-of-year/11189178"
+      ]
+    },
+    "2020": {
+      "summary": "JW Andersonのカラーブロック・パッチワークカーディガンがTikTokで再現されて広まり、デザイナーが公式編み図・解説動画を公開した。",
+      "sources": [
+        "https://www.vogue.com/article/jw-anderson-harry-styles-cardigan-tiktok",
+        "https://www.ravelry.com/patterns/library/colour-block-patchwork-cardigan",
+        "https://www.youtube.com/watch?v=-igQBecLdKI"
+      ]
+    },
     "2022": {
       "summary": "かぎ針編みのバケットハットは2022年のファッション誌で流行として紹介。グラニースクエア衣類の動画公開は参考情報（人気の規模は未検証）。",
       "sources": [
