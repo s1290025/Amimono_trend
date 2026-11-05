@@ -1119,6 +1119,148 @@ window.AMIMONO_DATA = {
       "status": "classic",
       "checked": "2026-11-05",
       "evidence": "video"
+    },
+    {
+      "id": "tulip-pouch-tsumugi-2025",
+      "groupId": "tulip-drawstring-pouch",
+      "canonicalName": "チューリップ巾着ポーチ",
+      "featured": true,
+      "name": "チューリップ巾着ポーチ",
+      "english": "Tulip Drawstring Pouch",
+      "shape": "巾着の上部にチューリップの花と葉を編み込み、花束のように絞って閉じる小物入れ。",
+      "category": "バッグ・収納",
+      "region": "日本",
+      "tags": [
+        "チューリップ",
+        "巾着",
+        "花モチーフ"
+      ],
+      "firstYear": 2025,
+      "status": "past",
+      "videoId": "r52VSQ1cuGY",
+      "channel": "TSUMUGI かぎ針編み",
+      "published": "2025-04-19",
+      "views": 145061,
+      "likes": 2600,
+      "checked": "2026-11-05",
+      "note": "2025年4月公開の作品制作動画。再生数・いいねは確認時点の累計値で、同月の流行ピークを意味しない。",
+      "evidence": "video",
+      "trendSources": [
+        "https://www.youtube.com/watch?v=r52VSQ1cuGY"
+      ]
+    },
+    {
+      "id": "tulip-pouch-huniebi-2025",
+      "groupId": "tulip-drawstring-pouch",
+      "name": "チューリップ巾着（別作者）",
+      "english": "Tulip Drawstring Pouch",
+      "shape": "円筒状の巾着に茎・花・葉を配したチューリップの花束風ポーチ。",
+      "category": "バッグ・収納",
+      "region": "英語圏",
+      "tags": [
+        "チューリップ",
+        "花束",
+        "巾着"
+      ],
+      "firstYear": 2025,
+      "status": "past",
+      "videoId": "pSrCuygkcT4",
+      "channel": "huniebi",
+      "published": "2025-05-23",
+      "views": 19692,
+      "likes": 537,
+      "checked": "2026-11-05",
+      "note": "2025年5月に別作者の制作動画も存在。色・作者差は同一groupId。",
+      "evidence": "video",
+      "trendSources": [
+        "https://www.youtube.com/watch?v=pSrCuygkcT4"
+      ]
+    },
+    {
+      "id": "flower-pot-coaster-2025",
+      "groupId": "flower-pot-coaster",
+      "name": "植木鉢にしまえる花のコースター",
+      "english": "Flower Pot Coaster",
+      "shape": "花形のコースターを重ねて小さな植木鉢型のケースに収め、飾ると鉢植えの花のように見える収納兼コースター。",
+      "category": "雑貨",
+      "region": "英語圏",
+      "tags": [
+        "花",
+        "鉢植え",
+        "コースター",
+        "収納"
+      ],
+      "firstYear": 2025,
+      "status": "candidate",
+      "videoId": "MBTHZ5MDAdc",
+      "channel": "Cute Crochet",
+      "published": "2025-07-28",
+      "views": 52378,
+      "likes": 1200,
+      "checked": "2026-11-05",
+      "note": "動画名・説明で花と植木鉢の編み方を確認。鉢へ収納する構造の細部は動画視聴による最終照合待ち。2026年には別作者による鉢収納タイプのパターンも確認。",
+      "evidence": "video",
+      "trendSources": [
+        "https://www.youtube.com/watch?v=MBTHZ5MDAdc",
+        "https://www.ravelry.com/patterns/library/flower-pot-coaster"
+      ]
+    },
+    {
+      "id": "pocket-bucket-hat-2024",
+      "groupId": "pocket-bucket-hat",
+      "name": "ポケット・バケットハット",
+      "english": "Pocket Bucket Hat",
+      "shape": "小さなポーチの形にたたんで収納でき、広げるとバケットハットになる変形帽子。",
+      "category": "帽子・頭",
+      "region": "英語圏",
+      "tags": [
+        "変形",
+        "収納",
+        "バケットハット",
+        "携帯用"
+      ],
+      "firstYear": 2024,
+      "status": "candidate",
+      "videoId": "oUqTF0s1U7k",
+      "channel": "It KenKen",
+      "published": null,
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "note": "Ravelryに作者の2024年10月公開パターンと制作動画URLの記載あり。YouTube側の正確な公開日と数値は未確認のため過去月別・年別には使用しない。",
+      "evidence": "reference",
+      "trendSources": [
+        "https://www.ravelry.com/patterns/library/pocket-bucket-hat"
+      ]
+    },
+    {
+      "id": "bouquet-blanket-elyse-2025",
+      "groupId": "bouquet-blanket",
+      "name": "バラの花束に変形するブランケット",
+      "english": "Rose Bouquet Blanket",
+      "shape": "円形ブランケットの縁にバラと葉を配し、中心をまとめると花束に見える変形ブランケット。",
+      "category": "雑貨",
+      "region": "英語圏",
+      "tags": [
+        "花束",
+        "バラ",
+        "ブランケット",
+        "変形"
+      ],
+      "firstYear": 2025,
+      "status": "past",
+      "videoId": "pWpXGtrQeSU",
+      "channel": "ElyseCrochets",
+      "published": "2025-12-16",
+      "views": 1336567,
+      "likes": 23000,
+      "checked": "2026-11-05",
+      "note": "2025年12月公開の制作動画。2026年10月18日の編み物専門記事で大きな反響のあった作品として紹介。動画再生数は検索時の累計値。",
+      "evidence": "video",
+      "trendSources": [
+        "https://www.youtube.com/watch?v=pWpXGtrQeSU",
+        "https://www.dailycrochet.com/crochet-flower-bouquet-blanket-video-tutorial/"
+      ]
     }
   ],
   "trendYears": {
@@ -1162,7 +1304,10 @@ window.AMIMONO_DATA = {
       "discovery-bouquet",
       "flight-cap-sakura",
       "discovery-catbeanie",
-      "discovery-earmuffs"
+      "discovery-earmuffs",
+      "tulip-pouch-tsumugi-2025",
+      "flower-pot-coaster-2025",
+      "bouquet-blanket-elyse-2025"
     ],
     "2026": [
       "parandi-plakshi",
@@ -1180,7 +1325,9 @@ window.AMIMONO_DATA = {
       "discovery-lipcase",
       "discovery-catbeanie",
       "discovery-earmuffs",
-      "netbag-adel"
+      "netbag-adel",
+      "flower-pot-coaster-2025",
+      "bouquet-blanket-elyse-2025"
     ]
   },
   "observations": [
@@ -1327,17 +1474,20 @@ window.AMIMONO_DATA = {
         "discovery-balaclava",
         "discovery-scoodie",
         "discovery-sophie-hood-like",
-        "flight-cap-sakura"
+        "flight-cap-sakura",
+        "bouquet-blanket-elyse-2025"
       ],
       "summary": "公開月ベースの遡及調査：イヤーウォーマーと韓国の三角スカーフ。",
       "highlights": [
-        "公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"
+        "公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。",
+        "10月18日の専門記事は花束ブランケットの2025年公開動画を紹介。これは10月の話題の根拠であり、10月の急増数値は未確認。"
       ],
       "basis": "同時期の注目・継続人気作品と制作動画の公開月に基づく参考収録。すべてが月間人気急上昇と検証されたわけではありません。",
       "evidenceGrade": "mixed",
       "evidenceLinks": [
         "https://trilltrill.jp/articles/5082491",
-        "https://www.moderndailyknitting.com/community/jumping-on-a-trend/"
+        "https://www.moderndailyknitting.com/community/jumping-on-a-trend/",
+        "https://www.dailycrochet.com/crochet-flower-bouquet-blanket-video-tutorial/"
       ]
     },
     {
@@ -1387,21 +1537,25 @@ window.AMIMONO_DATA = {
       ]
     },
     "2025": {
-      "summary": "花束ブランケットや夏のネットバッグの流行、若い世代での編み物ブーム。Sophie Scarfなどの継続人気。",
+      "summary": "花束ブランケットや夏のネットバッグの流行、若い世代での編み物ブーム。Sophie Scarfなどの継続人気。 2025年春に別作者によるチューリップ巾着制作動画を確認（公開・継続関心の参考であり流行ピーク未確認）。",
       "sources": [
         "https://note.com/mochidaakari/n/ne1fc7a02b001",
         "https://group.gmo/news/article/9775/",
-        "https://www.jprime.jp/articles/-/37079"
+        "https://www.jprime.jp/articles/-/37079",
+        "https://www.youtube.com/watch?v=r52VSQ1cuGY",
+        "https://www.youtube.com/watch?v=pSrCuygkcT4"
       ]
     },
     "2026": {
-      "summary": "花束ブランケットの販売実績、Sophie Scarfの継続的人気、夏のクロシェ衣類、秋冬のバラクラバ・ボンネット・フード小物の再注目。個々の作品の人気度には差がある。",
+      "summary": "花束ブランケットの販売実績、Sophie Scarfの継続的人気、夏のクロシェ衣類、秋冬のバラクラバ・ボンネット・フード小物の再注目。個々の作品の人気度には差がある。 10月の専門記事で花束ブランケットが再紹介された。花のコースターを鉢にしまう作品も複数作者の制作例が見つかるが、月間ピークは未確認。",
       "sources": [
         "https://prtimes.jp/main/html/rd/p/000000823.000041489.html",
         "https://stitchcraftmarketing.com/9-craft-trends-dominating-2026-for-makers-retailers-stitchcraft-marketing/",
         "https://trilltrill.jp/articles/5082491",
         "https://www.lovecrafts.com/en-us/blogs/articles-us/ear-warming-makes",
-        "https://community.etsy.com/forum/etsy-success-300/topic/etsy-insights-explore-the-trends-shaping-spring-and-summer-2026-165859/"
+        "https://community.etsy.com/forum/etsy-success-300/topic/etsy-insights-explore-the-trends-shaping-spring-and-summer-2026-165859/",
+        "https://www.dailycrochet.com/crochet-flower-bouquet-blanket-video-tutorial/",
+        "https://www.ravelry.com/patterns/library/flower-pot-coaster"
       ]
     }
   }
