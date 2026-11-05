@@ -12,9 +12,9 @@
 <div class="wrap"><div class="top"><div class="logo">Amimono<span>Trend.</span></div><div class="info">更新 <strong id="updated">—</strong></div></div>
 <nav class="tabs" aria-label="表示切り替え"><button class="tab active" data-tab="current">月別トレンド</button><button class="tab" data-tab="history">年別トレンド</button><button class="tab" data-tab="library">定番</button></nav>
 <main>
-<section class="pane active" id="current"><div class="months" id="months"></div><div class="controls"><select id="monthRegion" aria-label="月別の投稿地域"><option value="">全地域</option></select></div><div class="cards" id="currentCards"></div></section>
-<section class="pane" id="history"><div class="yearbar" id="yearbar"></div><div class="controls"><select id="historyRegion" aria-label="年別の投稿地域"><option value="">全地域</option></select></div><div class="cards" id="historyCards"></div></section>
-<section class="pane" id="library"><div class="controls"><input id="search" type="search" aria-label="作品検索" placeholder="作品名で検索"><select id="cat" aria-label="カテゴリー"><option value="">すべての種類</option></select><select id="region" aria-label="地域"><option value="">すべての地域</option></select></div><div class="count" id="resultCount"></div><div class="cards" id="allCards"></div></section>
+<section class="pane active" id="current"><div class="months" id="months"></div><div class="cards" id="currentCards"></div></section>
+<section class="pane" id="history"><div class="yearbar" id="yearbar"></div><div class="cards" id="historyCards"></div></section>
+<section class="pane" id="library"><div class="controls"><input id="search" type="search" aria-label="作品検索" placeholder="作品名で検索"><select id="cat" aria-label="カテゴリー"><option value="">すべての種類</option></select></div><div class="count" id="resultCount"></div><div class="cards" id="allCards"></div></section>
 </main></div>
 <footer><div class="wrap">Amimono Trend · 画像・作品の権利は各作者に帰属します。</div></footer>
 <script src="./data.js"></script>
@@ -43,9 +43,9 @@ function initCurrent(){
  document.querySelectorAll(".month.has").forEach(function(b){b.addEventListener("click",function(){selected=b.dataset.month;renderMonth()})});
  var record=yearObs.find(function(o){return o.month===selected});
  var ids=new Set(record?record.itemIds:[]);
- cards(items.filter(function(x){return ids.has(x.id)&&(!$("monthRegion").value||x.region===$("monthRegion").value)}),"currentCards");
+ cards(items.filter(function(x){return ids.has(x.id)}),"currentCards");
  }
- $("monthRegion").addEventListener("change",renderMonth);
+
  renderMonth();
 }
 function initHistory(){
@@ -62,23 +62,23 @@ function initHistory(){
  document.querySelectorAll(".yearbtn").forEach(function(b){b.addEventListener("click",function(){selected=Number(b.dataset.year);renderYear()})});
  var records=obs.filter(function(o){return Number(o.month.slice(0,4))===selected});
  var ids=new Set(records.flatMap(function(o){return o.itemIds}));
- cards(items.filter(function(x){return (dateYear(x)===selected||ids.has(x.id))&&(!$("historyRegion").value||x.region===$("historyRegion").value)}),"historyCards");
+ cards(items.filter(function(x){return (dateYear(x)===selected||ids.has(x.id))}),"historyCards");
  }
- $("historyRegion").addEventListener("change",renderYear);
+
  renderYear();
 }
 function addOptions(id,values){$(id).innerHTML+=[...new Set(values)].filter(Boolean).sort().map(function(v){return '<option value="'+esc(v)+'">'+esc(v)+'</option>'}).join("")}
 function initLibrary(){
- addOptions("cat",items.map(function(x){return x.category}));addOptions("region",items.map(function(x){return x.region}));
+ addOptions("cat",items.map(function(x){return x.category}));
  
  function filter(){
- var q=$("search").value.trim().toLocaleLowerCase(),cat=$("cat").value,region=$("region").value;
- var arr=items.filter(function(x){return x.classic===true&&(!cat||x.category===cat)&&(!region||x.region===region)&&[x.name,x.english,x.channel,(x.tags||[]).join(" ")].join(" ").toLocaleLowerCase().includes(q)});
+ var q=$("search").value.trim().toLocaleLowerCase(),cat=$("cat").value;
+ var arr=items.filter(function(x){return x.classic===true&&(!cat||x.category===cat)&&[x.name,x.english,x.channel,(x.tags||[]).join(" ")].join(" ").toLocaleLowerCase().includes(q)});
  $("resultCount").textContent=arr.length+"件の作品";cards(arr,"allCards")
  }
- ["search","cat","region"].forEach(function(id){$(id).addEventListener(id==="search"?"input":"change",filter)});filter()
+ ["search","cat"].forEach(function(id){$(id).addEventListener(id==="search"?"input":"change",filter)});filter()
 }
-addOptions("monthRegion",items.map(function(x){return x.region}));addOptions("historyRegion",items.map(function(x){return x.region}));initTabs();initCurrent();initHistory();initLibrary();
+initTabs();initCurrent();initHistory();initLibrary();
 })();
 </script>
 </body></html>
