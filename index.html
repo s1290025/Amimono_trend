@@ -17,7 +17,7 @@
 <section class="pane" id="library"><div class="controls"><input id="search" type="search" aria-label="作品検索" placeholder="作品名・形・英語名で検索"><select id="scope" aria-label="作品の分類"><option value="">すべての作品</option><option value="discovery">名前や形が特徴的</option><option value="trending">流行した作品</option><option value="classic">定番作品</option></select><select id="cat" aria-label="カテゴリー"><option value="">すべての種類</option></select></div><div class="count" id="resultCount"></div><div class="cards" id="allCards"></div></section>
 </main></div>
 <footer><div class="wrap">Amimono Trend · 画像・作品の権利は各作者に帰属します。</div></footer>
-<script src="./data.js?v=20261105-discovery2"></script>
+<script src="./data.js?v=20261105-audit3"></script>
 <script>
 (function(){
 "use strict";
@@ -65,7 +65,9 @@ function initCurrent(){
  document.querySelectorAll(".month.has").forEach(function(b){b.addEventListener("click",function(){selected=b.dataset.month;renderMonth()})});
  var record=yearObs.find(function(o){return o.month===selected});
  var ids=new Set(record?record.itemIds:[]);
- cards(items.filter(function(x){return ids.has(x.id)}),"currentCards");
+ var monthItems=items.filter(function(x){return ids.has(x.id)});
+ if(monthItems.length){cards(monthItems,"currentCards")}
+ else{$("currentCards").innerHTML=record?'<div class="empty">この月の流行時期と制作動画を確認できた作品は、まだありません。</div>':'<div class="empty">この月はまだ調査記録がありません。</div>'}
  }
 
  renderMonth();
