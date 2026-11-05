@@ -116,3 +116,16 @@
 - 2026年10月：秋冬定番のニット帽・スヌード・指なし手袋・猫耳帽子、2way花イヤーマフ兼つけ衿を専門出版社のおすすめ記事で確認。**人気急上昇の証拠ではなく、季節の紹介として扱う。**
 
 過去の記事の公開年と個別作品の実際の流行ピークは別物です。月別・年別には対象の時点までに公開された出典だけを採用します。
+
+
+## 2026-11-05 追加検証（年別補強・地域固有名）
+
+- **2016 メッシーバン・ビーニー**：2016-12-07のKnitHacker記事がFacebook編み物コミュニティでの拡散を同時代に報告。`messy-bun-beanie-2016` を図鑑・2016年に追加。https://knithacker.com/2016/12/everyones-going-crazy-for-knit-and-crochet-ponytail-hats-aka-messy-bun-beanie-free-patterns/ 。2016年12月の原作Ravelryページも確認（https://www.ravelry.com/patterns/library/jessie-messy-bun-hat-and-beanie）。
+- **2017 フクロウのフード付きブランケット**：2017-02-02の現地記事で当時のFacebook動画2,500万再生以上を報道。`hooded-owl-blanket-2017` を図鑑・2017年に追加。https://www.ptbocanada.com/journal/2017/2/2/a-lakefield-womans-hooded-owl-blanket-has-gone-viral-around-the-world 。2017年1月発表の原作者Ravelryパターン https://www.ravelry.com/patterns/library/bulky--quick-hooded-owl-blanket 。Facebook再生数をYouTube再生数と混同しない。
+- **韓国のポクチュモニ**：韓国の伝統的な紐付き福巾着を手編みにした販売商品を2026-01-17の紹介で確認。`bokjumeoni-handknit-2026` を図鑑と定番に登録。https://saranban.shop/news/696ae5ac1886eb5a1ea28154 。**制作動画や2026年1月の流行根拠は未確認**のため月別・年別には入れない。
+- **2016 マーメイドブランケット**：2016-12-11 Guardian記事でSNS上の反響と販売を確認。既存 `mermaid-blanket` の2016年流行根拠へ追記。https://www.theguardian.com/fashion/shortcuts/2016/dec/11/mermaid-blankets-this-years-answer-to-the-onesie
+
+### 継続保留
+- ポクチュモニの**制作方法を紹介する動画・原作者**、地域外での普及、2026年の流行規模。
+- 過去の保留欄にあるポップアップ花コースターとポケット・バケットハットの制作動画公開日、クラゲのバッグチャームの構造差。
+- 2026年8月・11月などの月別空欄は、対象月に注目を集めた一次資料が不足するため補完を見送り。公開月だけで話題化を断定しない。
