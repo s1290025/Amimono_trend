@@ -1444,6 +1444,93 @@ window.AMIMONO_DATA = {
       "trendSources": [
         "https://onlineshop.boutique-sha.co.jp/blogs/magazine/261019"
       ]
+    },
+    {
+      "id": "messy-bun-beanie-2016",
+      "groupId": "messy-bun-beanie",
+      "canonicalName": "お団子ヘア用メッシーバン・ビーニー",
+      "name": "お団子ヘア用メッシーバン・ビーニー",
+      "english": "Messy Bun Beanie / Ponytail Hat",
+      "category": "帽子・頭",
+      "region": "北米",
+      "tags": [
+        "お団子ヘア",
+        "ポニーテール",
+        "頭頂部に穴",
+        "ponytail beanie"
+      ],
+      "firstYear": 2016,
+      "status": "past",
+      "sourceType": "article",
+      "sourceUrl": "https://knithacker.com/2016/12/everyones-going-crazy-for-knit-and-crochet-ponytail-hats-aka-messy-bun-beanie-free-patterns/",
+      "sourceLabel": "KnitHacker 2016年12月の編み物コミュニティ紹介",
+      "published": "2016-12-07",
+      "checked": "2026-11-05",
+      "views": null,
+      "likes": null,
+      "classic": true,
+      "evidence": "contemporary-community-report",
+      "shape": "頭頂部に穴があり、お団子やポニーテールを外へ出せるニット帽。髪を結んだままかぶれる。",
+      "note": "2016年12月7日の記事でFacebookの編み物グループで注目が集まったと記載。制作元の編み図ではなく紹介記事へのリンク。"
+    },
+    {
+      "id": "hooded-owl-blanket-2017",
+      "groupId": "hooded-owl-blanket",
+      "canonicalName": "フクロウのフード付きブランケット",
+      "name": "フクロウのフード付きブランケット",
+      "english": "Bulky & Quick Hooded Owl Blanket",
+      "category": "ブランケット",
+      "region": "カナダ",
+      "tags": [
+        "動物",
+        "フクロウ",
+        "フード",
+        "羽",
+        "hooded blanket"
+      ],
+      "firstYear": 2017,
+      "status": "past",
+      "sourceType": "article",
+      "sourceUrl": "https://www.ptbocanada.com/journal/2017/2/2/a-lakefield-womans-hooded-owl-blanket-has-gone-viral-around-the-world",
+      "originalUrl": "https://www.ravelry.com/patterns/library/bulky--quick-hooded-owl-blanket",
+      "sourceLabel": "2017年2月2日付PTBOCanada報道（原作者の編み図は別リンク）",
+      "published": "2017-02-02",
+      "checked": "2026-11-05",
+      "views": null,
+      "likes": null,
+      "evidence": "contemporary-viral-report",
+      "shape": "大きな目とくちばしのあるフクロウ形のフードがブランケットの端に付く。広げると羽のような縁飾りも現れる。",
+      "note": "2017年2月2日時点で原作者Facebook投稿の2,500万回以上の再生と多数の共有を同時代報道が確認。これはFacebook投稿の当時の数値でありYouTube再生数ではない。原作パターンは2017年1月公開。"
+    },
+    {
+      "id": "bokjumeoni-handknit-2026",
+      "groupId": "bokjumeoni-pouch",
+      "canonicalName": "ポクチュモニ（韓国の福巾着）",
+      "name": "手編みポクチュモニ",
+      "english": "Bokjumeoni / 복주머니",
+      "category": "バッグ・収納",
+      "region": "韓国",
+      "tags": [
+        "韓国伝統",
+        "福袋",
+        "巾着",
+        "복주머니",
+        "handknit",
+        "伝統模様"
+      ],
+      "firstYear": null,
+      "status": "discovery",
+      "sourceType": "article",
+      "sourceUrl": "https://saranban.shop/news/696ae5ac1886eb5a1ea28154",
+      "sourceLabel": "韓国雑貨専門店による手編み作品の紹介（販売商品）",
+      "published": "2026-01-17",
+      "checked": "2026-11-05",
+      "views": null,
+      "likes": null,
+      "classic": true,
+      "evidence": "product-introduction",
+      "shape": "韓国の伝統的な福袋を編み物にした巾着。左右の紐を締めると、丸くふくらんだ袋の形になる。",
+      "note": "2026年1月17日の手編み商品紹介。伝統的な形の存在は確認できるが、2026年1月に流行した証拠ではない。編み方のチュートリアルではなく販売商品紹介。"
     }
   ],
   "trendYears": {
@@ -1452,11 +1539,13 @@ window.AMIMONO_DATA = {
       "shark-blanket-2015-pattern"
     ],
     "2016": [
-      "mermaid-blanket-2016"
+      "mermaid-blanket-2016",
+      "messy-bun-beanie-2016"
     ],
     "2017": [
       "pussyhat-2017-article",
-      "octopus-preemie-2017-article"
+      "octopus-preemie-2017-article",
+      "hooded-owl-blanket-2017"
     ],
     "2018": [
       "octopus-preemie-2018-article"
@@ -1693,11 +1782,20 @@ window.AMIMONO_DATA = {
         "https://www.mjsoffthehookdesigns.com/about-mjs-off-the-hook/"
       ]
     },
+    "2016": {
+      "summary": " 2016年12月7日付の同時代記事では、お団子ヘア用の穴あき帽子が編み物グループで急速に共有されたと記録。2016年12月11日付Guardianは人魚の尾型ブランケットがSNSや販売で大きな話題になったと報道。",
+      "sources": [
+        "https://knithacker.com/2016/12/everyones-going-crazy-for-knit-and-crochet-ponytail-hats-aka-messy-bun-beanie-free-patterns/",
+        "https://www.theguardian.com/fashion/shortcuts/2016/dec/11/mermaid-blankets-this-years-answer-to-the-onesie"
+      ]
+    },
     "2017": {
-      "summary": "1月のWomen's Marchでピンクの猫耳帽子が広まり、タコのあみぐるみの制作・寄贈活動も各地で報道。両者は異なる文脈で注目された。",
+      "summary": "1月のWomen's Marchでピンクの猫耳帽子が広まり、タコのあみぐるみの制作・寄贈活動も各地で報道。両者は異なる文脈で注目された。 フクロウのフード付きブランケットは2017年2月2日の現地報道で原作者のFacebook投稿が2,500万回以上再生されたと確認。YouTubeの再生数ではない。",
       "sources": [
         "https://crafthouston.org/2017/03/case-study-pussyhat/",
-        "https://www.abc.net.au/news/2017-08-11/touch-of-an-octopus-gives-comfort-to-premature-babies/8790688"
+        "https://www.abc.net.au/news/2017-08-11/touch-of-an-octopus-gives-comfort-to-premature-babies/8790688",
+        "https://www.ptbocanada.com/journal/2017/2/2/a-lakefield-womans-hooded-owl-blanket-has-gone-viral-around-the-world",
+        "https://www.ravelry.com/patterns/library/bulky--quick-hooded-owl-blanket"
       ]
     },
     "2018": {
