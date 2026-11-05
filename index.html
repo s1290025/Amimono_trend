@@ -71,22 +71,22 @@ function initCurrent(){
  renderMonth();
 }
 function initHistory(){
- var years=new Set(items.map(dateYear).filter(Boolean).concat(obs.map(function(o){return Number(o.month.slice(0,4))})));
- var list=Array.from(years).filter(function(y){return y<=nowYear}).sort(function(a,b){return b-a});
- var selected=list[0]||null;
- function renderYear(){
- $("yearbar").innerHTML=list.map(function(y){
- var records=obs.filter(function(o){return Number(o.month.slice(0,4))===y});
- var ids=new Set(records.flatMap(function(o){return o.itemIds}));
- var n=uniqueItems(items.filter(function(x){return dateYear(x)===y||ids.has(x.id)})).length;
- return '<button class="yearbtn '+(selected===y?"active":"")+'" data-year="'+y+'"><span>'+y+'年</span><strong>'+n+'</strong></button>';
- }).join("");
- document.querySelectorAll(".yearbtn").forEach(function(b){b.addEventListener("click",function(){selected=Number(b.dataset.year);renderYear()})});
- var records=obs.filter(function(o){return Number(o.month.slice(0,4))===selected});
- var ids=new Set(records.flatMap(function(o){return o.itemIds}));
- cards(items.filter(function(x){return (dateYear(x)===selected||ids.has(x.id))}),"historyCards");
+ var trends=data.trendYears||{};
+ var list=Array.from({length:nowYear-2015+1},function(_,i){return nowYear-i});
+ var selected=nowYear;
+ function getYearItems(y){
+  var ids=new Set(trends[String(y)]||[]);
+  return uniqueItems(items.filter(function(x){return ids.has(x.id)}));
  }
-
+ function renderYear(){
+  $("yearbar").innerHTML=list.map(function(y){
+   var n=getYearItems(y).length;
+   return '<button class="yearbtn '+(selected===y?"active":"")+'" data-year="'+y+'" aria-pressed="'+(selected===y)+'"><span>'+y+'年</span><strong>'+(n||"—")+'</strong></button>';
+  }).join("");
+  document.querySelectorAll(".yearbtn").forEach(function(b){b.addEventListener("click",function(){selected=Number(b.dataset.year);renderYear()})});
+  var arr=getYearItems(selected);
+  $("historyCards").innerHTML=arr.length?arr.map(card).join(""):'<div class="empty">この年は流行の根拠とYouTube制作動画を調査中です。</div>';
+ }
  renderYear();
 }
 function addOptions(id,values){$(id).innerHTML+=[...new Set(values)].filter(Boolean).sort().map(function(v){return '<option value="'+esc(v)+'">'+esc(v)+'</option>'}).join("")}
