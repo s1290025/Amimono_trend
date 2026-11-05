@@ -147,3 +147,21 @@
 - **ポップアップ式フラワーコースター**は飲料を置いた時に花が立ち上がる構造。収納式花ボトルホルダーとは混同しない。
 - 2026年8月の貝殻ボトルホルダーは10万回再生以上という**累計数**であって、8月に再生が急増したと断定できない。11月のキャップフードも11月ピークと断定しない。
 - 韓国・インド・東南アジア・南米などの現地語資料からの形状の独立確認は今後も継続。今回の探索だけで各地域を網羅したとはみなさない。
+
+## 2026-11-05 夕方の地域別・構造別追加調査
+
+### 掲載した7種類（原資料と人気の区別）
+- **チュリョ／Chullo／Ch'ullu**：アンデスの耳当て・長い結び紐・幾何学模様の伝統帽子。19世紀の実物をMuseum of International Folk Artの収蔵品で確認。 `chullo-andean-museum`。https://collection.internationalfolkart.org/objects/26302/chullo 。流行の年は設定しない。
+- **ローシトゥッド／Roositud**：エストニア・キフヌ島の手袋で編む途中に別糸を渡して表面模様を作る技法。タルトゥ大学の文化継承ワークショップ https://viljandi.ut.ee/en/node/163889 で確認。 `roositud-kihnu-gloves`。日単位公開日は未確認、最近の流行とはしない。
+- **トゥイドルマフ／Twiddle Muff**：二重の筒の表面に触れる飾りを付ける感覚遊び小物。Shirley MacDonald原作の2015年3月公開無料パターン https://www.ravelry.com/patterns/library/twiddle-muff 。`twiddle-muff-2015-pattern`。日付不詳につき2015年の流行として登録しない。小部品の固定や対象者への安全確認が必要。
+- **バラボネット／Balabonnet**：顎下の紐を結び、場合によって首に巻けるニットボンネット。The Guardian 2025-01-30の同時代記事がコペンハーゲンの流行・TikTokの編み方人気を報道 https://www.theguardian.com/fashion/2025/jan/30/chin-up-behind-the-trend-for-grownup-bonnets 。`balabonnet-guardian-2025` を**2025年年別**に追加。個別制作動画は未確認。Sophie Hoodやバブーシュカとは分ける。
+- **裏返し気分タコ／Reversible Mood Octopus**：ひっくり返して色と表情が変わる半球型あみぐるみ。Hannah Mainprizeの2021年1月原作 https://www.ravelry.com/patterns/library/reversible-octopus-6 。`reversible-octopus-2021-pattern`。乳児向けの触手タコとは別構造。年別流行は未確認。
+- **ドラゴンスケール手袋／Dragon Scale Fingerless Gloves**：クロコダイルステッチの立体鱗を重ねた指なし手袋。Knitty Mommaの2016年9月原作 https://www.ravelry.com/patterns/library/dragon-scale-fingerless-gloves 。`dragon-scale-gloves-2016-pattern`。2016年流行の証拠は不十分。
+- **韓国の白菜と大根の編みぐるみキーチェーン／배추·무 키링**：2026-08-18聯合ニュース記事で実作者の編み作品を確認 https://www.yna.co.kr/view/AKR20260813145500505?section=society/all 。`korean-vegetable-knit-keychain-2026`。記事は若年層の編み物人気を扱うが野菜キーリング単独の流行を証明しないため、図鑑のみ登録。
+
+### 今後の再確認
+- バラボネットの実際の編み方動画の構造がニュース記事のものと一致するか。個別動画の公開日、再生数。
+- ポクチュモニ以外の韓国固有型、インドのポトリバッグ（potli）、東南アジアの現地制作資料、ブラジルの `crochê bolsa que vira flor` など。ローカル名称の相違に注意。
+- チュリョと一般のフライトキャップは耳当てが共通するだけで同一型にしない。民族衣装の由来を単なるファッションの流行と読み替えない。
+- ローシトゥッドの実作者の制作解説動画、原作パターンを収集。2017年のNancy Bush `Aire's Gloves` は同技法の作家デザイン例：https://www.ravelry.com/patterns/library/aires-gloves-to-knit 。日単位の公開日は未確認。
+- 旧来の2026年1〜11月月別記録は維持。**今回の月別追加は0件**。作品別の特定月の話題化が明確でないものを追加しない。
