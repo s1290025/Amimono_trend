@@ -33,7 +33,25 @@ window.AMIMONO_DATA = {
     {id:"aug-granny-day",groupId:"granny-square",name:"グラニースクエア",english:"Granny Square",category:"雑貨",region:"英語圏",tags:["モチーフ","8月15日","記念日"],firstYear:2026,status:"candidate",videoId:"cB32-a0r6f0",channel:"Cornwall Crochet",published:"2026-08-15",views:1261,likes:29,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"},
     {id:"sep-hobo",groupId:"hobo-bag",name:"ホーボーバッグ",english:"Crochet Hobo Bag",category:"バッグ・収納",region:"英語圏",tags:["ショルダーバッグ","秋"],firstYear:2026,status:"candidate",videoId:"wssTNoojSQg",channel:"VivCrochets",published:"2026-09-04",views:8926,likes:225,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"},
     {id:"oct-earwarmer",groupId:"ear-warmer",name:"イヤーウォーマー",english:"Crochet Ear Warmer",category:"帽子・頭",region:"日本",tags:["耳当て","冬","ヘッドバンド"],firstYear:2026,status:"candidate",videoId:"rimppemU0-M",channel:"ミミチャンネル かぎ針編み",published:"2026-10-22",views:16438,likes:null,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"}
+,
+    {id:"mermaid-blanket-2016",groupId:"mermaid-blanket",name:"マーメイドブランケット",english:"Mermaid Tail Blanket",category:"雑貨",region:"スペイン語圏",tags:["人魚","ブランケット"],firstYear:2016,videoId:"5s8hH8-6IK0",channel:"Ahuyama Crochet",published:"2016-01-28",views:2695653,likes:38000,trendYears:[2016],trendSources:["https://www.theguardian.com/fashion/shortcuts/2016/dec/11/mermaid-blankets-this-years-answer-to-the-onesie"],status:"past",checked:"2026-11-05",note:"年別の流行資料・制作動画から確認。動画の公開年と流行年は別に記録。",evidence:"video"},
+    {id:"bucket-hat-2021",groupId:"crochet-bucket-hat",name:"クロシェバケットハット",english:"Crochet Bucket Hat",category:"帽子・頭",region:"英語圏",tags:["バケットハット","帽子"],firstYear:2021,videoId:"mxuRYr7NUI0",channel:"MOP Crochet",published:"2021-10-17",views:172149,likes:5600,trendYears:[2021,2022],trendSources:["https://www.gq.com/story/crochet-hat-trend","https://www.voguescandinavia.com/articles/crocheted-bucket-hats-to-buy-now"],status:"past",checked:"2026-11-05",note:"年別の流行資料・制作動画から確認。動画の公開年と流行年は別に記録。",evidence:"video"},
+    {id:"hexagon-cardigan-2023",groupId:"hexagon-cardigan",name:"ヘキサゴンカーディガン",english:"Hexagon Cardigan",category:"衣類",region:"日本",tags:["六角形","カーディガン"],firstYear:2023,videoId:"H4wvR4_j-Q8",channel:"*.ゆくれあ.*",published:"2023-02-03",views:430025,likes:null,trendYears:[2023],trendSources:["https://www.youtube.com/watch?v=KtA4oseKsWI"],status:"past",checked:"2026-11-05",note:"年別の流行資料・制作動画から確認。動画の公開年と流行年は別に記録。",evidence:"video"}
   ],
+  trendYears: {
+    "2015":[],
+    "2016":["mermaid-blanket-2016"],
+    "2017":[],
+    "2018":[],
+    "2019":[],
+    "2020":[],
+    "2021":["bucket-hat-2021"],
+    "2022":["bucket-hat-2021"],
+    "2023":["hexagon-cardigan-2023"],
+    "2024":[],
+    "2025":[],
+    "2026":["mar-bandana","may-scallop-bandana","parandi-plakshi","jul-tie-mesh","oct-earwarmer","bottle-shell"]
+  },
   observations: [
     {"month":"2026-01","itemIds":["jan-star-earmuffs"],"summary":"公開月ベースの遡及調査：星型イヤーマフ。公開された制作動画を収録。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
     {"month":"2026-02","itemIds":["feb-cherry-pouch"],"summary":"公開月ベースの遡及調査：チェリーポーチ。公開された制作動画を収録。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
