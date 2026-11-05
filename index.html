@@ -17,7 +17,7 @@
 <section class="pane" id="library"><div class="controls"><input id="search" type="search" aria-label="作品検索" placeholder="作品名・形・英語名で検索"><select id="scope" aria-label="作品の分類"><option value="">すべての作品</option><option value="discovery">名前や形が特徴的</option><option value="trending">流行した作品</option><option value="classic">定番作品</option></select><select id="cat" aria-label="カテゴリー"><option value="">すべての種類</option></select></div><div class="count" id="resultCount"></div><div class="cards" id="allCards"></div></section>
 </main></div>
 <footer><div class="wrap">Amimono Trend · 画像・作品の権利は各作者に帰属します。</div></footer>
-<script src="./data.js?v=20261105-broaden-trends1"></script>
+<script src="./data.js?v=20261105-historical-cutoff1"></script>
 <script>
 (function(){
 "use strict";
@@ -42,15 +42,37 @@ function betterVideo(a,b){
  for(var i=0;i<x.length;i++){if(x[i]!==y[i])return x[i]>y[i]}
  return false;
 }
+function periodCutoff(period){
+ var end=String(period).length===4?period+"-12-31":period+"-31";
+ return data.updated&&data.updated<end?data.updated:end;
+}
+function availableByDate(item,cutoff){
+ // 過去時点の記録では、公開日が不明な動画を採用しない。
+ return typeof item.published==="string" && /^\d{4}-\d{2}-\d{2}$/.test(item.published) && item.published<=cutoff;
+}
+function periodItems(ids,cutoff){
+ // 作品のIDから同一groupIdの全動画を探し、その時点までの公開作だけを使う。
+ var selected=new Set(ids.map(function(id){
+  var item=items.find(function(x){return x.id===id});
+  return item?groupKey(item):null;
+ }).filter(Boolean));
+ return Array.from(selected).map(function(key){
+  var candidates=items.filter(function(x){return groupKey(x)===key&&availableByDate(x,cutoff)});
+  if(!candidates.length)return null;
+  var best=candidates[0];
+  candidates.forEach(function(x){if(betterVideo(x,best))best=x});
+  var canonical=items.find(function(x){return groupKey(x)===key&&x.canonicalName})||items.find(function(x){return groupKey(x)===key});
+  return Object.assign({},best,{name:canonical.canonicalName||canonical.name,groupId:key,sourceCount:candidates.length});
+ }).filter(Boolean);
+}
 function uniqueItems(arr){
  var selected=new Map();
  arr.forEach(function(item){selected.set(groupKey(item),true)});
- var keys=Array.from(selected.keys());
- return keys.map(function(key){
+ return Array.from(selected.keys()).map(function(key){
   var candidates=arr.filter(function(item){return groupKey(item)===key});
   var best=candidates[0];
   candidates.forEach(function(item){if(betterVideo(item,best))best=item});
-  var canonical=candidates.find(function(item){return item.canonicalName})||candidates[0];
+  var canonical=items.find(function(item){return groupKey(item)===key&&item.canonicalName})||candidates[0];
   return Object.assign({},best,{name:canonical.canonicalName||canonical.name,groupId:key,sourceCount:candidates.length});
  });
 }
@@ -61,16 +83,17 @@ function initCurrent(){
  var yearObs=obs.filter(function(x){return Number(x.month.slice(0,4))===nowYear}).sort(function(a,b){return a.month.localeCompare(b.month)});
  var selected=yearObs.length?yearObs[yearObs.length-1].month:null;
  function renderMonth(){
- $("months").innerHTML=Array.from({length:12},function(_,i){var m=nowYear+"-"+String(i+1).padStart(2,"0"),o=yearObs.find(function(x){return x.month===m});return '<button class="month '+(o?"has ":"")+(m===selected?"active":"")+'" data-month="'+m+'" '+(o?"":"disabled")+'><span>'+String(i+1)+'月</span><strong>'+(o?uniqueItems(items.filter(function(x){return o.itemIds.includes(x.id)})).length:"—")+'</strong></button>'}).join("");
- document.querySelectorAll(".month.has").forEach(function(b){b.addEventListener("click",function(){selected=b.dataset.month;renderMonth()})});
- var record=yearObs.find(function(o){return o.month===selected});
- $("monthNote").textContent=record?"その時期の話題・継続人気・制作動画の記録。すべてが月間急上昇作品とは限りません。":"";
- var ids=new Set(record?record.itemIds:[]);
- var monthItems=items.filter(function(x){return ids.has(x.id)});
- if(monthItems.length){cards(monthItems,"currentCards")}
- else{$("currentCards").innerHTML=record?'<div class="empty">この月の流行時期と制作動画を確認できた作品は、まだありません。</div>':'<div class="empty">この月はまだ調査記録がありません。</div>'}
+  $("months").innerHTML=Array.from({length:12},function(_,i){
+   var m=nowYear+"-"+String(i+1).padStart(2,"0"),record=yearObs.find(function(x){return x.month===m});
+   var n=record?periodItems(record.itemIds,periodCutoff(m)).length:0;
+   return '<button class="month '+(record?"has ":"")+(m===selected?"active":"")+'" data-month="'+m+'" '+(record?"":"disabled")+'><span>'+String(i+1)+'月</span><strong>'+(record?n:"—")+'</strong></button>';
+  }).join("");
+  document.querySelectorAll(".month.has").forEach(function(b){b.addEventListener("click",function(){selected=b.dataset.month;renderMonth()})});
+  var record=yearObs.find(function(x){return x.month===selected});
+  var arr=record?periodItems(record.itemIds,periodCutoff(selected)):[];
+  $("monthNote").textContent=record?"各月末（今月は最終更新日）までに公開された動画のみ掲載。注目・継続人気・再流行の参考一覧です。":"";
+  $("currentCards").innerHTML=arr.length?arr.map(card).join(""):'<div class="empty">この時点までの制作動画を確認できた作品はありません。</div>';
  }
-
  renderMonth();
 }
 function initHistory(){
@@ -78,8 +101,7 @@ function initHistory(){
  var list=Array.from({length:nowYear-2015+1},function(_,i){return nowYear-i});
  var selected=nowYear;
  function getYearItems(y){
-  var ids=new Set(trends[String(y)]||[]);
-  return uniqueItems(items.filter(function(x){return ids.has(x.id)}));
+  return periodItems(trends[String(y)]||[],periodCutoff(String(y)));
  }
  function renderYear(){
   $("yearbar").innerHTML=list.map(function(y){
@@ -88,8 +110,8 @@ function initHistory(){
   }).join("");
   document.querySelectorAll(".yearbtn").forEach(function(b){b.addEventListener("click",function(){selected=Number(b.dataset.year);renderYear()})});
   var arr=getYearItems(selected);
- $("yearNote").textContent=arr.length?"その年に話題になった作品、継続人気、注目動画の参考一覧。流行のピーク年とは限りません。":"";
-  $("historyCards").innerHTML=arr.length?arr.map(card).join(""):'<div class="empty">この年は流行の根拠とYouTube制作動画を調査中です。</div>';
+  $("yearNote").textContent=arr.length?"その年末（今年は最終更新日）までに公開された動画のみ掲載。人気の順位ではありません。":"";
+  $("historyCards").innerHTML=arr.length?arr.map(card).join(""):'<div class="empty">この年までに公開された制作動画を確認できた作品はまだありません。</div>';
  }
  renderYear();
 }
