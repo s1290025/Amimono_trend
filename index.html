@@ -47,7 +47,7 @@ function uniqueItems(arr){
  arr.forEach(function(item){selected.set(groupKey(item),true)});
  var keys=Array.from(selected.keys());
  return keys.map(function(key){
-  var candidates=items.filter(function(item){return groupKey(item)===key});
+  var candidates=arr.filter(function(item){return groupKey(item)===key});
   var best=candidates[0];
   candidates.forEach(function(item){if(betterVideo(item,best))best=item});
   var canonical=candidates.find(function(item){return item.canonicalName})||candidates[0];
