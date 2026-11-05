@@ -1046,14 +1046,16 @@ window.AMIMONO_DATA = {
       "views": null,
       "likes": null,
       "checked": "2026-11-05",
-      "note": "ポーチに変形するバケットハット。作者の作品ページにYouTube制作動画へのリンクあり。動画公開日は未確認。",
+      "note": "元のRavelryページを主リンクにし、作者のYouTube動画も補助リンクで示す。YouTubeの正確な日単位公開日は不明のため過去時点のトレンドには掲載しない。",
       "evidence": "video",
       "trendSources": [
         "https://www.ravelry.com/patterns/library/pocket-bucket-hat"
       ],
-      "sourceUrl": "https://www.youtube.com/watch?v=oUqTF0s1U7k",
+      "sourceUrl": "https://www.ravelry.com/patterns/library/pocket-bucket-hat",
       "originalUrl": "https://www.ravelry.com/patterns/library/pocket-bucket-hat",
-      "originalLabel": "作者の作品・無料パターンページ"
+      "originalLabel": "作者の作品・無料パターンページ",
+      "sourceType": "pattern",
+      "sourceLabel": "作者のオリジナル作品・パターン"
     },
     {
       "id": "bouquet-blanket-elyse-2025",
