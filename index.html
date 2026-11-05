@@ -17,7 +17,7 @@
 <section class="pane" id="library"><div class="controls"><input id="search" type="search" aria-label="作品検索" placeholder="作品名・形・英語名で検索"><select id="scope" aria-label="作品の分類"><option value="">すべての作品</option><option value="discovery">名前や形が特徴的</option><option value="trending">流行した作品</option><option value="classic">定番作品</option></select><select id="cat" aria-label="カテゴリー"><option value="">すべての種類</option></select></div><div class="count" id="resultCount"></div><div class="cards" id="allCards"></div></section>
 </main></div>
 <footer><div class="wrap">Amimono Trend · 画像・作品の権利は各作者に帰属します。</div></footer>
-<script src="./data.js?v=20261105-discovery-update2"></script>
+<script src="./data.js?v=20261105-curation3"></script>
 <script>
 (function(){
 "use strict";
@@ -30,7 +30,7 @@ function formatNumber(v){return typeof v==="number"?new Intl.NumberFormat("ja-JP
 function card(x){
  var thumb="https://i.ytimg.com/vi/"+encodeURIComponent(x.videoId)+"/hqdefault.jpg";
  var url="https://www.youtube.com/watch?v="+encodeURIComponent(x.videoId);
- return '<article class="card"><a href="'+url+'" class="cardimage" target="_blank" rel="noopener noreferrer" aria-label="'+esc(x.name)+'の制作動画"><img loading="lazy" alt="'+esc(x.name)+'の制作動画サムネイル" src="'+thumb+'" onerror="this.parentElement.classList.add('+"'missing'"+')"><span class="fallback">サムネイルを表示できません</span><span class="play">YouTubeで見る ↗</span></a><div class="body"><div class="badges"><span class="tag">'+(x.evidence==="video"?"確認済み":"要再確認")+'</span><span class="tag">投稿地域: '+esc(x.region)+'</span><span class="tag">'+esc(x.category)+'</span></div><h3>'+esc(x.name)+'</h3><p class="en">'+esc(x.english)+'</p>'+(x.shape?'<p class="shape">'+esc(x.shape)+'</p>':'')+'<p class="meta">'+esc(x.channel)+'</p>'+(x.published?'<p class="meta">'+esc(x.published.slice(0,7))+'</p>':"")+''+(typeof x.views==="number"?'<p class="meta">再生 '+formatNumber(x.views)+'</p>':"")+'<a class="open" href="'+url+'" target="_blank" rel="noopener noreferrer">動画を見る ↗</a></div></article>';
+ return '<article class="card"><a href="'+url+'" class="cardimage" target="_blank" rel="noopener noreferrer" aria-label="'+esc(x.name)+'の制作動画"><img loading="lazy" alt="'+esc(x.name)+'の制作動画サムネイル" src="'+thumb+'" onerror="this.parentElement.classList.add('+"'missing'"+')"><span class="fallback">サムネイルを表示できません</span><span class="play">YouTubeで見る ↗</span></a><div class="body"><div class="badges"><span class="tag">'+(x.evidence==="video"?"動画記録":"要再確認")+'</span><span class="tag">投稿地域: '+esc(x.region)+'</span><span class="tag">'+esc(x.category)+'</span></div><h3>'+esc(x.name)+'</h3><p class="en">'+esc(x.english)+'</p>'+(x.shape?'<p class="shape">'+esc(x.shape)+'</p>':'')+'<p class="meta">'+esc(x.channel)+'</p>'+(x.published?'<p class="meta">'+esc(x.published.slice(0,7))+'</p>':"")+''+(typeof x.views==="number"?'<p class="meta">再生 '+formatNumber(x.views)+'</p>':"")+'<a class="open" href="'+url+'" target="_blank" rel="noopener noreferrer">動画を見る ↗</a></div></article>';
 }
 function groupKey(x){return x.groupId||x.id}
 function rankVideo(x){
@@ -91,7 +91,7 @@ function initCurrent(){
   document.querySelectorAll(".month.has").forEach(function(b){b.addEventListener("click",function(){selected=b.dataset.month;renderMonth()})});
   var record=yearObs.find(function(x){return x.month===selected});
   var arr=record?periodItems(record.itemIds,periodCutoff(selected)):[];
-  $("monthNote").textContent=record?"各月末（今月は最終更新日）までに公開された動画のみ掲載。注目・継続人気・再流行の参考一覧です。":"";
+  $("monthNote").textContent=record?"各月末（今月は最終更新日）までに公開された動画のみ掲載。主に制作動画の公開月に基づく参考記録で、月間の流行順位・ピークではありません。":"";
   $("currentCards").innerHTML=arr.length?arr.map(card).join(""):'<div class="empty">この時点までの制作動画を確認できた作品はありません。</div>';
  }
  renderMonth();
@@ -110,7 +110,7 @@ function initHistory(){
   }).join("");
   document.querySelectorAll(".yearbtn").forEach(function(b){b.addEventListener("click",function(){selected=Number(b.dataset.year);renderYear()})});
   var arr=getYearItems(selected);
-  $("yearNote").textContent=arr.length?"その年末（今年は最終更新日）までに公開された動画のみ掲載。人気の順位ではありません。":"";
+  $("yearNote").textContent=arr.length?"その年末（今年は最終更新日）までに公開された動画のみ掲載。流行資料と制作動画に基づく参考一覧で、作品別の人気順位や急上昇を意味しません。":"";
   $("historyCards").innerHTML=arr.length?arr.map(card).join(""):'<div class="empty">この年までに公開された制作動画を確認できた作品はまだありません。</div>';
  }
  renderYear();
