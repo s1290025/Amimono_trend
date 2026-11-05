@@ -40,3 +40,34 @@
 
 ## 2026年11月件数の修正
 これまで11月に出ていた8種類は「11月に新しく調べた作品」と「過去からあるデザイン」が混ざっていた。2026-11-05時点で11月の流行時期と対応するYouTube制作動画をともに確認できた作品は **0件**。未知の形の発見候補は上記メモで継続追跡し、数を埋めるために過去の制作動画を11月へ移さない。
+
+## 2026-11-05 追加調査メモ（今後の優先確認）
+
+### 4. ポップアップ・フラワーガーデンコースター／Flip Flower Coaster
+- 構造: カップを置くと周囲に立体の花が立ち上がる、花壇のようなコースター。植木鉢に積み重ねて収納する一般的な Flower Pot Coaster とは **別構造**。
+- 話題の時期: 2026年10月。複数の作品例をまとめた記事とコミュニティ投稿を確認。人気の規模・ピーク月は未確定。
+- 根拠: https://knotoyarn.com/crochet-pop-up-flower-coaster-patterns/ 、https://meet.ribblr.com/t/the-best-trend-ive-ever-seen-the-flower-coaster/801587 、https://criazalblog.com/crochet-pop-up-flower-garden-pop-up-coaster/
+- 状態: 対応する制作動画が記事内で紹介されているが、動画ID・公開日・サムネイルとの完全照合がまだ済んでいないため掲載保留。
+- 次に検索: `crochet pop up flower garden coaster tutorial`, `flip flower coaster crochet`, `crochet flowers stand around mug`, `立ち上がる 花 コースター かぎ針`。
+- 登録時: `groupId: pop-up-flower-coaster`。鉢植えに収める `flower-pot-coaster` と混同しない。
+
+### 5. ミニ・クラゲのバッグチャーム／Jellyfish Amigurumi Keychain
+- 構造: 小さなクラゲの傘と垂れ下がる触手を一体で編み、バッグなどにつけるあみぐるみ。
+- 話題の時期: 2026年のミニサイズ・キーチェーン型あみぐるみの紹介記事。特定月の流行は未確認。
+- 根拠: https://mrscrochetworld.com/blogs/crochet-blog/crochet-trends-2026
+- 状態: 対応する特定作品のYouTube制作動画と公開日を未照合。既存の普通サイズのクラゲあみぐるみとの区分も要確認。
+- 次に検索: `mini jellyfish crochet keychain tutorial`, `no sew jellyfish bag charm`, `해파리 키링 뜨개`, `クラゲ キーホルダー かぎ針`。
+- 登録時: まず複数作者の構造を比較し、`groupId: jellyfish-keychain` の採用を判断。単なる色差は統合。
+
+### 6. ポケット・バケットハット（動画公開日の確認待ち）
+- 構造: ポーチから帽子に広げられる変形バケットハット。
+- 元作者のパターン: https://www.ravelry.com/patterns/library/pocket-bucket-hat （2024年10月の公開表示）
+- 作者の動画: https://www.youtube.com/watch?v=oUqTF0s1U7k
+- 状態: `data.js` の図鑑候補 `pocket-bucket-hat-2024` に登録。ただし**動画そのものの日単位公開日を未確認**のため `published:null` とし、2024年月別・年別にはまだ追加しない。
+- 次に検索: `oUqTF0s1U7k published date`, `It KenKen Pocket Bucket Hat video 2024`。
+
+### 7. 花束ブランケット：継続注目と再流行の確認
+- 構造: 丸いブランケットをまとめると花束に見える仕掛け。
+- 2025-12-16公開の制作動画: https://www.youtube.com/watch?v=pWpXGtrQeSU
+- 2026-10-18の紹介記事: https://www.dailycrochet.com/crochet-flower-bouquet-blanket-video-tutorial/
+- 状態: `bouquet-blanket` グループに動画を追加済み。**2026年10月の再紹介は確認できたが、月間再生数増加やブームのピークは未確認**。2025年12月以前の月別にこの動画を使わない。
