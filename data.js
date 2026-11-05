@@ -1,4 +1,5 @@
 // 手動確認した作品と月ごとの観測記録。
+// 2026年1〜10月は遡及調査。月次流行の実測ではなく該当月に公開された動画の記録。
 // 追加する際は items に作品を1件登録し、observations に年月を追加します。
 // views/likes は取得できた場合だけ数値を入力。未確認なら null。
 // groupId が同じ作品はサイトで１タイルに統合。canonicalName は統一表示名。
@@ -21,8 +22,29 @@ window.AMIMONO_DATA = {
 ,
     {id:"parandi-plakshi",groupId:"crochet-parandi",canonicalName:"クロシェ・パランディ",featured:true,name:"クロシェ・パランディ",english:"Crochet Parandi",category:"雑貨",region:"インド・英語圏",tags:["ヘアアクセサリー","髪飾り","paranda","パランダ","編み込み","crochet hair accessory"],firstYear:2026,status:"candidate",videoId:"937e6PWLL54",channel:"Plakshi Jain | Crochet",published:"2026-03-26",views:279202,likes:5600,checked:"2026-11-05",note:"髪に組み込む飾り。2026年3月公開動画の累計再生数を確認。海外の注目候補であり日本の流行を示すものではない。",evidence:"video"},
     {id:"parandi-kajal",groupId:"crochet-parandi",name:"クロシェ・パランディ（花付き）",english:"Crochet Parandi",category:"雑貨",region:"インド・英語圏",tags:["ヘアアクセサリー","髪飾り","paranda","パランダ","花モチーフ"],firstYear:2026,status:"candidate",videoId:"ZgxNh4rWWmI",channel:"Calm & Crochet by Kajal",published:"2026-04-13",views:99721,likes:2200,checked:"2026-11-05",note:"同じ作品系統を別作者が制作。作品種類としてはクロシェ・パランディ1件、根拠動画は2件。",evidence:"video"}
+,
+    {id:"jan-star-earmuffs",groupId:"star-earmuffs",name:"星型イヤーマフ",english:"Star Ear Muffs",category:"帽子・頭",region:"英語圏",tags:["星型","耳当て"],firstYear:2026,status:"candidate",videoId:"d5e2BDUEAis",channel:"thisfairymade",published:"2026-01-18",views:818,likes:null,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"},
+    {id:"feb-cherry-pouch",groupId:"cherry-pouch",name:"チェリーポーチ",english:"Cherry Pouch",category:"バッグ・収納",region:"英語圏",tags:["チェリー","フリル"],firstYear:2026,status:"candidate",videoId:"dOmPhF5eT8w",channel:"thisfairymade",published:"2026-02-04",views:656,likes:35,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"},
+    {id:"mar-bandana",groupId:"crochet-bandana",name:"クロシェバンダナ",english:"Crochet Bandana",category:"帽子・頭",region:"英語圏",tags:["春","バンダナ"],firstYear:2026,status:"candidate",videoId:"z6yHLQJ1MP8",channel:"VivCrochets",published:"2026-03-20",views:130272,likes:2600,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"},
+    {id:"apr-mesh-shrug",groupId:"mesh-shrug",name:"メッシュシュラグ",english:"Mesh Crochet Shrug",category:"衣類",region:"英語圏",tags:["ボレロ","袖"],firstYear:2026,status:"candidate",videoId:"OmnEgOg5k04",channel:"VivCrochets",published:"2026-04-11",views:37658,likes:976,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"},
+    {id:"may-scallop-bandana",groupId:"crochet-bandana",name:"スカラップバンダナ",english:"Scalloped Crochet Bandana",category:"帽子・頭",region:"英語圏",tags:["縁取り","バンダナ"],firstYear:2026,status:"candidate",videoId:"HJcZazde7-M",channel:"VivCrochets",published:"2026-05-08",views:193582,likes:3500,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"},
+    {id:"jun-mesh-bag",groupId:"net-bag",name:"メッシュビーチバッグ",english:"Mesh Beach Bag",category:"バッグ・収納",region:"アラビア語圏",tags:["ネットバッグ","夏","トート"],firstYear:2026,status:"candidate",videoId:"7aKstTRxyfQ",channel:"ebtehal handmade",published:"2026-06-02",views:11853,likes:540,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"},
+    {id:"jul-tie-mesh",groupId:"tie-mesh-top",name:"前結びメッシュトップス",english:"Tie-Front Crochet Mesh Top",category:"衣類",region:"英語圏",tags:["夏服","クロシェトップス"],firstYear:2026,status:"candidate",videoId:"i5fiJP0gz1s",channel:"VivCrochets",published:"2026-07-17",views:94901,likes:2400,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"},
+    {id:"aug-granny-day",groupId:"granny-square",name:"グラニースクエア",english:"Granny Square",category:"雑貨",region:"英語圏",tags:["モチーフ","8月15日","記念日"],firstYear:2026,status:"candidate",videoId:"cB32-a0r6f0",channel:"Cornwall Crochet",published:"2026-08-15",views:1261,likes:29,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"},
+    {id:"sep-hobo",groupId:"hobo-bag",name:"ホーボーバッグ",english:"Crochet Hobo Bag",category:"バッグ・収納",region:"英語圏",tags:["ショルダーバッグ","秋"],firstYear:2026,status:"candidate",videoId:"wssTNoojSQg",channel:"VivCrochets",published:"2026-09-04",views:8926,likes:225,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"},
+    {id:"oct-earwarmer",groupId:"ear-warmer",name:"イヤーウォーマー",english:"Crochet Ear Warmer",category:"帽子・頭",region:"日本",tags:["耳当て","冬","ヘッドバンド"],firstYear:2026,status:"candidate",videoId:"rimppemU0-M",channel:"ミミチャンネル かぎ針編み",published:"2026-10-22",views:16438,likes:null,checked:"2026-11-05",note:"公開月の制作動画を遡及収録。流行がその月にピークだったことは未確認。",evidence:"video"}
   ],
   observations: [
+    {"month":"2026-01","itemIds":["jan-star-earmuffs"],"summary":"公開月ベースの遡及調査：星型イヤーマフ。公開された制作動画を収録。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
+    {"month":"2026-02","itemIds":["feb-cherry-pouch"],"summary":"公開月ベースの遡及調査：チェリーポーチ。公開された制作動画を収録。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
+    {"month":"2026-03","itemIds":["mar-bandana","parandi-plakshi"],"summary":"公開月ベースの遡及調査：クロシェバンダナとパランディ。両動画は3月公開。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
+    {"month":"2026-04","itemIds":["apr-mesh-shrug","parandi-kajal"],"summary":"公開月ベースの遡及調査：メッシュシュラグと別作者のパランディ。4月公開。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
+    {"month":"2026-05","itemIds":["may-scallop-bandana"],"summary":"公開月ベースの遡及調査：スカラップバンダナ。3月のバンダナと同系統であり、表示時は統合。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
+    {"month":"2026-06","itemIds":["jun-mesh-bag","wavebag-adel"],"summary":"公開月ベースの遡及調査：ネットバッグ・波模様バッグの制作動画が6月に公開。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
+    {"month":"2026-07","itemIds":["jul-tie-mesh","netbag-adel"],"summary":"公開月ベースの遡及調査：前結びメッシュトップスと韓国のリーフラインバッグ。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
+    {"month":"2026-08","itemIds":["aug-granny-day"],"summary":"公開月ベースの遡及調査：Granny Square Dayの公開動画。制作過程の解説動画とは限らないため参考登録。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
+    {"month":"2026-09","itemIds":["sep-hobo","card-wallet-adel"],"summary":"公開月ベースの遡及調査：ホーボーバッグ、韓国のカードケース。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
+    {"month":"2026-10","itemIds":["oct-earwarmer","triangle-scarf-adel"],"summary":"公開月ベースの遡及調査：イヤーウォーマーと韓国の三角スカーフ。","highlights":["公開月に対応する動画を掲載。月間の流行順位・ピークを示すものではありません。"]},
     {month:"2026-11",itemIds:["flight-cap-sakura","flight-cap-momiii","cat-beanie-sakura","bouquet-blanket","triangle-scarf-adel","netbag-adel","card-wallet-adel","wavebag-adel","bottle-cream","bottle-cupcake","bottle-shell","bottle-net","parandi-plakshi","parandi-kajal"],summary:"サイト初回収録。公開済み動画の蓄積と新しい発見候補を分け、数値を確認できた作品だけ統計を記録。",highlights:["帽子に耳当てが付いたフライトキャップは、異なる作者による作例を確認","飲み物用ホルダーは形のバリエーションが豊富","韓国の小物・バッグ動画を調査対象に追加","クロシェ・パランディ：異なる2作者の制作動画を確認"]}
   ]
 };
