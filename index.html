@@ -12,8 +12,8 @@
 <div class="wrap"><div class="top"><div class="logo">Amimono<span>Trend.</span></div><div class="info">更新 <strong id="updated">—</strong></div></div>
 <nav class="tabs" aria-label="表示切り替え"><button class="tab active" data-tab="current">月別トレンド</button><button class="tab" data-tab="history">年別トレンド</button><button class="tab" data-tab="library">定番</button></nav>
 <main>
-<section class="pane active" id="current"><div class="months" id="months"></div><div class="cards" id="currentCards"></div></section>
-<section class="pane" id="history"><div class="yearbar" id="yearbar"></div><div class="cards" id="historyCards"></div></section>
+<section class="pane active" id="current"><div class="months" id="months"></div><div class="controls"><select id="monthRegion" aria-label="月別の投稿地域"><option value="">全地域</option></select></div><div class="cards" id="currentCards"></div></section>
+<section class="pane" id="history"><div class="yearbar" id="yearbar"></div><div class="controls"><select id="historyRegion" aria-label="年別の投稿地域"><option value="">全地域</option></select></div><div class="cards" id="historyCards"></div></section>
 <section class="pane" id="library"><div class="controls"><input id="search" type="search" aria-label="作品検索" placeholder="作品名で検索"><select id="cat" aria-label="カテゴリー"><option value="">すべての種類</option></select><select id="region" aria-label="地域"><option value="">すべての地域</option></select></div><div class="count" id="resultCount"></div><div class="cards" id="allCards"></div></section>
 </main></div>
 <footer><div class="wrap">Amimono Trend · 画像・作品の権利は各作者に帰属します。</div></footer>
@@ -30,7 +30,7 @@ function formatNumber(v){return typeof v==="number"?new Intl.NumberFormat("ja-JP
 function card(x){
  var thumb="https://i.ytimg.com/vi/"+encodeURIComponent(x.videoId)+"/hqdefault.jpg";
  var url="https://www.youtube.com/watch?v="+encodeURIComponent(x.videoId);
- return '<article class="card"><a href="'+url+'" class="cardimage" target="_blank" rel="noopener noreferrer" aria-label="'+esc(x.name)+'の制作動画"><img loading="lazy" alt="'+esc(x.name)+'の制作動画サムネイル" src="'+thumb+'" onerror="this.parentElement.classList.add('+"'missing'"+')"><span class="fallback">サムネイルを表示できません</span><span class="play">YouTubeで見る ↗</span></a><div class="body"><div class="badges"><span class="tag">'+(x.evidence==="video"?"確認済み":"要再確認")+'</span><span class="tag">'+esc(x.region)+'</span><span class="tag">'+esc(x.category)+'</span></div><h3>'+esc(x.name)+'</h3><p class="en">'+esc(x.english)+'</p><p class="meta">'+esc(x.channel)+'</p>'+(x.published?'<p class="meta">'+esc(x.published.slice(0,7))+'</p>':"")+''+(typeof x.views==="number"?'<p class="meta">再生 '+formatNumber(x.views)+'</p>':"")+'<a class="open" href="'+url+'" target="_blank" rel="noopener noreferrer">動画を見る ↗</a></div></article>';
+ return '<article class="card"><a href="'+url+'" class="cardimage" target="_blank" rel="noopener noreferrer" aria-label="'+esc(x.name)+'の制作動画"><img loading="lazy" alt="'+esc(x.name)+'の制作動画サムネイル" src="'+thumb+'" onerror="this.parentElement.classList.add('+"'missing'"+')"><span class="fallback">サムネイルを表示できません</span><span class="play">YouTubeで見る ↗</span></a><div class="body"><div class="badges"><span class="tag">'+(x.evidence==="video"?"確認済み":"要再確認")+'</span><span class="tag">投稿地域: '+esc(x.region)+'</span><span class="tag">'+esc(x.category)+'</span></div><h3>'+esc(x.name)+'</h3><p class="en">'+esc(x.english)+'</p><p class="meta">'+esc(x.channel)+'</p>'+(x.published?'<p class="meta">'+esc(x.published.slice(0,7))+'</p>':"")+''+(typeof x.views==="number"?'<p class="meta">再生 '+formatNumber(x.views)+'</p>':"")+'<a class="open" href="'+url+'" target="_blank" rel="noopener noreferrer">動画を見る ↗</a></div></article>';
 }
 function cards(arr,el){$(el).innerHTML=arr.length?arr.map(card).join(""):'<div class="empty">まだ記録がありません。</div>'}
 function initTabs(){document.querySelectorAll(".tab").forEach(function(t){t.addEventListener("click",function(){document.querySelectorAll(".tab").forEach(function(n){n.classList.toggle("active",n===t)});document.querySelectorAll(".pane").forEach(function(n){n.classList.toggle("active",n.id===t.dataset.tab)})})})}
@@ -43,8 +43,9 @@ function initCurrent(){
  document.querySelectorAll(".month.has").forEach(function(b){b.addEventListener("click",function(){selected=b.dataset.month;renderMonth()})});
  var record=yearObs.find(function(o){return o.month===selected});
  var ids=new Set(record?record.itemIds:[]);
- cards(items.filter(function(x){return ids.has(x.id)}),"currentCards");
+ cards(items.filter(function(x){return ids.has(x.id)&&(!$("monthRegion").value||x.region===$("monthRegion").value)}),"currentCards");
  }
+ $("monthRegion").addEventListener("change",renderMonth);
  renderMonth();
 }
 function initHistory(){
@@ -61,8 +62,9 @@ function initHistory(){
  document.querySelectorAll(".yearbtn").forEach(function(b){b.addEventListener("click",function(){selected=Number(b.dataset.year);renderYear()})});
  var records=obs.filter(function(o){return Number(o.month.slice(0,4))===selected});
  var ids=new Set(records.flatMap(function(o){return o.itemIds}));
- cards(items.filter(function(x){return dateYear(x)===selected||ids.has(x.id)}),"historyCards");
+ cards(items.filter(function(x){return (dateYear(x)===selected||ids.has(x.id))&&(!$("historyRegion").value||x.region===$("historyRegion").value)}),"historyCards");
  }
+ $("historyRegion").addEventListener("change",renderYear);
  renderYear();
 }
 function addOptions(id,values){$(id).innerHTML+=[...new Set(values)].filter(Boolean).sort().map(function(v){return '<option value="'+esc(v)+'">'+esc(v)+'</option>'}).join("")}
@@ -76,7 +78,7 @@ function initLibrary(){
  }
  ["search","cat","region"].forEach(function(id){$(id).addEventListener(id==="search"?"input":"change",filter)});filter()
 }
-initTabs();initCurrent();initHistory();initLibrary();
+addOptions("monthRegion",items.map(function(x){return x.region}));addOptions("historyRegion",items.map(function(x){return x.region}));initTabs();initCurrent();initHistory();initLibrary();
 })();
 </script>
 </body></html>
