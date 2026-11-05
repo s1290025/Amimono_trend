@@ -1306,8 +1306,7 @@ window.AMIMONO_DATA = {
       "discovery-catbeanie",
       "discovery-earmuffs",
       "tulip-pouch-tsumugi-2025",
-      "flower-pot-coaster-2025",
-      "bouquet-blanket-elyse-2025"
+      "flower-pot-coaster-2025"
     ],
     "2026": [
       "parandi-plakshi",
@@ -1318,7 +1317,6 @@ window.AMIMONO_DATA = {
       "discovery-scoodie",
       "discovery-sophie-hood-like",
       "mar-bandana",
-      "may-scallop-bandana",
       "jul-tie-mesh",
       "oct-earwarmer",
       "bottle-shell",
@@ -1326,8 +1324,7 @@ window.AMIMONO_DATA = {
       "discovery-catbeanie",
       "discovery-earmuffs",
       "netbag-adel",
-      "flower-pot-coaster-2025",
-      "bouquet-blanket-elyse-2025"
+      "flower-pot-coaster-2025"
     ]
   },
   "observations": [
