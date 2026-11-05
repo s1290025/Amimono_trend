@@ -17,7 +17,7 @@
 <section class="pane" id="library"><div class="controls"><input id="search" type="search" aria-label="作品検索" placeholder="作品名・形・英語名で検索"><select id="scope" aria-label="作品の分類"><option value="">すべての作品</option><option value="discovery">名前や形が特徴的</option><option value="trending">流行した作品</option><option value="classic">定番作品</option></select><select id="cat" aria-label="カテゴリー"><option value="">すべての種類</option></select></div><div class="count" id="resultCount"></div><div class="cards" id="allCards"></div></section>
 </main></div>
 <footer><div class="wrap">Amimono Trend · 画像・作品の権利は各作者に帰属します。</div></footer>
-<script src="./data.js?v=20261105-history4"></script>
+<script src="./data.js?v=20261105-history5"></script>
 <script>
 (function(){
 "use strict";
@@ -42,6 +42,7 @@ function card(x){
  var linked=url?'<a href="'+esc(url)+'" class="'+style+'" target="_blank" rel="noopener noreferrer" aria-label="'+esc(x.name)+'の'+esc(sourceLabel)+'">'+art+visual+'<span class="play">'+esc(sourceLabel)+'</span></a>':'<div class="'+style+'">'+art+visual+'</div>';
  var detail=url?'<a class="open" href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(sourceLabel)+' ↗</a>':'';
  if(origin&&origin!==url)detail+=' <a class="open" href="'+esc(origin)+'" target="_blank" rel="noopener noreferrer">作者の作品ページ ↗</a>';
+ if(!video&&x.videoId)detail+=' <a class="open" href="https://www.youtube.com/watch?v='+encodeURIComponent(x.videoId)+'" target="_blank" rel="noopener noreferrer">参考動画 ↗</a>';
  var kind=video?"動画":x.sourceType==="article"?"紹介記事":x.sourceType==="pattern"?"作品パターン":"作品資料";
  return '<article class="card">'+linked+'<div class="body"><div class="badges"><span class="tag">'+esc(kind)+'</span><span class="tag">地域: '+esc(x.region)+'</span><span class="tag">'+esc(x.category)+'</span></div><h3>'+esc(x.name)+'</h3><p class="en">'+esc(x.english)+'</p>'+(x.shape?'<p class="shape">'+esc(x.shape)+'</p>':'')+'<p class="meta">'+esc(x.channel||"")+'</p>'+(x.published?'<p class="meta">'+esc(x.published.slice(0,7))+'</p>':'')+(typeof x.views==="number"?'<p class="meta">再生 '+formatNumber(x.views)+'</p>':'')+(x.sourceLabel?'<p class="meta">'+esc(x.sourceLabel)+'</p>':'')+detail+'</div></article>';
 }
