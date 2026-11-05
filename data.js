@@ -1411,6 +1411,37 @@ window.AMIMONO_DATA = {
         "https://www.vogue.com/article/jw-anderson-harry-styles-cardigan-tiktok",
         "https://www.ravelry.com/patterns/library/colour-block-patchwork-cardigan"
       ]
+    },
+    {
+      "id": "flower-earmuff-collar-2way-2026",
+      "groupId": "flower-earmuff-collar-2way",
+      "name": "お花の2wayイヤーマフ・つけ衿",
+      "english": "Convertible Flower Earmuffs / Collar",
+      "shape": "大きな花モチーフと結びひもを組み合わせ、耳を覆うイヤーマフにも首まわりのつけ衿にもなる2way小物。",
+      "category": "帽子・頭",
+      "region": "日本",
+      "tags": [
+        "2way",
+        "花",
+        "イヤーマフ",
+        "つけ衿",
+        "変形"
+      ],
+      "firstYear": 2026,
+      "published": "2026-10-21",
+      "sourceType": "article",
+      "sourceUrl": "https://onlineshop.boutique-sha.co.jp/blogs/magazine/261019",
+      "sourceLabel": "出版社の2026年秋冬作品紹介",
+      "channel": "ブティック社",
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "evidence": "article",
+      "status": "candidate",
+      "note": "2026年10月21日の専門出版社の作品紹介。『かぎ針で編むフラワー小物』収録作品の案内で、単独の無料編み図ではない。2026年のおすすめ作品としての紹介であり、急上昇やSNSバズの証拠ではない。",
+      "trendSources": [
+        "https://onlineshop.boutique-sha.co.jp/blogs/magazine/261019"
+      ]
     }
   ],
   "trendYears": {
@@ -1474,7 +1505,12 @@ window.AMIMONO_DATA = {
       "discovery-lipcase",
       "flower-pot-coaster-2025",
       "bucket-hat-2021",
-      "overcap-earflaps-mdk-2026"
+      "overcap-earflaps-mdk-2026",
+      "flower-earmuff-collar-2way-2026",
+      "classic-beanie",
+      "classic-snood",
+      "classic-handwarmer",
+      "discovery-catbeanie"
     ]
   },
   "observations": [
@@ -1601,20 +1637,27 @@ window.AMIMONO_DATA = {
         "discovery-scoodie",
         "discovery-sophie-hood-like",
         "discovery-bouquet",
-        "overcap-earflaps-mdk-2026"
+        "overcap-earflaps-mdk-2026",
+        "flower-earmuff-collar-2way-2026",
+        "classic-beanie",
+        "classic-snood",
+        "classic-handwarmer",
+        "discovery-catbeanie"
       ],
-      "summary": "10月公開の制作動画と、同月の編み物メディアで注目された作品記事を収録。",
+      "summary": "10月の制作動画、秋冬定番小物の専門媒体特集、後付け耳当てのミニトレンド、花束ブランケットの再紹介を区別して収録。",
       "highlights": [
         "イヤーウォーマー等の10月公開動画を記録。",
         "10月18日付の専門記事で花束ブランケットの既存動画が再紹介された。",
-        "10月29日の編み物専門メディアで、キャップに後付けする耳当ての小規模トレンドが紹介された。動画未確認のため作品記事へリンク。"
+        "10月29日の編み物専門メディアで、キャップに後付けする耳当ての小規模トレンドが紹介された。動画未確認のため作品記事へリンク。",
+        "10月21日の編み物出版社の2026秋冬おすすめ特集に、ニット帽・首小物・ハンドウォーマー・猫耳帽子・イヤーマフ兼つけ衿が掲載。これは専門媒体によるおすすめで、作品別バズの根拠ではない。"
       ],
-      "basis": "制作動画の公開月と、2026-10-29の専門記事によるキャップ用後付け耳当てのミニトレンド、花束ブランケットの再紹介を区別して登録。",
+      "basis": "動画公開月に加え、10月18日の花束ブランケット紹介、10月21日のブティック社秋冬おすすめ作品、10月29日の後付け耳当てミニトレンドを根拠に分類。",
       "evidenceGrade": "mixed",
       "evidenceLinks": [
         "https://trilltrill.jp/articles/5082491",
         "https://www.moderndailyknitting.com/community/jumping-on-a-trend/",
-        "https://www.dailycrochet.com/crochet-flower-bouquet-blanket-video-tutorial/"
+        "https://www.dailycrochet.com/crochet-flower-bouquet-blanket-video-tutorial/",
+        "https://onlineshop.boutique-sha.co.jp/blogs/magazine/261019"
       ]
     },
     {
@@ -1696,12 +1739,13 @@ window.AMIMONO_DATA = {
       ]
     },
     "2026": {
-      "summary": "2026年は花束ブランケットが10月の専門記事で再紹介。クロシェバケットハットは2026年のファッション記事で再注目。その他の作品は公開日が確認できた制作動画や継続注目の参考であり、年内急上昇を個別に検証したものではない。 10月29日のModern Daily Knittingでキャップ用の着脱式耳当ての小規模流行も言及。",
+      "summary": "2026年は花束ブランケットが10月の専門記事で再紹介。クロシェバケットハットは2026年のファッション記事で再注目。その他の作品は公開日が確認できた制作動画や継続注目の参考であり、年内急上昇を個別に検証したものではない。 10月29日のModern Daily Knittingでキャップ用の着脱式耳当ての小規模流行も言及。 ブティック社の10月21日付秋冬小物特集は定番の継続的な制作候補と花モチーフの2wayイヤーマフ兼つけ衿を紹介（急上昇を示すデータではない）。",
       "sources": [
         "https://www.dailycrochet.com/crochet-flower-bouquet-blanket-video-tutorial/",
         "https://www.whowhatwear.com/fashion/celebrity-style/crochet-bucket-hat-trend-zoe-kravitz",
         "https://www.elle.com/fashion/shopping/a71097428/best-beach-hat-trends-2026/",
-        "https://www.moderndailyknitting.com/community/jumping-on-a-trend/"
+        "https://www.moderndailyknitting.com/community/jumping-on-a-trend/",
+        "https://onlineshop.boutique-sha.co.jp/blogs/magazine/261019"
       ]
     }
   }
