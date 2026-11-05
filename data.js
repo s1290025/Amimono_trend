@@ -1162,7 +1162,6 @@ window.AMIMONO_DATA = {
       "discovery-bouquet",
       "flight-cap-sakura",
       "discovery-catbeanie",
-      "jun-mesh-bag",
       "discovery-earmuffs"
     ],
     "2026": [
@@ -1181,8 +1180,7 @@ window.AMIMONO_DATA = {
       "discovery-lipcase",
       "discovery-catbeanie",
       "discovery-earmuffs",
-      "netbag-adel",
-      "discovery-catbeanie"
+      "netbag-adel"
     ]
   },
   "observations": [
@@ -1260,8 +1258,7 @@ window.AMIMONO_DATA = {
       "itemIds": [
         "jun-mesh-bag",
         "wavebag-adel",
-        "discovery-bouquet",
-        "jul-tie-mesh"
+        "discovery-bouquet"
       ],
       "summary": "公開月ベースの遡及調査：ネットバッグ・波模様バッグの制作動画が6月に公開。",
       "highlights": [
