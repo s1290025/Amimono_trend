@@ -1046,12 +1046,14 @@ window.AMIMONO_DATA = {
       "views": null,
       "likes": null,
       "checked": "2026-11-05",
-      "note": "作者本人がRavelryでYouTube制作動画と変形構造を明記。動画の日単位公開日は未確認のため歴史的トレンドには掲載しない。",
+      "note": "ポーチに変形するバケットハット。作者の作品ページにYouTube制作動画へのリンクあり。動画公開日は未確認。",
       "evidence": "video",
       "trendSources": [
         "https://www.ravelry.com/patterns/library/pocket-bucket-hat"
       ],
-      "sourceUrl": "https://www.youtube.com/watch?v=oUqTF0s1U7k"
+      "sourceUrl": "https://www.youtube.com/watch?v=oUqTF0s1U7k",
+      "originalUrl": "https://www.ravelry.com/patterns/library/pocket-bucket-hat",
+      "originalLabel": "作者の作品・無料パターンページ"
     },
     {
       "id": "bouquet-blanket-elyse-2025",
@@ -1110,6 +1112,93 @@ window.AMIMONO_DATA = {
         "https://www.youtube.com/watch?v=aibKU1lAluc"
       ],
       "sourceUrl": "https://www.youtube.com/watch?v=aibKU1lAluc"
+    },
+    {
+      "id": "overcap-earflaps-mdk-2026",
+      "groupId": "overcap-earflaps",
+      "name": "キャップ用の後付け耳当て",
+      "english": "Cozy Earflap Headband for a Cap / Tie-on Earflaps",
+      "shape": "手持ちの野球帽の上から取り付け、左右の耳を覆う紐付きの編み物。帽子本体とは別パーツ。",
+      "category": "帽子・頭",
+      "region": "英語圏",
+      "tags": [
+        "野球帽",
+        "後付け",
+        "耳当て",
+        "オーバーキャップ",
+        "tie-on earflaps"
+      ],
+      "firstYear": 2026,
+      "published": "2026-10-29",
+      "sourceType": "article",
+      "sourceUrl": "https://www.moderndailyknitting.com/community/jumping-on-a-trend/",
+      "sourceLabel": "編み物専門メディアの作品紹介",
+      "channel": "Modern Daily Knitting",
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "evidence": "article",
+      "status": "past",
+      "trendSources": [
+        "https://www.moderndailyknitting.com/community/jumping-on-a-trend/"
+      ],
+      "note": "2026-10-29公開記事で、Instagram上の着用例と複数パターン出現に言及。2026年10月末の小規模流行の根拠。制作動画は未照合。記事内の写真は許諾未確認のため転載しない。"
+    },
+    {
+      "id": "sophie-hood-original-petiteknit",
+      "groupId": "sophie-hood-original",
+      "name": "Sophie Hood（原作）",
+      "english": "Sophie Hood by PetiteKnit",
+      "shape": "細い先端から編み始めて途中が頭を覆うフードとなり、反対側も細く尖る一体型の棒針編みマフラー。",
+      "category": "首・肩",
+      "region": "デンマーク",
+      "tags": [
+        "ソフィーフード",
+        "棒針編み",
+        "フード",
+        "マフラー",
+        "PetiteKnit"
+      ],
+      "firstYear": null,
+      "published": null,
+      "sourceType": "pattern",
+      "sourceUrl": "https://www.petiteknit.com/en/products/sophie-hood",
+      "sourceLabel": "デザイナーの公式パターン（有料）",
+      "channel": "PetiteKnit",
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "evidence": "original",
+      "status": "candidate",
+      "note": "PetiteKnit原作を正確に区別して掲載。有料デジタルパターンであり、無料チュートリアルではない。原作の公開日・流行月は未照合。既存のsophie-hood-styleと別グループ。"
+    },
+    {
+      "id": "popup-flower-coaster-thao-2026",
+      "groupId": "pop-up-flower-coaster",
+      "name": "立体ポップアップ・フラワーコースター",
+      "english": "Pop-Up Flower Coaster",
+      "shape": "コースターの台座から花と茎・葉が立ち上がる立体的な花飾り。鉢に重ねて収納するコースターとは別構造。",
+      "category": "雑貨",
+      "region": "英語圏",
+      "tags": [
+        "立体",
+        "花",
+        "コースター",
+        "ポップアップ",
+        "変形"
+      ],
+      "firstYear": 2026,
+      "published": null,
+      "sourceType": "pattern",
+      "sourceUrl": "https://www.ravelry.com/patterns/library/flower-coaster-pop-up",
+      "sourceLabel": "作品パターン（有料・動画付き）",
+      "channel": "Thao Homemade Crochet",
+      "views": null,
+      "likes": null,
+      "checked": "2026-11-05",
+      "evidence": "original",
+      "status": "candidate",
+      "note": "Ravelryは2026年10月公開と表記するが正確な日付は未確認のためpublished:null。購入後利用できる動画付き有料パターン。2026年10月という月単位の記録は可能だが日単位の時点制約には採用しない。"
     }
   ],
   "trendYears": {
@@ -1160,7 +1249,8 @@ window.AMIMONO_DATA = {
       "oct-earwarmer",
       "discovery-lipcase",
       "flower-pot-coaster-2025",
-      "bucket-hat-2021"
+      "bucket-hat-2021",
+      "overcap-earflaps-mdk-2026"
     ]
   },
   "observations": [
@@ -1286,14 +1376,16 @@ window.AMIMONO_DATA = {
         "oct-earwarmer",
         "discovery-scoodie",
         "discovery-sophie-hood-like",
-        "discovery-bouquet"
+        "discovery-bouquet",
+        "overcap-earflaps-mdk-2026"
       ],
-      "summary": "10月公開の制作動画と、10月18日の専門記事で紹介された花束ブランケットを掲載。",
+      "summary": "10月公開の制作動画と、同月の編み物メディアで注目された作品記事を収録。",
       "highlights": [
         "イヤーウォーマー等の10月公開動画を記録。",
-        "10月18日付の専門記事で花束ブランケットの既存動画が再紹介された。"
+        "10月18日付の専門記事で花束ブランケットの既存動画が再紹介された。",
+        "10月29日の編み物専門メディアで、キャップに後付けする耳当ての小規模トレンドが紹介された。動画未確認のため作品記事へリンク。"
       ],
-      "basis": "制作動画の公開月に加え、花束ブランケットは2026-10-18の独立した紹介記事で話題を確認。",
+      "basis": "制作動画の公開月と、2026-10-29の専門記事によるキャップ用後付け耳当てのミニトレンド、花束ブランケットの再紹介を区別して登録。",
       "evidenceGrade": "mixed",
       "evidenceLinks": [
         "https://trilltrill.jp/articles/5082491",
@@ -1345,11 +1437,12 @@ window.AMIMONO_DATA = {
       ]
     },
     "2026": {
-      "summary": "2026年は花束ブランケットが10月の専門記事で再紹介。クロシェバケットハットは2026年のファッション記事で再注目。その他の作品は公開日が確認できた制作動画や継続注目の参考であり、年内急上昇を個別に検証したものではない。",
+      "summary": "2026年は花束ブランケットが10月の専門記事で再紹介。クロシェバケットハットは2026年のファッション記事で再注目。その他の作品は公開日が確認できた制作動画や継続注目の参考であり、年内急上昇を個別に検証したものではない。 10月29日のModern Daily Knittingでキャップ用の着脱式耳当ての小規模流行も言及。",
       "sources": [
         "https://www.dailycrochet.com/crochet-flower-bouquet-blanket-video-tutorial/",
         "https://www.whowhatwear.com/fashion/celebrity-style/crochet-bucket-hat-trend-zoe-kravitz",
-        "https://www.elle.com/fashion/shopping/a71097428/best-beach-hat-trends-2026/"
+        "https://www.elle.com/fashion/shopping/a71097428/best-beach-hat-trends-2026/",
+        "https://www.moderndailyknitting.com/community/jumping-on-a-trend/"
       ]
     }
   }
